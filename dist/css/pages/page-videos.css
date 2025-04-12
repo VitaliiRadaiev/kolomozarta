@@ -1,0 +1,207 @@
+.videos__list {
+  margin-bottom: 40px;
+}
+.videos__list-item {
+  padding: 60px 0 36px;
+  border-bottom: 8px solid #F8DB01;
+}
+.videos__list-item:last-child {
+  border-bottom: 0;
+}
+.videos__list-item video, .videos__list-item .wp-block-presto-player-reusable-edit {
+  width: 100%;
+}
+.videos__list-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 48px;
+}
+.videos__list-content span, .videos__list-content h2 {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #212934;
+  margin-bottom: 40px;
+}
+.videos__list-content span {
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.videos__list-desc p:first-of-type {
+  margin-bottom: 20px;
+}
+.videos__list-desc ul {
+  padding-left: 40px;
+}
+.videos__list-desc ul li {
+  list-style-type: disc;
+}
+.videos__list-additional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.videos__list-additional li {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 48px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.videos__list-additional li:first-child {
+  margin-top: 20px;
+}
+.videos__list-additional li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+.videos__list-additional li p {
+  max-width: 576px;
+}
+.videos__list-additional li::before {
+  content: "";
+  width: 120px;
+  height: 4px;
+  background: #F8DB01;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 4px;
+  margin-bottom: 40px;
+}
+.pagination .page-numbers {
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 14px;
+  height: 32px;
+  border: 2px solid #F8DB01;
+  background: transparent;
+  font-size: 1.4rem;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  color: #212934;
+}
+.pagination .page-numbers:hover {
+  background: #FFF8E8;
+}
+.pagination .page-numbers.dots:hover {
+  background: transparent;
+}
+.pagination .page-numbers.current {
+  background: #F8DB01;
+}
+
+.accent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+}
+.accent img {
+  width: 15px;
+  height: auto;
+}
+
+.accent-red .accent {
+  background: #FF0F0F;
+}
+.accent-orange .accent {
+  background: #FC6600;
+}
+.accent-yellow .accent {
+  background: #F8DB01;
+}
+.accent-violet .accent {
+  background: #2D0CD1;
+}
+.accent-blue .accent {
+  background: #3FB3D8;
+}
+.accent-purple .accent {
+  background: #8A3B8F;
+}
+.accent-green .accent {
+  background: #3ED715;
+}
+@media only screen and (min-width: 745px) {
+  .videos__list-item video, .videos__list-item .wp-block-presto-player-reusable-edit {
+    width: 50%;
+  }
+  .videos__list-content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .videos__list-additional li {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}

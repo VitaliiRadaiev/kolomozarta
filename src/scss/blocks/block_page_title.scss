@@ -1,0 +1,21 @@
+@use '../base/_variables' as *;
+
+.page__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .page__title {
+    text-align: center;
+  }
+
+  nav {
+    align-self: flex-start;
+    padding: 20px 0;
+
+    * {
+      color: $text;
+    }
+  }
+}

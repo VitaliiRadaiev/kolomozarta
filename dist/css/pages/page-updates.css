@@ -1,0 +1,101 @@
+.updates h1 {
+  max-width: 1014px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+.updates nav a {
+  color: #212934;
+}
+.updates__list {
+  margin-top: 56px;
+}
+.updates__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 28px;
+  padding: 48px 0 32px;
+  border-bottom: 8px solid #F8DB01;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.updates__list-item:first-child {
+  padding-top: 0;
+}
+.updates__list-item:last-child {
+  border-bottom: 0;
+}
+.updates__list-item-video {
+  width: 100%;
+}
+.updates__list-item-video iframe, .updates__list-item-video video {
+  height: auto;
+  width: 100%;
+}
+.updates__list-item-info {
+  width: 100%;
+}
+.updates__list-item h2, .updates__list-item h3 {
+  margin-bottom: 36px;
+  color: #212934;
+  text-align: center;
+  font-size: 26px;
+}
+.updates__list-item-audio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.updates__list-item-audio li {
+  margin-bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+.updates__list-item-audio li:last-child {
+  margin-bottom: 0;
+}
+.updates__list-item-audio audio {
+  width: 100%;
+}
+@media only screen and (min-width: 360px) {
+  .updates__list-item h2, .updates__list-item h3 {
+    font-size: calc(26px + 2 * (100vw - 360px) / (1440 - 360));
+  }
+}
+@media only screen and (min-width: 745px) {
+  .updates__list-item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .updates__list-item-video {
+    width: 50%;
+  }
+  .updates__list-item-video iframe, .updates__list-item-video video {
+    height: 416px;
+  }
+  .updates__list-item-info {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .updates__list-item h2, .updates__list-item h3 {
+    font-size: 28px;
+  }
+}

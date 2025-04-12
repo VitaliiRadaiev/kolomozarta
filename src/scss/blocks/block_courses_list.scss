@@ -1,0 +1,33 @@
+@use '../base/_variables' as *;
+
+.courses-list {
+  padding-bottom: 46px;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 60px;
+
+    @include minw($sm-pc) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    h2 {
+      @include fluid-font(28, 34, 360, 1440);
+    }
+
+    div {
+      padding-bottom: 30px;
+      @extend %line-center;
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      ul {
+        @extend %custom-list;
+      }
+    }
+  }
+}

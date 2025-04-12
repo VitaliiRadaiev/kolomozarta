@@ -1,0 +1,99 @@
+@use '../base/_variables' as *;
+
+.education {
+  margin-bottom: 120px;
+
+  h2 {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    @extend %line-decoration;
+    text-align: center;
+    @include fluid-font(24, 34, 360, 1200);
+  }
+
+  &__subtitle {
+    margin-top: 60px;
+  }
+
+  &__list {
+    margin-bottom: 24px;
+
+    li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 40px;
+      @include fluid-font(14, 16, 360, 1200);
+
+      @extend %list-style;
+    }
+  }
+
+  &__works {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+
+    @include minw($sm-tablet) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &-info {
+      max-width: 380px;
+    }
+
+    li {
+      background-color: $white;
+      box-shadow: $card-shadow;
+      padding: 16px;
+      border-radius: $radius-md;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid transparent;
+      position: relative;
+      transition: $ease-in;
+      text-align: center;
+
+      @include minw($sm-tablet) {
+        flex: 0 1 calc(50% - 10px);
+      }
+
+      &:hover {
+        border-color: $primary-medium;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        color: rgba(71, 88, 87, 1);
+        font-weight: 600;
+        margin-bottom: 6px;
+        @include fluid-font(12, 16, 360, 1200);
+      }
+
+      p {
+        color: rgba(71, 88, 87, 1);
+        font-weight: 700;
+        @include fluid-font(16, 22, 360, 1200);
+      }
+
+      a.btn {
+        margin-top: 20px;
+        @extend %button;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        transition: $ease-in;
+
+        @include minw($lg-mob) {
+          width: 132px;
+          height: 132px;
+        }
+      }
+    }
+  }
+}

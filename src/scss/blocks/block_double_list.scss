@@ -1,0 +1,33 @@
+@use '../base/_variables' as *;
+
+.double-list {
+  padding: 80px 0 ;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include minw($sm-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    h3{
+      margin-bottom: 20px;
+    }
+    &:nth-child(1) {
+      ul {
+        @extend %custom-list;
+      }
+    }
+
+    &:nth-child(2) {
+      ul {
+        @extend %custom-list;
+        @extend %custom-list-tick;
+      }
+    }
+  }
+}

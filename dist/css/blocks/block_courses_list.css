@@ -1,0 +1,71 @@
+.courses-list__wrap div ul li {
+  padding-left: 40px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.courses-list__wrap div ul li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-image: url('data:image/svg+xml,<svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.949951" y="0.564941" width="27.19" height="27.19" rx="13.595" fill="%23F8DB01"/><path d="M20.4333 6.87249C20.5159 6.84495 20.5985 6.84495 20.7087 6.84495C21.1768 6.84495 21.5624 7.23049 21.5899 7.69866V17.3924C21.5899 18.3838 20.4057 19.1549 18.9462 19.1549C17.4866 19.1549 16.3024 18.3838 16.3024 17.3924C16.3024 16.4285 17.4866 15.6299 18.9462 15.6299C19.2491 15.6574 19.5245 15.685 19.8274 15.7401V10.6729L12.7774 12.7383V19.1549C12.7774 20.1463 11.5932 20.9174 10.1337 20.9174C8.6741 20.9174 7.48992 20.1463 7.48992 19.1549C7.48992 18.191 8.6741 17.3924 10.1337 17.3924C10.4366 17.4199 10.712 17.4475 11.0149 17.5026V10.3149C11.0149 9.92932 11.2628 9.59885 11.6208 9.46116L20.4333 6.87249Z" fill="white"/></svg>');
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+}
+.courses-list__wrap div ul li:last-child {
+  margin-bottom: 0;
+}
+.courses-list__wrap div {
+  position: relative;
+}
+.courses-list__wrap div::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 4px;
+  width: 120px;
+  background-color: #F8DB01;
+}
+
+.courses-list {
+  padding-bottom: 46px;
+}
+.courses-list__wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+}
+.courses-list__wrap h2 {
+  font-size: 28px;
+}
+.courses-list__wrap div {
+  padding-bottom: 30px;
+}
+.courses-list__wrap div p {
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 360px) {
+  .courses-list__wrap h2 {
+    font-size: calc(28px + 6 * (100vw - 360px) / (1440 - 360));
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .courses-list__wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .courses-list__wrap h2 {
+    font-size: 34px;
+  }
+}

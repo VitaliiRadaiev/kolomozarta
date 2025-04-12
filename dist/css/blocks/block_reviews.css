@@ -1,0 +1,96 @@
+.reviews {
+  margin-bottom: 60px;
+}
+.reviews h2 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-size: 36px;
+}
+.reviews .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+.reviews .slick-dots li.slick-active button {
+  background: #212934;
+}
+.reviews .slick-dots li button {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  background: none;
+  border-radius: 100%;
+  font-size: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #212934;
+}
+.reviews__slider-item {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.reviews__slider-item img {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reviews__slider-item p {
+  padding: 24px 40px;
+  background-color: rgb(255, 248, 232);
+  border-radius: 16px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+.reviews__slider-item span {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+@media only screen and (min-width: 360px) {
+  .reviews h2 {
+    font-size: calc(36px + 20 * (100vw - 360px) / (1200 - 360));
+  }
+  .reviews__slider-item p {
+    font-size: calc(14px + 4 * (100vw - 360px) / (1200 - 360));
+  }
+  .reviews__slider-item span {
+    font-size: calc(14px + 4 * (100vw - 360px) / (1200 - 360));
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .reviews h2 {
+    font-size: 56px;
+  }
+  .reviews__slider-item p {
+    font-size: 18px;
+  }
+  .reviews__slider-item span {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,417 @@
+@use '../base/_variables' as *;
+
+.entire__line {
+  background-color: $primary;
+  padding: 12px 0;
+  font-size: 1.2rem;
+  display: none;
+
+  @include minw($sm-pc) {
+    display: block;
+  }
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include minw($lg-mob) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &-contacts {
+    display: flex;
+    align-items: center;
+
+    li {
+      padding: 0 4px;
+      cursor: pointer;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        background-color: $text-dark;
+        height: 12px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      color: $text-dark;
+    }
+  }
+
+  &-social {
+    display: flex;
+
+    li {
+      padding: 0 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+
+      a {
+        display: flex;
+      }
+    }
+  }
+
+}
+
+.header {
+  display: flex;
+  @include fluid-font(14, 16, 360, 1200);
+
+  &__nav,
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+      display: none;
+
+      @include minw($sm-pc) {
+        display: flex;
+      }
+    }
+  }
+
+  &__nav {
+    align-items: center;
+
+    @include minw($sm-pc) {
+      align-items: flex-start;
+    }
+  }
+
+  &__menu {
+    a {
+      color: $text-dark;
+      z-index: 3;
+      position: relative;
+    }
+
+    .menu-item.current-menu-item,
+    .menu-item.current-menu-parent {
+      background-color: $primary;
+    }
+
+    &>li {
+      &:hover {
+        &::before {
+          transform: scaleX(1);
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-color: $primary;
+        transition: $ease-out;
+        display: block;
+        transform: scaleX(0);
+      }
+    }
+
+    li {
+      position: relative;
+      transition: $ease-out;
+
+      &>a {
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        height: 64px;
+        cursor: pointer;
+        transition: $ease-out;
+        position: relative;
+        z-index: 2;
+
+        @include minw($pc) {
+          padding: 18px 20px;
+        }
+      }
+
+      &:hover>.sub-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .has-submenu {
+      position: relative;
+      padding-right: 40px;
+
+      &:after {
+        content: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2210%22 height=%226%22 viewBox=%220 0 10 6%22 fill=%22none%22%3E%3Cpath d=%22M9.79774 0.999504C9.79774 1.07241 9.77171 1.14011 9.71963 1.2026L5.54826 5.35835C5.49618 5.42084 5.42848 5.45209 5.34516 5.45209C5.27225 5.45209 5.20455 5.42084 5.14206 5.35835L0.986317 1.2026C0.923824 1.14011 0.892578 1.07241 0.892578 0.999504C0.892578 0.916181 0.923824 0.848481 0.986317 0.796403L1.42376 0.343334C1.48626 0.280841 1.55396 0.249595 1.62686 0.249595C1.71019 0.249595 1.78309 0.280841 1.84559 0.343334L5.34516 3.85853L8.86036 0.343334C8.91244 0.280841 8.98014 0.249595 9.06346 0.249595C9.13637 0.249595 9.20407 0.280841 9.26656 0.343334L9.71963 0.796403C9.77171 0.848481 9.79774 0.916181 9.79774 0.999504Z%22 fill=%22%23212934%22/%3E%3C/svg%3E');
+        position: absolute;
+        z-index: 3;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .sub-menu {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      transition: $ease-out;
+      background-color: $white;
+      left: 0;
+      top: 64px;
+      z-index: 5;
+      min-width: max-content;
+      box-shadow: $card-shadow;
+
+      >li {
+        text-align: left;
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
+
+      & a {
+        max-width: 300px;
+      }
+
+      //Child submenu
+      .has-submenu-child {
+        position: relative;
+
+        &:after {
+          content: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2210%22 height=%226%22 viewBox=%220 0 10 6%22 fill=%22none%22%3E%3Cpath d=%22M9.79774 0.999504C9.79774 1.07241 9.77171 1.14011 9.71963 1.2026L5.54826 5.35835C5.49618 5.42084 5.42848 5.45209 5.34516 5.45209C5.27225 5.45209 5.20455 5.42084 5.14206 5.35835L0.986317 1.2026C0.923824 1.14011 0.892578 1.07241 0.892578 0.999504C0.892578 0.916181 0.923824 0.848481 0.986317 0.796403L1.42376 0.343334C1.48626 0.280841 1.55396 0.249595 1.62686 0.249595C1.71019 0.249595 1.78309 0.280841 1.84559 0.343334L5.34516 3.85853L8.86036 0.343334C8.91244 0.280841 8.98014 0.249595 9.06346 0.249595C9.13637 0.249595 9.20407 0.280841 9.26656 0.343334L9.71963 0.796403C9.77171 0.848481 9.79774 0.916181 9.79774 0.999504Z%22 fill=%22%23212934%22/%3E%3C/svg%3E');
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%) rotate(-90deg);
+        }
+
+        >.sub-menu {
+          position: absolute;
+          left: 100%;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    z-index: 5;
+    max-width: 100px;
+
+    @include minw($sm-tablet) {
+      max-width: 150px;
+    }
+
+    @include minw($pc) {
+      max-width: 190px;
+    }
+
+    a {
+      display: flex;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+}
+
+header {
+  &.open-popup {
+    .openMenu {
+      span {
+        background-color: transparent;
+
+        &::before,
+        &:after {
+          transform: translate(-50%, -50%) rotate(45deg);
+          top: 50%;
+          opacity: 1;
+        }
+
+        &:after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+    }
+
+    .menu__popup {
+      height: 100%;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.header__nav-mobile {
+  display: block;
+
+  @include minw($sm-pc) {
+    display: none;
+  }
+
+  .openMenu {
+    background-color: $primary;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+
+    span {
+      display: block;
+      width: 30px;
+      height: 2px;
+      background-color: $white;
+      transition: $ease-in;
+
+      &::before,
+      &::after {
+        transition: $ease-in;
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 20px;
+        background-color: $white;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        bottom: auto;
+      }
+
+      &::after {
+        top: auto;
+        bottom: 10px;
+      }
+    }
+  }
+}
+
+.menu__popup {
+  width: 100%;
+  height: 0;
+  position: fixed;
+  background-color: $primary-ultra-light;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s linear;
+  padding-top: 150px;
+  gap: 24px;
+
+  nav {
+    padding: 0 16px;
+    display: flex;
+    height: 100%;
+    overflow: auto;
+
+    ul {
+      width: 100%;
+
+      & ul {
+        padding-left: 16px;
+      }
+    }
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        font-size: 1.6rem;
+        color: $text;
+        display: block;
+      }
+    }
+
+    .has-submenu,
+    .has-submenu-child {
+      width: 100%;
+      position: relative;
+
+      &::before {
+        display: block;
+        position: absolute;
+        right: 0;
+        content: '';
+        background-image: url('data:image/svg+xml,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M7 10L12 15L17 10" stroke="%23000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>');
+        width: 24px;
+        height: 24px;
+        transition: $ease-in;
+        pointer-events: none;
+      }
+
+      ul {
+
+        li {
+          a {
+            width: 100%;
+          }
+        }
+      }
+
+      .sub-menu {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .menu-item.active {
+        &>.sub-menu {
+          display: block;
+        }
+      }
+    }
+
+    .has-submenu.active,
+    .has-submenu-child.active {
+      &>a {
+        color: $primary;
+      }
+
+      &::before {
+        transform: rotate(180deg);
+        filter: invert(80%) sepia(100%) saturate(500%) hue-rotate(325deg) brightness(105%) contrast(95%);
+      }
+    }
+
+  }
+
+  .entire__line {
+    display: flex;
+  }
+}

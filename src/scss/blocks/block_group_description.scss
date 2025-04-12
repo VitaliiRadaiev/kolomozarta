@@ -1,0 +1,83 @@
+@use "../base/_variables" as *;
+
+.group-description {
+  padding: 34px 0 84px;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+
+    @include minw($sm-pc) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__img {
+    max-width: 576px;
+    width: 100%;
+
+    h2 {
+      @include fluid-font(60, 80, 360, 1440);
+    }
+
+    p {
+      font-weight: 600;
+      @include fluid-font(28, 34, 360, 1440);
+    }
+  }
+
+  &__mask {
+    width: 100%;
+    @extend %mask;
+  }
+
+  &__list {
+    display: grid;
+    margin-top: 16px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include minw($sm-tablet) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    img {
+      max-width: 126px;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+
+  &__content {
+    div {
+      margin-bottom: 20px;
+      padding-bottom: 30px;
+      @extend %line-decoration;
+      @extend %line-decoration-left;
+
+    }
+
+    h3 {
+      @include fluid-font(24, 28, 360, 1440);
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+}

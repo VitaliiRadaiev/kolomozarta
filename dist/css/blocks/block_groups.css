@@ -1,0 +1,100 @@
+.groups {
+  background-color: #FFF8E8;
+  padding: 82px 0;
+}
+.groups__title {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 30px;
+}
+.groups__title:after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 100%;
+  max-width: 120px;
+  background-color: #f8db01;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.groups__title h2 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.groups__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 48px;
+}
+.groups__list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+.groups__list img,
+.groups__list iframe {
+  width: 100%;
+}
+.groups__list iframe {
+  max-width: 368px;
+  max-height: 208px;
+}
+.groups__list img {
+  width: 214px;
+  height: 214px;
+  border-radius: 100%;
+  border: 3px solid #F8DB01;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 22px;
+}
+.groups__list h3 {
+  font-size: 24px;
+}
+.groups__list span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 360px) {
+  .groups__title h2 {
+    font-size: calc(28px + 6 * (100vw - 360px) / (1440 - 360));
+  }
+  .groups__list h3 {
+    font-size: calc(24px + 4 * (100vw - 360px) / (1440 - 360));
+  }
+}
+@media only screen and (min-width: 600px) {
+  .groups__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .groups__title {
+    margin-bottom: 70px;
+  }
+  .groups__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .groups__title h2 {
+    font-size: 34px;
+  }
+  .groups__list h3 {
+    font-size: 28px;
+  }
+}

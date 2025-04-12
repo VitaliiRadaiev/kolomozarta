@@ -1,0 +1,137 @@
+.courses-img__wrap img {
+  -webkit-mask-image: url("/wp-content/themes/kolo-mozarta/dist/images/mask.svg");
+          mask-image: url("/wp-content/themes/kolo-mozarta/dist/images/mask.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+.courses-img__wrap ul li {
+  padding-left: 40px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.courses-img__wrap ul li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-image: url('data:image/svg+xml,<svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.949951" y="0.564941" width="27.19" height="27.19" rx="13.595" fill="%23F8DB01"/><path d="M20.4333 6.87249C20.5159 6.84495 20.5985 6.84495 20.7087 6.84495C21.1768 6.84495 21.5624 7.23049 21.5899 7.69866V17.3924C21.5899 18.3838 20.4057 19.1549 18.9462 19.1549C17.4866 19.1549 16.3024 18.3838 16.3024 17.3924C16.3024 16.4285 17.4866 15.6299 18.9462 15.6299C19.2491 15.6574 19.5245 15.685 19.8274 15.7401V10.6729L12.7774 12.7383V19.1549C12.7774 20.1463 11.5932 20.9174 10.1337 20.9174C8.6741 20.9174 7.48992 20.1463 7.48992 19.1549C7.48992 18.191 8.6741 17.3924 10.1337 17.3924C10.4366 17.4199 10.712 17.4475 11.0149 17.5026V10.3149C11.0149 9.92932 11.2628 9.59885 11.6208 9.46116L20.4333 6.87249Z" fill="white"/></svg>');
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+}
+.courses-img__wrap ul li:last-child {
+  margin-bottom: 0;
+}
+.courses-img {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.courses-img__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.courses-img__wrap img {
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  max-width: 600px;
+}
+.courses-img__wrap img[src*="1-32-1024x683"] {
+  -o-object-position: -45px 0%;
+     object-position: -45px 0%;
+}
+.courses-img__wrap h2 {
+  padding-bottom: 30px;
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.courses-img__wrap h2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #F8DB01;
+  height: 4px;
+  width: 120px;
+}
+.courses-img__list {
+  max-width: 576px;
+}
+@media only screen and (min-width: 360px) {
+  .courses-img__wrap h2 {
+    font-size: calc(28px + 6 * (100vw - 360px) / (1440 - 360));
+  }
+}
+@media only screen and (min-width: 410px) {
+  .courses-img__wrap img[src*="1-32-1024x683"] {
+    -o-object-position: -28px 0%;
+       object-position: -28px 0%;
+  }
+}
+@media only screen and (min-width: 440px) {
+  .courses-img__wrap img[src*="1-32-1024x683"] {
+    -o-object-position: -8px 0%;
+       object-position: -8px 0%;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .courses-img__wrap img[src*="1-32-1024x683"] {
+    -o-object-position: 11px 0%;
+       object-position: 11px 0%;
+  }
+}
+@media only screen and (min-width: 510px) {
+  .courses-img__wrap img[src*="1-32-1024x683"] {
+    -o-object-position: 24px 0%;
+       object-position: 24px 0%;
+  }
+}
+@media only screen and (min-width: 745px) {
+  .courses-img__wrap img[src*="1-32-1024x683"] {
+    -o-object-position: 74px 0%;
+       object-position: 74px 0%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .courses-img {
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+  .courses-img__wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .courses-img__wrap img {
+    width: 600px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .courses-img__wrap {
+    gap: 80px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .courses-img__wrap h2 {
+    font-size: 34px;
+  }
+}

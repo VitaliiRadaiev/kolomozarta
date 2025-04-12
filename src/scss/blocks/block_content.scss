@@ -1,0 +1,45 @@
+@use '../base/_variables' as *;
+
+.content {
+  padding-bottom: 90px;
+
+  & *:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    @include fluid-font(24, 28, 360, 1440);
+    margin-bottom: 36px;
+  }
+
+  ol {
+    padding-left: 20px;
+    margin-bottom: 56px;
+
+    li {
+      list-style-type: decimal;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__wrap {
+    &-additional {
+      text-align: center;
+
+      a {
+        color: $text-dark;
+        border-bottom: 1px solid $text-dark;
+      }
+
+      @include minw($sm-tablet) {
+        text-align: left;
+        padding-left: 40px;
+      }
+    }
+  }
+}

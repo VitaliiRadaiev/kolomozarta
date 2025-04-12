@@ -1,0 +1,268 @@
+.order__form-buttons .wpcf7-submit,
+.order__form-buttons button {
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #F8DB01;
+  height: 42px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+  color: #454545;
+  font-size: 1.4rem;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  border: 2px solid #F8DB01;
+}
+.order__form-buttons .wpcf7-submit:hover,
+.order__form-buttons button:hover {
+  background-color: transparent;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./../fonts/Montserrat-Regular.ttf") format("ttf"), url("./../fonts/Montserrat-Regular.woff") format("woff"), url("./../fonts/Montserrat-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./../fonts/Montserrat-Bold.ttf") format("ttf"), url("./../fonts/Montserrat-Bold.woff") format("woff"), url("./../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./../fonts/Montserrat-SemiBold.ttf") format("ttf"), url("./../fonts/Montserrat-SemiBold.woff") format("woff"), url("./../fonts/Montserrat-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-size: 62.5%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  line-height: 1.8em;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  color: #454545;
+  font-size: 1.4rem;
+}
+body.open-menu {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF8E8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #F8DB01;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.container--fluid {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 26px;
+  margin: 0 auto;
+}
+
+.page__title {
+  max-width: 1020px;
+  font-size: 36px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2em;
+}
+
+.page__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page__wrap .page__title {
+  text-align: center;
+}
+.page__wrap nav {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 20px 0;
+  width: 100%;
+}
+.page__wrap nav * {
+  color: #454545;
+}
+
+.order__form {
+  background: #FFF8E8;
+  padding: 25px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 576px;
+  width: 100%;
+  text-align: center;
+}
+.order__form-buttons {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+}
+.order__form-buttons button {
+  background: transparent;
+}
+.order__form-buttons button:hover {
+  background: #F8DB01;
+}
+.order__form .wpcf7-form-control-wrap {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.order__form .wpcf7-form-control-wrap:last-child {
+  margin-bottom: 0;
+}
+.order__form .wpcf7-form-control-wrap input {
+  width: 100%;
+  background: #FFFFFF;
+  padding: 16px;
+  font-size: 1.6rem;
+  border: none;
+}
+.order__form-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+.order__form-price {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.order__form-wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  visibility: hidden;
+}
+.order__form-wrapper.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.link {
+  color: #212934;
+  border-bottom: 1px solid #212934;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.link:hover {
+  opacity: 0.7;
+}
+@media only screen and (min-width: 360px) {
+  .page__title {
+    font-size: calc(36px + 18 * (100vw - 360px) / (1200 - 360));
+  }
+  .order__form-title {
+    font-size: calc(20px + 4 * (100vw - 360px) / (1440 - 360));
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .page__title {
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .page__title {
+    font-size: 54px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .order__form-title {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,845 @@
+{
+    "key": "group_671e689be41f9",
+    "title": "Шаблон сторінки",
+    "fields": [
+        {
+            "key": "field_671e689c1218d",
+            "label": "Секції",
+            "name": "sections",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_671e68a69c03b": {
+                    "key": "layout_671e68a69c03b",
+                    "name": "block_hero",
+                    "label": "Блок \"Головна секція\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671e6fc2a22ad",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_671e6e3cda26f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_671e73133c973": {
+                    "key": "layout_671e73133c973",
+                    "name": "block_courses",
+                    "label": "Блок \"Курси та програми\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671e73273c976",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_671e717d0dd19"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_671e7ceda1aca": {
+                    "key": "layout_671e7ceda1aca",
+                    "name": "block_interesting",
+                    "label": "Блок \"Цікавинки\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671e805aa1acd",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_671e7c51349cb"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_671e82160d520": {
+                    "key": "layout_671e82160d520",
+                    "name": "block_page_title",
+                    "label": "Блок \"Заголовок сторінки та навігація\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671e82b90d523",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_671e80efd9ea9"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_671e90902ded1": {
+                    "key": "layout_671e90902ded1",
+                    "name": "block_about",
+                    "label": "Блок \"Про нас\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671e909b2ded4",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_671e8cf98a26e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_671e9b3a1f7a6": {
+                    "key": "layout_671e9b3a1f7a6",
+                    "name": "block_education",
+                    "label": "Блок \"Освіта\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671e9b4a1f7a9",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_671e98ba2ad8d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67266c4e976a3": {
+                    "key": "layout_67266c4e976a3",
+                    "name": "block_contacts",
+                    "label": "Блок \"Контакти\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67266c5b976a6",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672666f88341c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6726704495060": {
+                    "key": "layout_6726704495060",
+                    "name": "block_reviews",
+                    "label": "Блок \"Відгуки\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6726705395063",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67266fba7cbfa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67267c008f5f6": {
+                    "key": "layout_67267c008f5f6",
+                    "name": "block_games",
+                    "label": "Блок \"Ігри ДоДобль\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67267c148f5f9",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67267926151ed"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_672765b8de9c5": {
+                    "key": "layout_672765b8de9c5",
+                    "name": "block_songs",
+                    "label": "Блок \"Логоритмічні пісні\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672765c6de9c8",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6727532ed126e"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_672765f5de9c9": {
+                    "key": "layout_672765f5de9c9",
+                    "name": "block_content",
+                    "label": "Блок \"Зміст збірки\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672765f5de9cb",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6727651bb4e33"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6727901780e4f": {
+                    "key": "layout_6727901780e4f",
+                    "name": "block_courses_info",
+                    "label": "Блок \"Опис курсу\"(тільки текст)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6727902c80e52",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67278f7ca37e1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6727a70c20d55": {
+                    "key": "layout_6727a70c20d55",
+                    "name": "block_courses_img",
+                    "label": "Блок \"Опис курсу\"(список\/зображення)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6727a72f20d58",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6727a4799b5e2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6727af7096671": {
+                    "key": "layout_6727af7096671",
+                    "name": "block_video",
+                    "label": "Блок \"Цитата з відео\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6727af8396674",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6727af21a3dbb"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6727c1e641a37": {
+                    "key": "layout_6727c1e641a37",
+                    "name": "block_courses_list",
+                    "label": "Блок “Опис курсу”(список\/опис\/заголовок)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6727c1f041a3a",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6727bcfba0297"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6727c62750850": {
+                    "key": "layout_6727c62750850",
+                    "name": "block_groups",
+                    "label": "Блок \"Наші групи\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6727c63750853",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6727c5c08b6ac"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6727ca7730f6c": {
+                    "key": "layout_6727ca7730f6c",
+                    "name": "block_double_list",
+                    "label": "Блок \"Декілька списків\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6727ca8730f6f",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6727ca8f6e3d1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6727d3ed52c3d": {
+                    "key": "layout_6727d3ed52c3d",
+                    "name": "block_group_description",
+                    "label": "Блок \"Опис групи\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6727d3fe52c40",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6727d068abf1d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6728d93d25ec8": {
+                    "key": "layout_6728d93d25ec8",
+                    "name": "block_material_list",
+                    "label": "Блок \"Список матеріалів\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6728d95525ecb",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6728d7d0d2ca1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6729050601800": {
+                    "key": "layout_6729050601800",
+                    "name": "block_material_description",
+                    "label": "Блок \"Опис курсів із скарбнички\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6729051b01803",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6729020708d53"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_672b6024359fa": {
+                    "key": "layout_672b6024359fa",
+                    "name": "block_year_course",
+                    "label": "Блок \"Річний відеокурс\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672b603e359fd",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672b5695c2e42"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_672b88c990371": {
+                    "key": "layout_672b88c990371",
+                    "name": "block_year_updates",
+                    "label": "Блок \"Оновлення річного курсу\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672b88db90374",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672b852ca2ada"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_672b953f37a44": {
+                    "key": "layout_672b953f37a44",
+                    "name": "block_year_lessons",
+                    "label": "Блок \"Як займаються дітки?\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672b955b37a47",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672b9128b4482"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6785869351e4f": {
+                    "key": "layout_6785869351e4f",
+                    "name": "block_pay_content",
+                    "label": "Блок \"Платний контент\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6785869351e51",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6785863ab24e2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67f75721f64db": {
+                    "key": "layout_67f75721f64db",
+                    "name": "block_text",
+                    "label": "Блок \"Текстовий\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67f75727f64de",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67f754359e6c8"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Додати рядок"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page-template.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1744263062
+}

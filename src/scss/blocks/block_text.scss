@@ -1,0 +1,74 @@
+@use '../base/_variables' as *;
+
+.block-text {
+    &.text-center {
+        & .block-text__title {
+            &::after {
+                left: 50%;
+                transform: translateX(-50%)
+            }
+        }
+    }
+    &.text-right {
+        & .block-text__title {
+            &::after {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+    &__title {
+        @include fluid-font(24, 34, 360, 1200);
+        padding-bottom: 30px;
+        @extend %line-decoration;
+        @extend %line-decoration-left;
+        font-weight: 700;
+    }
+
+    &__text {
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+
+        a {
+            color: $text-dark;
+            border-bottom: 1px solid $text-dark;
+          }
+    }
+}
+
+.space-top-no {
+    margin-top: 0px;
+}
+.space-top-sm {
+    margin-top: 30px;
+}
+.space-top-md {
+    margin-top: 50px;
+}
+.space-top-lg {
+    margin-top: 90px;
+}
+
+.space-bottom-no {
+    margin-bottom: 0px;
+}
+.space-bottom-sm {
+    margin-bottom: 30px;
+}
+.space-bottom-md {
+    margin-bottom: 50px;
+}
+.space-bottom-lg {
+    margin-bottom: 90px;
+}
+
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}

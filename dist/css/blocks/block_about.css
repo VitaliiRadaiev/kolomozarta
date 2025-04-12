@@ -1,0 +1,113 @@
+.about__text h2 {
+  position: relative;
+}
+.about__text h2::after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 100%;
+  max-width: 120px;
+  background-color: #F8DB01;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.about__image img {
+  -webkit-mask-image: url("/wp-content/themes/kolo-mozarta/dist/images/mask-about.svg");
+          mask-image: url("/wp-content/themes/kolo-mozarta/dist/images/mask-about.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+.about {
+  margin-bottom: 80px;
+}
+.about__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.about__image {
+  max-width: 480px;
+  width: 100%;
+}
+.about__image img {
+  width: 100%;
+}
+.about__text {
+  max-width: 660px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.about__text span {
+  line-height: 1.2em;
+  display: block;
+  text-align: center;
+  font-size: 24px;
+}
+.about__text h2 {
+  padding-bottom: 16px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto 32px;
+  font-size: 54px;
+}
+.about__text p {
+  text-align: center;
+}
+@media only screen and (min-width: 360px) {
+  .about__text span {
+    font-size: calc(24px + 10 * (100vw - 360px) / (1200 - 360));
+  }
+  .about__text h2 {
+    font-size: calc(54px + 30 * (100vw - 360px) / (1200 - 360));
+  }
+}
+@media only screen and (min-width: 745px) {
+  .about__text p {
+    max-width: 90%;
+  }
+}
+@media only screen and (min-width: 968px) {
+  .about__wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .about__text span {
+    font-size: 34px;
+  }
+  .about__text h2 {
+    font-size: 84px;
+  }
+}

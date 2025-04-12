@@ -1,0 +1,184 @@
+.year-course__description ul li::before, .year-course__lists-item ul li::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2229%22 height%3D%2228%22 viewBox%3D%220 0 29 28%22 fill%3D%22none%22%3E%3Crect x%3D%220.970703%22 y%3D%220.361816%22 width%3D%2227.19%22 height%3D%2227.19%22 rx%3D%2213.595%22 fill%3D%22%23F8DB01%22/%3E%3Cpath d%3D%22M20.4539 6.66936C20.5365 6.64182 20.6191 6.64182 20.7293 6.64182C21.1975 6.64182 21.583 7.02737 21.6105 7.49553V17.1893C21.6105 18.1807 20.4264 18.9518 18.9668 18.9518C17.5072 18.9518 16.323 18.1807 16.323 17.1893C16.323 16.2254 17.5072 15.4268 18.9668 15.4268C19.2697 15.4543 19.5451 15.4819 19.848 15.5369V10.4698L12.798 12.5352V18.9518C12.798 19.9432 11.6139 20.7143 10.1543 20.7143C8.69473 20.7143 7.51055 19.9432 7.51055 18.9518C7.51055 17.9879 8.69473 17.1893 10.1543 17.1893C10.4572 17.2168 10.7326 17.2444 11.0355 17.2994V10.1117C11.0355 9.7262 11.2834 9.39573 11.6414 9.25803L20.4539 6.66936Z%22 fill%3D%22white%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  left: 0;
+  top: 0;
+}
+
+.year-course__lists-price span {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 25px 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+  border-bottom: 3px solid #F8DB01;
+  margin-bottom: 30px;
+}
+.year-course__lists-price span::before {
+  content: "";
+  background-image: url('data:image/svg+xml,<svg width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3643 9.02808C21.1064 9.77026 21.1064 10.9812 20.3643 11.6843L12.3955 19.6531C11.6924 20.3953 10.4814 20.3953 9.73926 19.6531L1.49707 11.4109C1.14551 11.0593 0.950195 10.5906 0.950195 10.0828V2.07495C0.950195 1.05933 1.77051 0.199951 2.8252 0.199951H10.7939C11.3018 0.199951 11.7705 0.434326 12.1221 0.785889L20.3643 9.02808ZM5.3252 6.44995C6.34082 6.44995 7.2002 5.62964 7.2002 4.57495C7.2002 3.55933 6.34082 2.69995 5.3252 2.69995C4.27051 2.69995 3.4502 3.55933 3.4502 4.57495C3.4502 5.62964 4.27051 6.44995 5.3252 6.44995ZM25.3643 11.6843L17.3955 19.6531C16.6924 20.3953 15.4814 20.3953 14.7393 19.6531L21.5361 12.8562C22.2002 12.1921 22.5908 11.2937 22.5908 10.3562C22.5908 9.4187 22.2002 8.55933 21.5361 7.89526L13.8799 0.199951H15.7939C16.3018 0.199951 16.7705 0.434326 17.1221 0.785889L25.3643 9.02808C26.1064 9.77026 26.1064 10.9812 25.3643 11.6843Z" fill="%23454545"/></svg>');
+  background-size: cover;
+  width: 25px;
+  height: 20px;
+}
+
+.year-course__lists-price button {
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #F8DB01;
+  height: 42px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+  color: #454545;
+  font-size: 1.4rem;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  border: 2px solid #F8DB01;
+}
+.year-course__lists-price button:hover {
+  background-color: transparent;
+}
+
+.year-course {
+  padding-top: 30px;
+  padding-bottom: 48px;
+}
+.year-course__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.year-course__description p {
+  margin-bottom: 20px;
+}
+.year-course__description ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 40px;
+  font-size: 1.4rem;
+}
+.year-course__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.year-course__video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+.year-course__video h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.year-course__video iframe {
+  max-width: 600px;
+  width: 100%;
+}
+.year-course__lists h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 70px;
+}
+.year-course__lists-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.year-course__lists-item ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 40px;
+  font-size: 1.4rem;
+}
+.year-course__lists-item ul li a {
+  color: #212934;
+  border-bottom: 1px solid #212934;
+}
+.year-course__lists-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.year-course__lists-price p {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 745px) {
+  .year-course__info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .year-course__description {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+  .year-course__img {
+    width: 300px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+  .year-course__lists-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

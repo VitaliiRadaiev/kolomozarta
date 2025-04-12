@@ -1,0 +1,77 @@
+@use '../base/_variables' as *;
+
+.year-updates {
+  &:not(:first-child) {
+    margin-top: 55px;
+  }
+  &__wrap {
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.4rem;
+
+      @include minw($sm-pc) {
+        margin-bottom: 75px;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
+    gap: 20px;
+
+    @include minw($sm-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    p {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 40px;
+        font-size: 1.4rem;
+        @extend %list-style;
+
+        a {
+          color: $text-dark;
+          border-bottom: 1px solid $text-dark;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 40px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      span {
+        @extend %price;
+      }
+
+      button {
+        @extend %primary-btn;
+      }
+    }
+  }
+}

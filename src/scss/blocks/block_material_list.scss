@@ -1,0 +1,74 @@
+@use '../base/_variables' as *;
+
+.material {
+  padding-top: 24px;
+  padding-bottom: 80px;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    h2 {
+      font-size: 2.4rem;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+
+    @include minw($sm-tablet) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      padding: 30px 40px 66px;
+      border-radius: 24px;
+      background: $primary-ultra-light;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      transition: $ease-in;
+
+      @include minw($sm-tablet) {
+        flex: 0 1 calc(50% - 10px);
+      }
+
+      @include minw($sm-pc) {
+        flex: 0 1 calc(33.33333% - (20px * 2 / 3));
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .1);
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      img {
+        margin-bottom: 24px;
+        border-radius: 4px;
+        width: 100%;
+      }
+    }
+
+    &-item-arrow {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 30px;
+      height: auto;
+      width: 120px !important;
+      margin: 0 !important;
+    }
+  }
+}

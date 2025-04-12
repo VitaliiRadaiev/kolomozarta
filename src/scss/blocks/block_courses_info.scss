@@ -1,0 +1,18 @@
+@use '../base/_variables' as *;
+
+.courses-info {
+  padding-top: 36px;
+  padding-bottom: 46px;
+
+  &__wrap {
+    max-width: 808px;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 50px;
+    @extend %line-center;
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
