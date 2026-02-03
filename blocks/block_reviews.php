@@ -7,13 +7,13 @@ $reviews_list = $data['reviews_list'];
 
 ?>
 
-<section class="reviews">
-    <div class="container">
-        <div class="reviews__wrap">
-            <?php if ($reviews_title): ?>
-                <h2> <?= $reviews_title ?></h2>
-            <?php endif; ?>
-            <?php if (!empty($reviews_list)): ?>
+<?php if (!empty($reviews_list)): ?>
+    <section class="reviews">
+        <div class="container">
+            <div class="reviews__wrap">
+                <?php if ($reviews_title): ?>
+                    <h2> <?= $reviews_title ?></h2>
+                <?php endif; ?>
                 <div class="reviews__slider">
                     <?php foreach ($reviews_list as $review): ?>
                         <div class="reviews__slider-item">
@@ -25,7 +25,7 @@ $reviews_list = $data['reviews_list'];
                         </div>
                     <?php endforeach; ?>
                 </div>
-            <?php endif; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>

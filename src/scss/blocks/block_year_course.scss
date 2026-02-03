@@ -41,6 +41,7 @@
       width: 100%;
       height: auto;
       display: block;
+      border-radius: 4px;
     }
     @include minw($sm-tablet) {
       width: 300px;

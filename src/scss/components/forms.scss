@@ -1,0 +1,148 @@
+@use '../base/_variables' as *;
+
+.order__form {
+    background: #FFF8E8;
+    padding: 25px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    max-width: 576px;
+    width: 100%;
+    text-align: center;
+
+
+    &-buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        column-gap: 16px;
+
+        .wpcf7-submit,
+        button {
+            @extend %primary-btn;
+        }
+
+        .wpcf7-submit:not(.can-submit) {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        button {
+            background: transparent;
+
+            &:hover {
+                background: $primary;
+            }
+        }
+    }
+
+    .wpcf7-form-control-wrap {
+        margin-bottom: 12px;
+        display: inline-block;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        input {
+            width: 100%;
+            background: $white;
+            padding: 16px;
+            font-size: 1.6rem;
+            border: none;
+        }
+    }
+
+    &-title {
+        font-weight: 700;
+        margin-bottom: 8px;
+        @include fluid-font(20, 24, 360, 1440);
+    }
+
+    &-price {
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+
+
+    &-wrapper {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $ease-in;
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+$icon-check: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMzQ5MjggMTBMMSA2LjI0MzAzTDEuNDgxMTYgNS43MDQwNUw0LjM0OTI4IDguOTIxMjlMMTAuNTE5NSAyTDExIDIuNTM5NzNMNC4zNDkyOCAxMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=";
+
+.checkbox {
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+    user-select: none;
+
+    & input[type="checkbox"] {
+        appearance: none;
+        display: block;
+        height: 16px;
+        width: 16px;
+        border-radius: 4px;
+        background-color: transparent;
+        border: 1px solid $text-dark;
+        flex: 0 0 auto;
+        margin-top: 1px;
+
+        &:checked {
+            background-color: $text-dark;
+            background-image: url($icon-check);
+            background-position: center;
+            background-size: 80%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__label {
+        font-size: 1.4rem;
+        line-height: 1.38em;
+        text-align: start;
+
+        a {
+            color: $text-dark;
+            border-bottom: 1px solid $text-dark;
+            transition: opacity .3s ease;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.checkbox-wrap {
+    margin-bottom: 12px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order__form-wrap .wpcf7-form-control-wrap {
+    width: 100%;
+    max-width: 380px;
+}

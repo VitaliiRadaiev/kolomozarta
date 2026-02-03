@@ -1,4 +1,5 @@
 <?php
+wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_courses.css');
 
 global $data;
 

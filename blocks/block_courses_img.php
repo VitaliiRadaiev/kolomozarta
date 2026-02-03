@@ -10,7 +10,7 @@ $courses_list_wrap = $data['courses_list_wrap'];
 
 <section class="courses-img">
     <div class="container">
-        <div class="courses-img__wrap">
+        <div data-aos="fade-up" class="courses-img__wrap">
             <?php if ($courses_list_img): ?>
                 <img src="<?= $courses_list_img ?>" alt="Image">
             <?php endif; ?>

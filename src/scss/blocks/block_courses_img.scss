@@ -57,17 +57,6 @@
     h2 {
       padding-bottom: 30px;
       position: relative;
-      margin-bottom: 20px;
-
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background-color: $primary;
-        height: 4px;
-        width: 120px;
-      }
 
       @include fluid-font(28, 34, 360, 1440);
     }

@@ -1,0 +1,41 @@
+@use '../base/_variables' as *;
+
+.not_available_content {
+    padding-bottom: 70px;
+
+    & .block-text__text {
+        text-align: center;
+        max-width: 590px;
+
+        & a {
+            color: $text-dark;
+            border-bottom: 1px solid $text-dark;
+            transition: $ease-in;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    & .buttons-group {
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &>* {
+            width: 100%;
+        }
+
+        @include minw($sm-tablet) {
+            flex-direction: row;
+            justify-content: center;
+
+            &>* {
+                width: auto;
+            }
+        }
+    }
+}

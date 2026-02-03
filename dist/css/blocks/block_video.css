@@ -20,22 +20,9 @@
 }
 .video__wrap h2 {
   margin-bottom: 48px;
-  padding-bottom: 30px;
   position: relative;
   text-align: center;
   font-size: 28px;
-}
-.video__wrap h2::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  height: 4px;
-  width: 120px;
-  background-color: #F8DB01;
 }
 .video__wrap iframe {
   max-width: 560px;

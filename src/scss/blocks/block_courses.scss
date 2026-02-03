@@ -1,11 +1,10 @@
-@use '../base/_variables' as *;
+@use "../base/_variables" as *;
 
 .courses,
-.interesting{
+.interesting {
   padding-bottom: 60px;
 
   &__wrap {
-
   }
 
   h2 {
@@ -38,7 +37,6 @@
       border-radius: $radius-md;
       display: flex;
       flex-direction: column;
-      align-items: center;
       border: 2px solid transparent;
       position: relative;
       transition: $ease-in;
@@ -50,7 +48,12 @@
       @include minw($sm-pc) {
         flex: 0 1 calc(33.33333% - (20px * 2 / 3));
       }
-      
+
+      & img,
+      & .btn {
+        align-self: center;
+      }
+
       &:hover {
         border-color: $primary-medium;
 
@@ -78,7 +81,6 @@
       }
 
       h3 {
-
         padding-bottom: 30px;
         margin-bottom: 30px;
         @extend %line-decoration;
@@ -87,7 +89,14 @@
         @include fluid-font(14, 18, 360, 1200);
       }
 
+      & ul {
+        @extend %custom-list;
+        @extend %custom-list-tick;
 
+        &:not(:first-child) {
+           margin-top: 10px;
+        }
+      }
     }
 
     &-subtitle {
@@ -103,15 +112,20 @@
       color: $text-dark;
       border-bottom: 1px solid $text-dark;
       transition: $ease-in;
-    
+
       &:hover {
         opacity: 0.7;
       }
     }
 
     &-description {
-
     }
+  }
+
+  &__btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
   }
 }
 

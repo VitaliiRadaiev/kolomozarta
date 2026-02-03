@@ -6,7 +6,7 @@ $order_btn = get_field('order_btn', 'option');
 ?>
 
 <section class="songs">
-    <div class="container">
+    <div data-aos="fade-up" class="container">
         <?php if (!empty($songs_list)): ?>
             <ul class="songs__wrap">
                 <?php foreach ($songs_list as $song):
@@ -36,15 +36,19 @@ $order_btn = get_field('order_btn', 'option');
                             <?php endif; ?>
                             <button class="openOrderPopup"
                                     data-price="<?= $song_price ?>"
-                                    data-title="<?= the_title() ?>"><?= $order_btn ?></button>
+                                    data-title="<?= the_title() ?>"
+                                    data-subtitle="<?= $song_title ?>:"
+                                    ><?= $order_btn ?></button>
                         </div>
                         <div class="songs__item-additional">
                             <?php if ($song_detail): ?>
                                 <div><?= $song_detail ?></div>
                             <?php endif; ?>
-                            <?php if ($btn_link && $btn_text && $btn_icon): ?>
+                            <?php if ($btn_link && $btn_text): ?>
                                 <a href="<?= $btn_link ?>" class="link" target="_blank">
-                                    <img src="<?= $btn_icon['url'] ?>" alt="Icon">
+                                    <?php if($btn_icon['url']):?>
+                                        <img src="<?= $btn_icon['url'] ?>" alt="Icon">
+                                    <?php endif;?>
                                     <p><?= $btn_text ?></p>
                                 </a>
                             <?php endif; ?>

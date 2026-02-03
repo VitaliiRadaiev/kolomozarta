@@ -21,3 +21,10 @@ function learning_files()
 }
 
 add_action('wp_enqueue_scripts', 'learning_files');
+
+add_action('admin_enqueue_scripts', 'load_admin_style');
+function load_admin_style()
+{
+    wp_enqueue_style('admin-style-css', get_template_directory_uri() . '/admin-style.css');
+}
+add_editor_style('admin-style.css');

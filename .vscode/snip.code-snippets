@@ -1,0 +1,76 @@
+{
+	// Place your nesepora workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"get_t": {
+		"scope": "html,php",
+		"prefix": "get_t",
+		"body": [
+			"get_template_directory_uri() . '/assets/images/general/$1'",
+		],
+		"description": "Log output to console"
+	},
+	"get_ti": {
+		"scope": "html,php",
+		"prefix": "get_ti",
+		"body": [
+			"get_template_directory_uri() . '/assets/images/icons/$1'",
+		],
+		"description": "Log output to console"
+	},
+	"abs": {
+		"scope": "scss",
+		"prefix": "abs",
+		"body": [
+			"@use \"./utils/abstracts\" as *;",
+		],
+		"description": "Log output to console"
+	},
+	"mmin": {
+		"scope": "scss",
+		"prefix": "mmin",
+		"body": [
+			"@media (min-width: $$mq-$1) {",
+			"	$2",
+			"}"
+		],
+		"description": "Log output to console"
+	},
+	"hover": {
+		"scope": "css,scss",
+		"prefix": "minh",
+		"body": [
+			"@media #{$$mouse-device} {",
+			"	&:hover {",
+			"		$2",
+			"	}",
+			"}"
+		],
+		"description": ""
+	},
+	"picture": {
+		"scope": "html,php",
+		"prefix": "pict",
+		"body": [
+			"<picture>",
+			"	<source srcset=\"\" media=\"(min-width: 600px)\" />",
+			"	<img src=\"\" alt=\"\" />",
+			"</picture>"
+		],
+		"description": ""
+	},
+	"debug": {
+		"scope": "html,php",
+		"prefix": "debug",
+		"body": [
+			"<script>",
+			"	console.log( <?= json_encode($1); ?> );",
+			"</script>"
+		],
+		"description": ""
+	}
+}

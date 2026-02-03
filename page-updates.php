@@ -1,20 +1,18 @@
 <?php
 wp_enqueue_style('page_updates_styles', get_theme_file_uri('dist/css/pages/page-updates.css'));
 
-/*
-Template Name: Оновлення річного відеокурсу
-*/
-
 
 get_header(); ?>
 
     <section class="page__hero">
         <div class="container">
             <div class="page__wrap">
-                <h1 class="page__title">
+                <h1 data-aos="fade-up" class="page__title">
                     <?= get_the_title(); ?>
                 </h1>
-                <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+                <div data-aos="fade-in" data-aos-delay="600" data-aos-duration="1000" class="">
+                    <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+                </div>
             </div>
 
         </div>

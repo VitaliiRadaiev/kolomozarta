@@ -10,7 +10,7 @@ $text = $data['block_text_text'];
 ?>
 
 <section class="block-text space-top-<?= $space_top ?> space-bottom-<?= $space_bottom ?> text-<?= $text_align ?>">
-    <div class="container">
+    <div data-aos="fade-up" class="container">
             <?php if ($title): ?>
                 <div class="block-text__title">
                     <?= $title ?>
@@ -18,8 +18,8 @@ $text = $data['block_text_text'];
             <?php endif; ?>
 
             <?php if ($text): ?>
-                <div class="block-text__text">
-                    <?= $text ?>
+                <div class="block-text__text text-content">
+                    <?= add_inner_wrap_to_li($text); ?>
                 </div>
             <?php endif; ?>
 

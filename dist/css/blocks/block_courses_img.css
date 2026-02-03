@@ -60,17 +60,7 @@
 .courses-img__wrap h2 {
   padding-bottom: 30px;
   position: relative;
-  margin-bottom: 20px;
   font-size: 28px;
-}
-.courses-img__wrap h2::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #F8DB01;
-  height: 4px;
-  width: 120px;
 }
 .courses-img__list {
   max-width: 576px;

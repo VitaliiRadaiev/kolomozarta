@@ -12,7 +12,7 @@ $about_description = $data['about_description'];
 ?>
 
 <section class="about">
-    <div class="container">
+    <div data-aos="fade-up" class="container">
         <div class="about__wrap">
             <?php if ($about_img): ?>
                 <div class="about__image">

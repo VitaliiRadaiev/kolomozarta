@@ -9,7 +9,7 @@ $year_lessons_additional = $data['year_lessons_additional'];
 
 <section class="year-lessons">
     <div class="container">
-        <div class="year-lessons__wrap">
+        <div data-aos="fade-up" class="year-lessons__wrap">
             <div class="year-lessons__list">
                 <?php if ($year_lessons_title): ?>
                     <h2><?= $year_lessons_title ?></h2>

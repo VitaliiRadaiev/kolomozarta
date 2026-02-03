@@ -51,6 +51,7 @@
 .groups__list iframe {
   max-width: 368px;
   max-height: 208px;
+  margin-top: 16px;
 }
 .groups__list img {
   width: 214px;
@@ -67,7 +68,6 @@
 .groups__list span {
   font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 16px;
 }
 @media only screen and (min-width: 360px) {
   .groups__title h2 {

@@ -1,9 +1,9 @@
-.double-list__item:nth-child(1) ul li, .double-list__item:nth-child(2) ul li {
+.double-list__item:nth-child(odd) ul li, .double-list__item:nth-child(even) ul li {
   padding-left: 40px;
   margin-bottom: 10px;
   position: relative;
 }
-.double-list__item:nth-child(1) ul li::before, .double-list__item:nth-child(2) ul li::before {
+.double-list__item:nth-child(odd) ul li::before, .double-list__item:nth-child(even) ul li::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,10 +15,10 @@
   background-repeat: no-repeat;
   display: block;
 }
-.double-list__item:nth-child(1) ul li:last-child, .double-list__item:nth-child(2) ul li:last-child {
+.double-list__item:nth-child(odd) ul li:last-child, .double-list__item:nth-child(even) ul li:last-child {
   margin-bottom: 0;
 }
-.double-list__item:nth-child(2) ul li::before {
+.double-list__item:nth-child(even) ul li::before {
   background-image: url('data:image/svg+xml,<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.869873" y="0.953857" width="27.19" height="27.19" rx="13.595" fill="%23F8DB01"/><path d="M21.2796 14.2464C21.2796 18.0193 18.1953 21.0761 14.45 21.0761C10.6771 21.0761 7.62026 18.0193 7.62026 14.2464C7.62026 10.5011 10.6771 7.41675 14.45 7.41675C18.1953 7.41675 21.2796 10.5011 21.2796 14.2464ZM13.6513 17.8816L18.7185 12.8144C18.8837 12.6492 18.8837 12.3462 18.7185 12.181L18.0851 11.5751C17.9199 11.3824 17.6445 11.3824 17.4792 11.5751L13.3484 15.706L11.3931 13.7783C11.2279 13.5855 10.9525 13.5855 10.7873 13.7783L10.1539 14.3841C9.98862 14.5494 9.98862 14.8523 10.1539 15.0175L13.0179 17.8816C13.1832 18.0468 13.4861 18.0468 13.6513 17.8816Z" fill="white"/></svg>');
 }
 

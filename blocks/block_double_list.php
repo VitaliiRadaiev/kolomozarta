@@ -10,7 +10,7 @@ $double_list_wrap = $data["double_list_wrap"];
 <section class="double-list">
     <div class="container">
         <?php if (!empty($double_list_wrap)): ?>
-            <div class="double-list__wrap">
+            <div data-aos="fade-up" class="double-list__wrap">
                 <?php foreach ($double_list_wrap as $item):
                     $double_list = $item["double_list"];
                     $double_list_title = $item["double_list_title"];

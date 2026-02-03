@@ -94,6 +94,7 @@
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 4px;
 }
 .year-course__video {
   display: -webkit-box;

@@ -9,7 +9,7 @@ $course_list_description = $data['course_list_description'];
 
 <section class="courses-list">
     <div class="container">
-        <div class="courses-list__wrap">
+        <div data-aos="fade-up" class="courses-list__wrap">
             <?php if ($course_list_title): ?>
                 <h2><?= $course_list_title ?></h2>
             <?php endif; ?>

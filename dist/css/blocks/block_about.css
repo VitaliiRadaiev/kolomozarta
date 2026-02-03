@@ -103,6 +103,11 @@
             flex-direction: row;
   }
 }
+@media only screen and (min-width: 1024px) {
+  .about__image {
+    min-height: 672px;
+  }
+}
 @media only screen and (min-width: 1200px) {
   .about__text span {
     font-size: 34px;

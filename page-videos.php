@@ -1,8 +1,5 @@
 <?php
 wp_enqueue_style('page_videos_styles', get_theme_file_uri('dist/css/pages/page-videos.css'));
-/*
-Template Name: Відеоуроки
-*/
 
 //videos_info
 //videos_info['lesson_num'];

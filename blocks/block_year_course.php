@@ -16,7 +16,7 @@ $year_course_price = $data['year_course_price'];
 <section class="year-course">
     <div class="container">
         <div class="year-course__wrap">
-            <div class="year-course__info">
+            <div data-aos="fade-up" class="year-course__info">
                 <?php if ($year_course_description): ?>
                     <div class="year-course__description">
                         <?= $year_course_description ?>
@@ -28,7 +28,7 @@ $year_course_price = $data['year_course_price'];
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="year-course__video">
+            <div data-aos="fade-up" class="year-course__video">
                 <?php if ($year_course_video_title): ?>
                     <h2><?= $year_course_video_title ?></h2>
                 <?php endif; ?>
@@ -39,21 +39,24 @@ $year_course_price = $data['year_course_price'];
                             allowfullscreen></iframe>
                 <?php endif; ?>
             </div>
-            <div class="year-course__lists">
+            <div data-aos="fade-up" class="year-course__lists">
                 <?php if ($year_course_list_title): ?>
                     <h2><?= $year_course_list_title ?></h2>
                 <?php endif; ?>
                 <?php if (!empty($year_course_list)): ?>
                     <div class="year-course__lists-wrap">
                         <?php foreach ($year_course_list as $year_course): ?>
-                            <div class="year-course__lists-item">
-                                <?= $year_course['text'] ?>
+                            <div class="year-course__lists-item text-content">
+                                <script>
+                                    console.log( <?= json_encode($year_course['text']); ?> );
+                                </script>
+                                <?= add_inner_wrap_to_li($year_course['text']) ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="year-course__lists-price">
+            <div data-aos="fade-up" class="year-course__lists-price">
                 <?php if ($year_course_price_title): ?>
                     <p><?= $year_course_price_title ?></p>
                 <?php endif; ?>
@@ -62,7 +65,9 @@ $year_course_price = $data['year_course_price'];
                 <?php endif; ?>
                 <button class="openOrderPopup"
                         data-price="<?= $year_course_price ?>"
-                        data-title="<?= the_title() ?>"><?= $order_btn ?></button>
+                        data-title="<?= the_title() ?>"
+                        data-subtitle="<?= $year_course_price_title ?>"
+                        ><?= $order_btn ?></button>
             </div>
         </div>
     </div>

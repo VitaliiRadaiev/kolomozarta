@@ -118,6 +118,7 @@
   max-width: 225px;
   max-height: 300px;
   margin-bottom: 10px;
+  border-radius: 4px;
 }
 .songs__item-info span {
   margin-bottom: 30px;
@@ -139,6 +140,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 .songs__item-additional div {
   margin-bottom: 20px;

@@ -14,13 +14,13 @@ $education_works = $data['education_works'];
     <div class="container">
         <div class="education__wrap">
             <?php if ($education_title): ?>
-                <div class="education__title">
+                <div data-aos="fade-up" class="education__title">
                     <h2><?= $education_title ?></h2>
                 </div>
             <?php endif;
 
             if (!empty($education_info)):?>
-                <ul class="education__list">
+                <ul data-aos="fade-up" class="education__list">
                     <?php foreach ($education_info as $education_item):
                         if ($education_item['education_info_item']):?>
                             <li><?= $education_item['education_info_item'] ?></li>
@@ -29,12 +29,12 @@ $education_works = $data['education_works'];
                 </ul>
             <?php endif; ?>
             <?php if($education_subtitle):?>
-                <div class="education__subtitle">
+                <div data-aos="fade-up" class="education__subtitle">
                     <h2 class="text-center"><?= $education_subtitle ?></h2>
                 </div>
             <?php endif;?>
             <?php if (!empty($education_works)): ?>
-                <ul class="education__works">
+                <ul data-aos="fade-up" class="education__works">
                     <?php foreach ($education_works as $work):
                         $icon = $work['icon'];
                         $name = $work['name'];

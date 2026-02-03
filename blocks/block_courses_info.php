@@ -8,7 +8,7 @@ $courses_info = $data['courses_info'];
 <?php if ($courses_info): ?>
     <section class="courses-info">
         <div class="container">
-            <div class="courses-info__wrap">
+            <div data-aos="fade-up" class="courses-info__wrap">
                 <?= $courses_info ?>
             </div>
         </div>

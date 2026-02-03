@@ -11,12 +11,12 @@ $groups_list = $data['groups_list'];
     <div class="container">
         <div class="groups__wrap">
             <?php if ($groups_title): ?>
-                <div class="groups__title">
+                <div data-aos="fade-up" class="groups__title">
                     <h2><?= $groups_title ?></h2>
                 </div>
             <?php endif; ?>
             <?php if (!empty($groups_list)): ?>
-                <ul class="groups__list">
+                <ul data-aos="fade-up" class="groups__list">
                     <?php foreach ($groups_list as $group):
                         $group_title = $group['group_title'] ?? null;
                         $group_age = $group['group_age'] ?? null;

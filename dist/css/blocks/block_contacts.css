@@ -16,6 +16,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 15px;
 }
 .contacts__image img {
   max-width: 400px;
@@ -133,6 +134,14 @@
 @media only screen and (min-width: 745px) {
   .contacts__wrap {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .contacts__image {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .contacts__image {
+    min-height: 440px;
   }
 }
 @media only screen and (min-width: 1200px) {

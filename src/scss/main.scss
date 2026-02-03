@@ -1,6 +1,7 @@
 @use "base/_variables" as *;
 @use "base/_reset" as *;
 @use 'base/_fonts' as *;
+@use './components/forms.scss';
 
 html {
   font-size: 62.5%;
@@ -25,20 +26,26 @@ body {
 }
 
 //Scrollbar
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
 
-::-webkit-scrollbar-track {
-  background: $primary-ultra-light;
-  border-radius: 4px;
-}
+.styled-scrollbar { 
+  scrollbar-width: thin;
+  scrollbar-color: $primary $primary-ultra-light;
 
-::-webkit-scrollbar-thumb {
-  background-color: $primary;
-  border-radius: 4px;
-  transition: $ease-in;
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $primary-ultra-light;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 4px;
+    transition: $ease-in;
+  }
 }
 
 //UI Kit
@@ -95,95 +102,366 @@ h5 {
   }
 }
 
-.order__form {
-  background: #FFF8E8;
-  padding: 25px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  max-width: 576px;
-  width: 100%;
-  text-align: center;
-
-
-  &-buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    column-gap: 16px;
-
-    .wpcf7-submit,
-    button {
-      @extend %primary-btn;
-    }
-
-    button {
-      background: transparent;
-
-      &:hover {
-        background: $primary;
-      }
-    }
-  }
-
-  .wpcf7-form-control-wrap {
-    margin-bottom: 12px;
-    display: inline-block;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    input {
-      width: 100%;
-      background: $white;
-      padding: 16px;
-      font-size: 1.6rem;
-      border: none;
-    }
-  }
-
-  &-title {
-    font-weight: 700;
-    margin-bottom: 8px;
-    @include fluid-font(20, 24, 360, 1440);
-  }
-
-  &-price {
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 1.4rem;
-  }
-
-
-  &-wrapper {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: $ease-in;
-    opacity: 0;
-    visibility: hidden;
-
-    &.active {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-}
-
 .link {
   color: $text-dark;
   border-bottom: 1px solid $text-dark;
   transition: $ease-in;
 
+  & img {
+    height: 1em;
+  }
+
+
   &:hover {
     opacity: 0.7;
   }
+}
+
+.auth-popup {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $ease-in;
+  opacity: 0;
+  visibility: hidden;
+  overflow: auto;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__body {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+  }
+
+  &__content {
+    background: #FFF8E8;
+    padding: 25px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    max-width: 576px;
+    width: 100%;
+    position: relative;
+
+    & [data-action="close-auth-popup"] {
+      padding: 5px;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      position: absolute;
+      z-index: 5;
+      top: 10px;
+      right: 10px;
+
+      & svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center
+  }
+
+  &__buttons-wrap {
+    & .wp_google_login {
+      max-width: 300px;
+    }
+  }
+}
+
+.h3 {
+  @include fluid-font(20, 24, 360, 1440);
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-default {
+  @extend %primary-btn;
+}
+
+.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.btn-loading {
+  animation: btn-loading 2s ease infinite;
+}
+
+@keyframes btn-loading {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.article__text-content,
+.text-content {
+  margin-top: 20px;
+  font-size: 1.4rem;
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &>*:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  &>*:first-child {
+    margin-top: 0 !important;
+  }
+
+  & h1,
+  & .text-h1,
+  & h2,
+  & .text-h2,
+  & h3,
+  & .text-h3,
+  & h4,
+  & .text-h4,
+  & h5,
+  & .text-h5,
+  & h6,
+  & .text-h6 {
+    font-weight: bold;
+  }
+
+  & h1,
+  & .text-h1 {
+    margin-top: 40px;
+    @include fluid-font(34, 40, 360, 1440);
+  }
+
+
+  & h2,
+  & .text-h2 {
+    margin-top: 40px;
+    @include fluid-font(28, 34, 360, 1440);
+  }
+
+  & h3,
+  & .text-h3 {
+    margin-top: 30px;
+    @include fluid-font(24, 30, 360, 1440);
+  }
+
+  & h4,
+  & .text-h4 {
+    margin-top: 30px;
+    @include fluid-font(20, 26, 360, 1440);
+  }
+
+  & h5,
+  & .text-h5 {
+    margin-top: 30px;
+    @include fluid-font(18, 24, 360, 1440);
+  }
+
+  & h6,
+  & .text-h6 {
+    margin-top: 20px;
+    @include fluid-font(16, 22, 360, 1440);
+  }
+
+
+  & p,
+  & ul:not(.no-style),
+  & ol:not(.no-style) {
+    margin-top: 16px;
+  }
+
+  & ul:not(.no-style) {
+    li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+      position: relative;
+
+      &::before {
+        content: "";
+        background-image: url('data:image/svg+xml,<svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.949951" y="0.564941" width="27.19" height="27.19" rx="13.595" fill="%23F8DB01"/><path d="M20.4333 6.87249C20.5159 6.84495 20.5985 6.84495 20.7087 6.84495C21.1768 6.84495 21.5624 7.23049 21.5899 7.69866V17.3924C21.5899 18.3838 20.4057 19.1549 18.9462 19.1549C17.4866 19.1549 16.3024 18.3838 16.3024 17.3924C16.3024 16.4285 17.4866 15.6299 18.9462 15.6299C19.2491 15.6574 19.5245 15.685 19.8274 15.7401V10.6729L12.7774 12.7383V19.1549C12.7774 20.1463 11.5932 20.9174 10.1337 20.9174C8.6741 20.9174 7.48992 20.1463 7.48992 19.1549C7.48992 18.191 8.6741 17.3924 10.1337 17.3924C10.4366 17.4199 10.712 17.4475 11.0149 17.5026V10.3149C11.0149 9.92932 11.2628 9.59885 11.6208 9.46116L20.4333 6.87249Z" fill="white"/></svg>');
+        width: 28px;
+        height: 28px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        flex: 0 0 auto;
+        transform: translateY(-0.15em);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // & ol:not(.no-style) {
+  //   margin-left: 2em;
+  //   & li {
+  //     list-style: decimal;
+
+  //     &:not(:first-child) {
+  //       margin-top: 0.25em;
+  //     }
+  //   }
+  // }
+
+  & a {
+    @extend .link;
+  }
+
+  & img {
+    border-radius: 4px;
+
+    width: 100%;
+
+    @include minw($lg-mob) {
+      width: auto;
+    }
+  }
+
+  & iframe,
+  & .wp-video {
+    aspect-ratio: 1 / 0.5625;
+    height: auto;
+  }
+
+  & video,
+  & .mejs-video {
+    border-radius: 12px;
+  }
+
+  & .mejs-video .mejs-controls {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  & iframe {
+    display: block;
+    width: 100%;
+  }
+
+  & p:has(> iframe),
+  & p:has(> .wp-video),
+  & .wp-video {
+    margin: 30px 0;
+  }
+}
+
+ol:not(.no-style) {
+  padding-left: 0 !important;
+  list-style: none;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+    position: relative;
+    counter-increment: li;
+    display: flex;
+    gap: 12px;
+
+    &::before {
+      content: counter(li);
+      background-color: $primary;
+      width: 28px;
+      height: 28px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      transform: translateY(-0.15em);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+iframe {
+  border-radius: 12px;
+}
+
+// presto player styles
+presto-player::part(wrapper) {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+.wp-caption {
+  max-width: 100%;
+  -webkit-user-drag: none;
+
+  @media (max-width: 599.98px) {
+    width: 100% !important;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+.alignleft {
+  @include minw($lg-mob) {
+    float: left;
+    margin: 0.5em 1em 0.5em 0;
+  }
+}
+
+.alignright {
+  @include minw($lg-mob) {
+    float: right;
+    margin: 0.5em 0 0.5em 1em;
+  }
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

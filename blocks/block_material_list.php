@@ -9,11 +9,11 @@ $material_list = $data['material_list'];
 <section class="material">
     <div class="container">
         <div class="material__wrap">
-            <div class="material__title">
+            <div data-aos="fade-up" class="material__title">
                 <h2><?= $material_title ?></h2>
             </div>
             <?php if (!empty($material_title)): ?>
-                <ul class="material__list">
+                <ul data-aos="fade-up" class="material__list">
                     <?php foreach ($material_list as $item): ?>
                         <li class="material__list-item">
                             <img src="<?= $item['img']['sizes']['large'] ?>" alt="Image">

@@ -7,15 +7,12 @@ $games_subtitle = $data["games_subtitle"];
 $games_list = $data["games_list"];
 $games_price = $data["games_price"];
 $games_pdf = $data["games_pdf"]['url'];
-$games_additional = $data["games_additional"];
 $order_btn = get_field('order_btn', 'option');
 $instruction_btn = get_field('instruction_btn ', 'option');
 ?>
-
-
 <section class="games">
     <div class="container">
-        <div class="games__wrap">
+        <div data-aos="fade-up" class="games__wrap">
             <div class="games__list">
                 <?php if ($games_subtitle): ?>
                     <h2><?= $games_subtitle ?></h2>
@@ -40,11 +37,6 @@ $instruction_btn = get_field('instruction_btn ', 'option');
                         <a href="<?= $games_pdf ?>" target="_blank"><?= $instruction_btn ?></a>
                     <?php endif; ?>
                 </div>
-                <?php if ($games_additional): ?>
-                    <div class="games__additional">
-                        <?= $games_additional ?>
-                    </div>
-                <?php endif; ?>
             </div>
             <div class="games__img">
                 <?php if ($games_img): ?>

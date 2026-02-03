@@ -17,21 +17,10 @@
 
     h2 {
       margin-bottom: 48px;
-      padding-bottom: 30px;
       position: relative;
       text-align: center;
       @include fluid-font(28, 34, 360, 1440);
 
-      &::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        height: 4px;
-        width: 120px;
-        background-color: $primary;
-      }
     }
 
     iframe {

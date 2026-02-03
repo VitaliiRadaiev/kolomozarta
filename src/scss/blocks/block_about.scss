@@ -18,6 +18,10 @@
     max-width: 480px;
     width: 100%;
 
+    @include minw($sm-pc) {
+      min-height: 672px;
+    }
+
     img {
       width: 100%;
       @extend %mask-about;

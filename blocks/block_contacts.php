@@ -15,7 +15,7 @@ $contacts_img = $data['contacts_img'];
 
 <section class="contacts">
     <div class="container">
-        <div class="contacts__wrap">
+        <div data-aos="fade-up" class="contacts__wrap">
             <div class="contacts__info">
                 <div class="contacts__info-numbers">
                     <?php if ($contact_numbers_title): ?>

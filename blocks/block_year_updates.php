@@ -35,7 +35,9 @@ $order_btn = get_field('order_btn', 'option');
                             <?php endif; ?>
                             <button class="openOrderPopup"
                                     data-price="<?= $button['price'] ?>"
-                                    data-title="<?= the_title() ?>"><?= $order_btn ?></button>
+                                    data-title="<?= the_title() ?>"
+                                    data-subtitle="<?= $button['title'] ?>"
+                                    ><?= $order_btn ?></button>
                         </div>
                     <?php endforeach; ?>
                 </div>
