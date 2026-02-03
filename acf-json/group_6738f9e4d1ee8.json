@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6738f9e5d230e",
-            "label": "Інформація про відеоурок",
+            "label": "Інформація розділу",
             "name": "videos_info",
             "aria-label": "",
             "type": "group",
@@ -20,7 +20,7 @@
             "sub_fields": [
                 {
                     "key": "field_6738fa36d230f",
-                    "label": "Номер відеоуроку",
+                    "label": "Заголовок розділу",
                     "name": "lesson_num",
                     "aria-label": "",
                     "type": "text",
@@ -40,98 +40,8 @@
                     "append": ""
                 },
                 {
-                    "key": "field_6738fa9bd2310",
-                    "label": "Заголовок відеоуроку",
-                    "name": "lesson_title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_6738fac8d2311",
-                    "label": "Опис відеоуроку",
-                    "name": "lesson_desc",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "allow_in_bindings": 0,
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
-                },
-                {
-                    "key": "field_678a4d02eb81c",
-                    "label": "Presto player",
-                    "name": "presto_player",
-                    "aria-label": "",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "pp_video_block"
-                    ],
-                    "post_status": "",
-                    "taxonomy": "",
-                    "return_format": "object",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "allow_in_bindings": 0,
-                    "bidirectional": 0,
-                    "ui": 1,
-                    "bidirectional_target": []
-                },
-                {
-                    "key": "field_6738fb4dd2313",
-                    "label": "Відео",
-                    "name": "lesson_video",
-                    "aria-label": "",
-                    "type": "file",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "allow_in_bindings": 0
-                },
-                {
                     "key": "field_673903a006ebc",
-                    "label": "Акцентний колір",
+                    "label": "Колір іконки заголовка",
                     "name": "accent",
                     "aria-label": "",
                     "type": "select",
@@ -147,9 +57,9 @@
                         "red": "Червоний",
                         "yellow": "Жовтий",
                         "orange": "Оранжевий",
-                        "violet": "Оранжевий",
+                        "violet": "Синій",
                         "blue": "Блакитний",
-                        "purple": "Сливовий",
+                        "purple": "Фіолетовий",
                         "green": "Зелений"
                     },
                     "default_value": false,
@@ -160,59 +70,13 @@
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": ""
-                }
-            ]
-        },
-        {
-            "key": "field_6738faf8d2312",
-            "label": "Додаткові відео(опціонально)",
-            "name": "lesson_add",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Додати рядок",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_6738fb9cd2314",
-                    "label": "Опис до відео",
-                    "name": "desc",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "allow_in_bindings": 0,
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0,
-                    "parent_repeater": "field_6738faf8d2312"
                 },
                 {
-                    "key": "field_6738fbc3d2315",
-                    "label": "Відео",
-                    "name": "video",
+                    "key": "field_68a408527ce28",
+                    "label": "Рядок секції",
+                    "name": "row",
                     "aria-label": "",
-                    "type": "file",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -221,13 +85,295 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "allow_in_bindings": 0,
-                    "parent_repeater": "field_6738faf8d2312"
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Додати рядок",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_68a408957ce29",
+                            "label": "Колонка ліворуч",
+                            "name": "column_left",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_68a409207ce2b",
+                                    "label": "Опис",
+                                    "name": "text",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "allow_in_bindings": 0,
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_68a409727ce2c",
+                                    "label": "Зображення",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "",
+                                    "library": "",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "allow_in_bindings": 0,
+                                    "preview_size": "medium"
+                                },
+                                {
+                                    "key": "field_68a409997ce2d",
+                                    "label": "Медіа",
+                                    "name": "media",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "pagination": 0,
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Додати рядок",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_678a4d02eb81c",
+                                            "label": "Presto player",
+                                            "name": "presto_player",
+                                            "aria-label": "",
+                                            "type": "post_object",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "post_type": [
+                                                "pp_video_block"
+                                            ],
+                                            "post_status": "",
+                                            "taxonomy": "",
+                                            "return_format": "id",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "allow_in_bindings": 0,
+                                            "bidirectional": 0,
+                                            "ui": 1,
+                                            "bidirectional_target": [],
+                                            "parent_repeater": "field_68a409997ce2d"
+                                        },
+                                        {
+                                            "key": "field_68a409d07ce2e",
+                                            "label": "Підпис медіа файла",
+                                            "name": "media_sign",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_68a409997ce2d"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "parent_repeater": "field_68a408527ce28"
+                        },
+                        {
+                            "key": "field_68a40a5e7ce2f",
+                            "label": "Колонка праворуч",
+                            "name": "column_right",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_68a40a5e7ce34",
+                                    "label": "Опис",
+                                    "name": "text",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "allow_in_bindings": 0,
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_68a40a5e7ce35",
+                                    "label": "Зображення",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "allow_in_bindings": 0,
+                                    "preview_size": "medium"
+                                },
+                                {
+                                    "key": "field_68a40a5e7ce36",
+                                    "label": "Медіа",
+                                    "name": "media",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "pagination": 0,
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Додати рядок",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_68a40a5e7ce37",
+                                            "label": "Presto player",
+                                            "name": "presto_player",
+                                            "aria-label": "",
+                                            "type": "post_object",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "post_type": [
+                                                "pp_video_block"
+                                            ],
+                                            "post_status": "",
+                                            "taxonomy": "",
+                                            "return_format": "id",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "allow_in_bindings": 0,
+                                            "bidirectional": 0,
+                                            "ui": 1,
+                                            "bidirectional_target": [],
+                                            "parent_repeater": "field_68a40a5e7ce36"
+                                        },
+                                        {
+                                            "key": "field_68a40a5e7ce38",
+                                            "label": "Підпис медіа файла",
+                                            "name": "media_sign",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_68a40a5e7ce36"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "parent_repeater": "field_68a408527ce28"
+                        }
+                    ]
                 }
             ]
         }
@@ -237,7 +383,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "videos"
+                "value": "post"
             }
         ]
     ],
@@ -250,5 +396,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737117014
+    "modified": 1762844353
 }

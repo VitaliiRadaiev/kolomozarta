@@ -1,13 +1,13 @@
 {
     "key": "group_671e859b86afe",
-    "title": "[Block] Посилання на YouTube",
+    "title": "[Block] Кнопка з посиланням і підписом",
     "fields": [
         {
             "key": "field_671e859b16fbb",
-            "label": "Посилання на YouTube",
+            "label": "Посилання",
             "name": "interesting_link",
             "aria-label": "",
-            "type": "text",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,12 +16,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "return_format": "array",
+            "allow_in_bindings": 1
         }
     ],
     "location": [
@@ -42,5 +38,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730053589
+    "modified": 1757347977
 }

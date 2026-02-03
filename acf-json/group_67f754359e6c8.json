@@ -1,6 +1,6 @@
 {
     "key": "group_67f754359e6c8",
-    "title": "[block] Блок текстовий",
+    "title": "[C-Block] Блок текстовий",
     "fields": [
         {
             "key": "field_67f7543621b0c",
@@ -18,9 +18,9 @@
             },
             "choices": {
                 "no": "no",
-                "sm": "sm",
-                "md": "md",
-                "lg": "lg"
+                "sm": "small",
+                "md": "medium",
+                "lg": "large"
             },
             "default_value": "no",
             "return_format": "value",
@@ -47,9 +47,9 @@
             },
             "choices": {
                 "no": "no",
-                "sm": "sm",
-                "md": "md",
-                "lg": "lg"
+                "sm": "small",
+                "md": "medium",
+                "lg": "large"
             },
             "default_value": "no",
             "return_format": "value",
@@ -154,5 +154,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744263247
+    "modified": 1757347732
 }

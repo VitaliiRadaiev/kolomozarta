@@ -90,7 +90,7 @@
                             "parent_repeater": "field_672902de08b23"
                         },
                         {
-                            "key": "field_67e3a3de5c41a",
+                            "key": "field_67e3a5c703d20",
                             "label": "Зображення",
                             "name": "image",
                             "aria-label": "",
@@ -185,5 +185,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742972014
+    "modified": 1742972401
 }

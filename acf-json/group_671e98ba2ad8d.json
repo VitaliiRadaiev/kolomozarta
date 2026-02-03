@@ -70,7 +70,7 @@
             ]
         },
         {
-            "key": "field_67f6061ce3579",
+            "key": "field_67f60ab7b3339",
             "label": "Заголовок",
             "name": "education_subtitle",
             "aria-label": "",
@@ -184,7 +184,7 @@
                     "parent_repeater": "field_671e99bb8b4eb"
                 },
                 {
-                    "key": "field_67e7bd069d812",
+                    "key": "field_67e7c9efa5d30",
                     "label": "Диплом\/Сертифікат\/Інше",
                     "name": "diploma",
                     "aria-label": "",
@@ -231,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744176817
+    "modified": 1744177870
 }

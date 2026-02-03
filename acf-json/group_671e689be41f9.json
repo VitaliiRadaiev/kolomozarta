@@ -785,14 +785,14 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_67f75721f64db": {
-                    "key": "layout_67f75721f64db",
+                "layout_67f8a3681e49e": {
+                    "key": "layout_67f8a3681e49e",
                     "name": "block_text",
                     "label": "Блок \"Текстовий\"",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_67f75727f64de",
+                            "key": "field_67f8a3af1e4a1",
                             "label": "",
                             "name": "",
                             "aria-label": "",
@@ -841,5 +841,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744263062
+    "modified": 1744348117
 }
