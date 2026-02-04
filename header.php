@@ -19,7 +19,7 @@ $text_cabinet = get_field('text_cabinet', 'option');
     <?php echo  get_field('analytics_scripts_before_head', 'options'); ?>
 </head>
 
-<body <?php body_class() ?>> 
+<body <?php body_class() ?> > 
 
     <?php echo get_field('analytics_scripts_after_body', 'options'); ?>
 

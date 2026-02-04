@@ -226,6 +226,12 @@ $i5: 320px;
   }
 }
 
+@mixin maxw($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}
+
 
 
 

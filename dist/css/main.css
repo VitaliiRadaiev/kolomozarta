@@ -207,6 +207,11 @@
   max-width: 380px;
 }
 
+.h2 {
+  font-size: 24px;
+  line-height: 1.2em;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -225,6 +230,10 @@ body {
   font-size: 1.4rem;
 }
 body.open-menu {
+  overflow: hidden;
+}
+
+.overflow-hidden {
   overflow: hidden;
 }
 

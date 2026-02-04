@@ -13,6 +13,7 @@ function learning_files()
     wp_enqueue_script('slick_js', get_theme_file_uri('/dist/js/libs/slick.min.js'), array('jquery'), '1.0', true);
     wp_enqueue_script('aos_js', get_theme_file_uri('./dist/js/libs/aos.js'), array('jquery'), '1.0', true);
     wp_enqueue_script('main_js', get_theme_file_uri('./dist/js/main.js'), array('jquery'), '1.0', true);
+    wp_enqueue_script('utils_js', get_theme_file_uri('./dist/js/utils.js'), array('jquery'), '1.0', true);
 
     if (is_front_page()) {
         wp_enqueue_style('hero_style', get_theme_file_uri() . '/dist/css/blocks/block_hero.css');

@@ -1,0 +1,44 @@
+.popup-contact-us__content {
+  width: 100%;
+  max-width: 567px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.popup-contact-us__inner .h2 {
+  font-weight: 700;
+}
+.popup-contact-us__inner .wpcf7 {
+  margin-top: 20px;
+}
+
+.popup-contact-us-trigger-btn-wrap {
+  position: fixed;
+  z-index: 40;
+  bottom: 10px;
+  right: 10px;
+}
+
+.popup-contact-us-trigger-btn {
+  padding: 8px;
+  background-color: #F8DB01;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.popup-contact-us-trigger-btn:hover {
+  background-color: rgb(237.8409638554, 210.0289156627, 0.9590361446);
+}
+.popup-contact-us-trigger-btn svg {
+  height: 24px;
+  width: 24px;
+}

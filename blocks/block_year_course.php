@@ -47,9 +47,6 @@ $year_course_price = $data['year_course_price'];
                     <div class="year-course__lists-wrap">
                         <?php foreach ($year_course_list as $year_course): ?>
                             <div class="year-course__lists-item text-content">
-                                <script>
-                                    console.log( <?= json_encode($year_course['text']); ?> );
-                                </script>
                                 <?= add_inner_wrap_to_li($year_course['text']) ?>
                             </div>
                         <?php endforeach; ?>

@@ -99,7 +99,7 @@ $(document).ready(function () {
         ".order__form-wrapper form.wpcf7-form"
       );
       form && form.reset();
-    }, 300);
+    }, 400);
   });
 
   orderPopup.on("click", function (e) {
@@ -112,7 +112,7 @@ $(document).ready(function () {
           ".order__form-wrapper form.wpcf7-form"
         );
         form && form.reset();
-      }, 300);
+      }, 400);
     }
   });
 

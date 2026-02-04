@@ -2,6 +2,7 @@
 @use "base/_reset" as *;
 @use 'base/_fonts' as *;
 @use './components/forms.scss';
+@use 'typography.scss';
 
 html {
   font-size: 62.5%;
@@ -23,6 +24,10 @@ body {
   &.open-menu {
     overflow: hidden;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 //Scrollbar
