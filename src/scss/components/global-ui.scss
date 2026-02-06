@@ -1,0 +1,66 @@
+@use '../base/_variables' as *;
+
+.slider-pagination-wrapper {
+    position: relative;
+    height: 15px;
+    margin-top: 25px;
+
+    & .swiper-pagination {
+        height: 100%;
+    }
+
+    & .swiper-pagination-bullet {
+        --swiper-pagination-bullet-size: 10px;
+        --swiper-pagination-color: transparent;
+        --swiper-pagination-bullet-inactive-color: transparent;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        border: 1px solid $text-dark;
+
+        &.swiper-pagination-bullet-active {
+            --swiper-pagination-color: #{$text-dark};
+        }
+    }
+}
+
+.swiper-button {
+    display: none;
+}
+
+@include minw($sm-pc) {
+    .swiper-has-buttons {
+        padding-top: 50px;
+    }
+
+    .swiper-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        height: 40px;
+        width: 40px;
+        border-radius: 4px;
+        background-color: $primary;
+        cursor: pointer;
+        transition: $ease-in;
+        border: 2px solid transparent;
+
+        &:hover {
+            background-color: transparent;
+            border-color: $primary;
+        }
+
+        &.next {
+            right: 0;
+        }
+
+        &.prev {
+            right: 50px;
+        }
+
+        & svg {
+            height: 18px;
+            width: 18px;
+        }
+    }
+}

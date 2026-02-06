@@ -207,9 +207,59 @@
   max-width: 380px;
 }
 
+.slider-pagination-wrapper {
+  position: relative;
+  height: 15px;
+  margin-top: 25px;
+}
+.slider-pagination-wrapper .swiper-pagination {
+  height: 100%;
+}
+.slider-pagination-wrapper .swiper-pagination-bullet {
+  --swiper-pagination-bullet-size: 10px;
+  --swiper-pagination-color: transparent;
+  --swiper-pagination-bullet-inactive-color: transparent;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  border: 1px solid #212934;
+}
+.slider-pagination-wrapper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  --swiper-pagination-color: #212934;
+}
+
+.swiper-button {
+  display: none;
+}
 .h2 {
+  font-size: 34px;
+  line-height: 1.2em;
+}
+.h2.bottom-line {
+  padding-bottom: 30px;
+}
+
+.h3 {
   font-size: 24px;
   line-height: 1.2em;
+}
+.h3.bottom-line {
+  padding-bottom: 20px;
+}
+
+.bottom-line {
+  position: relative;
+}
+.bottom-line::after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 100%;
+  max-width: 120px;
+  background-color: #F8DB01;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 html {
@@ -835,6 +885,44 @@ presto-player::part(wrapper) {
   }
 }
 @media only screen and (min-width: 1024px) {
+  .swiper-has-buttons {
+    padding-top: 50px;
+  }
+  .swiper-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    background-color: #F8DB01;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    border: 2px solid transparent;
+  }
+  .swiper-button:hover {
+    background-color: transparent;
+    border-color: #F8DB01;
+  }
+  .swiper-button.next {
+    right: 0;
+  }
+  .swiper-button.prev {
+    right: 50px;
+  }
+  .swiper-button svg {
+    height: 18px;
+    width: 18px;
+  }
   .page__title {
     margin-bottom: 20px;
   }

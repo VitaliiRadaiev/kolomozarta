@@ -1,4 +1,37 @@
+@use "base/_variables" as *;
+
 .h2 {
+    font-size: 34px;
+    line-height: 1.2em;
+
+    &.bottom-line {
+        padding-bottom: 30px;
+    }
+}
+
+.h3 {
     font-size: 24px;
     line-height: 1.2em;
+
+    &.bottom-line {
+        padding-bottom: 20px;
+    }
+}
+
+.bottom-line {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        height: 4px;
+        width: 100%;
+        max-width: 120px;
+        background-color: $primary;
+        bottom: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
 }

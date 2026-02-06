@@ -28,11 +28,28 @@ function render_menu_link($menu, $classes = '', $attr = '')
 <?php
 }
 
-function get_image($image_id, $classes = '', $echo = true, $size = 'large')
+function get_image($image_id, $classes = '', $echo = true, $size = 'full', $attributes = [])
 // thumbnail, medium, large, full
 {
+
     if ($image_id) {
-        $image_html = wp_get_attachment_image($image_id, $size, false, array('class' => $classes));
+        $image_html = wp_get_attachment_image(
+            $image_id,
+            $size,
+            false,
+            array_merge(
+                ['class' => $classes],
+                [
+                    'sizes' => '
+                        (max-width: 480px) 100vw,
+                        (max-width: 768px) 120vw,
+                        (max-width: 1024px) 150vw,
+                        2048px'
+                ],
+                $attributes
+            )
+        );
+
         if ($echo) {
             echo $image_html;
         } else {
@@ -45,11 +62,11 @@ function get_image($image_id, $classes = '', $echo = true, $size = 'large')
 
 function check($var)
 {
-    if (is_string($var)) {
-        $var = trim($var);
-    }
+  if (is_string($var)) {
+    $var = trim($var);
+  }
 
-    return $var && isset($var) && !empty($var);
+  return $var && isset($var) && !empty($var);
 }
 
 function add_inner_wrap_to_li($text)

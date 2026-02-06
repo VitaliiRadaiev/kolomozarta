@@ -11,35 +11,10 @@
     @include fluid-font(36, 56, 360, 1200);
   }
 
-  .slick-dots {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 25px;
-
-    li {
-      &.slick-active {
-        button {
-          background: $text-dark;
-        }
-      }
-
-      button {
-        cursor: pointer;
-        transition: $ease-in;
-        background: none;
-        border-radius: 100%;
-        font-size: 0;
-        width: 12px;
-        height: 12px;
-        border: 1px solid $text-dark;
-      }
-    }
-  }
-
   &__slider {
-
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 
     &-item {
       display: flex !important;

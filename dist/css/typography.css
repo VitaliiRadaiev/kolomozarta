@@ -1,4 +1,32 @@
 .h2 {
+  font-size: 34px;
+  line-height: 1.2em;
+}
+.h2.bottom-line {
+  padding-bottom: 30px;
+}
+
+.h3 {
   font-size: 24px;
   line-height: 1.2em;
+}
+.h3.bottom-line {
+  padding-bottom: 20px;
+}
+
+.bottom-line {
+  position: relative;
+}
+.bottom-line::after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 100%;
+  max-width: 120px;
+  background-color: #F8DB01;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }

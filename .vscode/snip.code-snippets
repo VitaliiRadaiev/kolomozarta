@@ -10,7 +10,7 @@
 		"scope": "html,php",
 		"prefix": "get_t",
 		"body": [
-			"get_template_directory_uri() . '/assets/images/general/$1'",
+			"get_template_directory_uri() . '/assets/images/decors/$1'",
 		],
 		"description": "Log output to console"
 	},
@@ -19,6 +19,14 @@
 		"prefix": "get_ti",
 		"body": [
 			"get_template_directory_uri() . '/assets/images/icons/$1'",
+		],
+		"description": "Log output to console"
+	},
+	"get_tt": {
+		"scope": "html,php",
+		"prefix": "get_tt",
+		"body": [
+			"get_template_directory_uri() . '/assets/images/temp/$1'",
 		],
 		"description": "Log output to console"
 	},
@@ -57,7 +65,7 @@
 		"prefix": "pict",
 		"body": [
 			"<picture>",
-			"	<source srcset=\"\" media=\"(min-width: 600px)\" />",
+			"	<source srcset=\"\" media=\"(min-width: 744px)\" />",
 			"	<img src=\"\" alt=\"\" />",
 			"</picture>"
 		],
@@ -72,5 +80,23 @@
 			"</script>"
 		],
 		"description": ""
-	}
+	},
+	"ifcheck": {
+		"scope": "html,php",
+		"prefix": "ifcheck",
+		"body": [
+			"<?php if(check($1 ?? null)):?>",
+            "	$2",
+			"<?php endif;?>"
+		],
+		"description": ""
+	},
+	"get_template_part": {
+		"scope": "html,php",
+		"prefix": "gtp",
+		"body": [
+			"get_template_part(get_part_path('$1'), null, [$2])",
+		],
+		"description": ""
+	},
 }

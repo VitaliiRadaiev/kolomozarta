@@ -273,6 +273,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6983890eafe42": {
+                    "key": "layout_6983890eafe42",
+                    "name": "block_certificates_slider",
+                    "label": "Блок \"Сертифікати слайдер\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6983890eafe44",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6983887b6544c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_67267c008f5f6": {
                     "key": "layout_67267c008f5f6",
                     "name": "block_games",
@@ -841,5 +873,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744348117
+    "display_title": "",
+    "modified": 1770228028
 }

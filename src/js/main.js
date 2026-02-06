@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  initFancybox();
+
+
   // Reviews slider
   const reviews = document.querySelectorAll(".reviews");
   reviews.forEach((review) => {
@@ -16,16 +19,6 @@ $(document).ready(function () {
     window.addEventListener("resize", () => {
       setMinHeight();
     });
-  });
-  $(".reviews__slider").slick({
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: "linear",
-    autoplay: true,
-    //adaptiveHeight: true
   });
 
   $(".openMenu").click(function () {
