@@ -19,7 +19,7 @@ $text_cabinet = get_field('text_cabinet', 'option');
     <?php echo  get_field('analytics_scripts_before_head', 'options'); ?>
 </head>
 
-<body <?php body_class() ?> > 
+<body <?php body_class() ?>>
 
     <?php echo get_field('analytics_scripts_after_body', 'options'); ?>
 
@@ -40,8 +40,8 @@ $text_cabinet = get_field('text_cabinet', 'option');
                     if ($whatsapp): ?>
                         <li>
                             <a href="https://wa.me/<?= cleanPhoneNumber($whatsapp) ?>" target="_blank">
+                                <img src="<?= get_theme_file_uri() . '/dist/images/whatsapp.svg' ?>" alt="WhatsApp">
                                 <?= $whatsapp ?>
-                                <span>(WhatsApp)</span>
                             </a>
                         </li>
                     <?php endif; ?>
@@ -49,8 +49,8 @@ $text_cabinet = get_field('text_cabinet', 'option');
                     <?php if ($viber): ?>
                         <li>
                             <a href="viber://chat?number=%2B<?= cleanPhoneNumber($viber) ?>" target="_blank">
+                                <img src="<?= get_theme_file_uri() . '/dist/images/viber.svg' ?>" alt="Viber">
                                 <?= $viber ?>
-                                <span>(Viber)</span>
                             </a>
                         </li>
                     <?php endif; ?>
@@ -264,8 +264,8 @@ $text_cabinet = get_field('text_cabinet', 'option');
                                     if ($whatsapp): ?>
                                         <li>
                                             <a href="https://wa.me/<?= cleanPhoneNumber($whatsapp) ?>" target="_blank">
+                                                <img src="<?= get_theme_file_uri() . '/dist/images/whatsapp.svg' ?>" alt="WhatsApp">
                                                 <?= $whatsapp ?>
-                                                <span>(WhatsApp)</span>
                                             </a>
                                         </li>
                                     <?php endif; ?>
@@ -273,8 +273,8 @@ $text_cabinet = get_field('text_cabinet', 'option');
                                     <?php if ($viber): ?>
                                         <li>
                                             <a href="viber://chat?number=%2B<?= cleanPhoneNumber($viber) ?>" target="_blank">
+                                                <img src="<?= get_theme_file_uri() . '/dist/images/viber.svg' ?>" alt="Viber">
                                                 <?= $viber ?>
-                                                <span>(Viber)</span>
                                             </a>
                                         </li>
                                     <?php endif; ?>

@@ -26,7 +26,7 @@
           align-items: center;
 }
 .entire__line-contacts li {
-  padding: 0 4px;
+  padding: 0 6px;
   cursor: pointer;
   position: relative;
 }
@@ -53,6 +53,20 @@
 }
 .entire__line-contacts a {
   color: #212934;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+.entire__line-contacts a img {
+  height: 1.2em;
+  width: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 .entire__line-social {
   display: -webkit-box;
