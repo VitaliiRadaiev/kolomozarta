@@ -25,22 +25,11 @@
   &-contacts {
     display: flex;
     align-items: center;
+    gap: 12px;
 
     li {
-      padding: 0 6px;
       cursor: pointer;
       position: relative;
-
-      &:after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        background-color: $text-dark;
-        height: 12px;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-      }
 
       &:first-child {
         padding-left: 0;
