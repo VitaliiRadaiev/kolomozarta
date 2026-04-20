@@ -1,0 +1,127 @@
+@use '../base/_variables' as *;
+
+.courses,
+.interesting{
+  padding-bottom: 60px;
+
+  &__wrap {
+
+  }
+
+  h2 {
+    margin-bottom: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    @include fluid-font(24, 34, 360, 1200);
+
+    @include minw($sm-pc) {
+      margin-bottom: 82px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @include minw($sm-tablet) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      background-color: $white;
+      box-shadow: $card-shadow;
+      padding: 16px;
+      border-radius: $radius-md;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid transparent;
+      position: relative;
+      transition: $ease-in;
+
+      @include minw($sm-tablet) {
+        flex: 0 1 calc(50% - 10px);
+      }
+
+      @include minw($sm-pc) {
+        flex: 0 1 calc(33.33333% - (20px * 2 / 3));
+      }
+      
+      &:hover {
+        border-color: $primary-medium;
+
+        img {
+          border-color: $primary-medium;
+        }
+
+        h3 {
+          color: $primary-medium;
+        }
+      }
+
+      @include minw($lg-mob) {
+        padding: 30px;
+      }
+
+      img {
+        width: 165px;
+        height: 165px;
+        object-fit: cover;
+        border-radius: $radius-sm;
+        margin-bottom: 10px;
+        transition: $ease-in;
+        border: 2px solid transparent;
+      }
+
+      h3 {
+
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        @extend %line-decoration;
+        text-align: center;
+        transition: $ease-in;
+        @include fluid-font(14, 18, 360, 1200);
+      }
+
+
+    }
+
+    &-subtitle {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    a.btn {
+      @extend %button;
+    }
+
+    a:not(.btn) {
+      color: $text-dark;
+      border-bottom: 1px solid $text-dark;
+      transition: $ease-in;
+    
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &-description {
+
+    }
+  }
+}
+
+.interesting {
+  &__list {
+    &-item {
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+}

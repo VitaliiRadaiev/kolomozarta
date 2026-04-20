@@ -1,0 +1,29 @@
+.courses-info__wrap {
+  position: relative;
+}
+.courses-info__wrap::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 4px;
+  width: 120px;
+  background-color: #F8DB01;
+}
+
+.courses-info {
+  padding-top: 36px;
+  padding-bottom: 46px;
+}
+.courses-info__wrap {
+  max-width: 808px;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 50px;
+}
+.courses-info__wrap p {
+  margin-bottom: 20px;
+}

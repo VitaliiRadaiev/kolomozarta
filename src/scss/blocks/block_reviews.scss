@@ -1,0 +1,74 @@
+@use '../base/_variables' as *;
+
+
+.reviews {
+  margin-bottom: 60px;
+
+  h2 {
+    width: fit-content;
+    margin: 0 auto 20px;
+    text-align: center;
+    @include fluid-font(36, 56, 360, 1200);
+  }
+
+  .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+
+    li {
+      &.slick-active {
+        button {
+          background: $text-dark;
+        }
+      }
+
+      button {
+        cursor: pointer;
+        transition: $ease-in;
+        background: none;
+        border-radius: 100%;
+        font-size: 0;
+        width: 12px;
+        height: 12px;
+        border: 1px solid $text-dark;
+      }
+    }
+  }
+
+  &__slider {
+
+
+    &-item {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 24px;
+        object-fit: cover;
+      }
+
+      p {
+        padding: 24px 40px;
+        background-color: rgba(255, 248, 232, 1);
+        border-radius: $radius-lg;
+        margin-bottom: 24px;
+        @include fluid-font(14, 18, 360, 1200);
+      }
+
+      span {
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        @include fluid-font(14, 18, 360, 1200);
+      }
+    }
+  }
+}

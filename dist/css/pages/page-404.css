@@ -1,0 +1,41 @@
+.block-404 {
+  padding-bottom: 60px;
+}
+.block-404__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  line-height: 1;
+}
+.block-404__title {
+  color: #212934;
+  font-size: 120px;
+  font-weight: 700;
+}
+.block-404__subtitle {
+  font-size: 18px;
+}
+.block-404__btn {
+  margin-top: 15px;
+}
+@media only screen and (min-width: 360px) {
+  .block-404__subtitle {
+    font-size: calc(18px + 2 * (100vw - 360px) / (1440 - 360));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .block-404__subtitle {
+    font-size: 20px;
+  }
+}

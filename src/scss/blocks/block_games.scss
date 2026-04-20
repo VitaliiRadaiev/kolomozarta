@@ -1,0 +1,92 @@
+@use '../base/_variables' as *;
+
+.games {
+  margin-top: 24px;
+  margin-bottom: 56px;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    gap: 40px;
+
+    @include minw($sm-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__img {
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 255px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__list {
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-bottom: 30px;
+
+      li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 40px;
+        font-size: 1.4rem;
+
+        @extend %list-style;
+      }
+    }
+
+    span {
+      @extend %price;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+
+    button {
+      @extend %primary-btn;
+    }
+
+    a {
+      @extend %primary-btn;
+      @extend %light-btn;
+
+    }
+  }
+
+  &__additional {
+    text-align: center;
+    
+    @include minw($sm-tablet) {
+      padding-left: 40px;
+      text-align: left;
+      margin-right: -300px;
+    }
+
+    @include minw($sm-pc) {
+      margin-right: 0;
+    }
+
+    a {
+      color: $text;
+      border-bottom: 1px solid $text-dark;
+    }
+  }
+}

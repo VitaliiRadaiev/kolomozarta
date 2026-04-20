@@ -1,0 +1,189 @@
+@use "base/_variables" as *;
+@use "base/_reset" as *;
+@use 'base/_fonts' as *;
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+body {
+  line-height: 1.8em;
+  font-weight: 400;
+  font-family: $primary-font;
+  color: $text;
+  font-size: 1.4rem;
+
+  &.open-menu {
+    overflow: hidden;
+  }
+}
+
+//Scrollbar
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: $primary-ultra-light;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-radius: 4px;
+  transition: $ease-in;
+}
+
+//UI Kit
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.container--fluid {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 26px;
+  margin: 0 auto;
+}
+
+.page__title {
+  max-width: 1020px;
+  @include fluid-font(36, 54, 360, 1200);
+
+  @include minw($sm-pc) {
+    margin-bottom: 20px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2em;
+}
+
+.page__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .page__title {
+    text-align: center;
+  }
+
+  nav {
+    align-self: flex-start;
+    padding: 20px 0;
+    width: 100%;
+
+    * {
+      color: $text;
+    }
+  }
+}
+
+.order__form {
+  background: #FFF8E8;
+  padding: 25px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  max-width: 576px;
+  width: 100%;
+  text-align: center;
+
+
+  &-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+
+    .wpcf7-submit,
+    button {
+      @extend %primary-btn;
+    }
+
+    button {
+      background: transparent;
+
+      &:hover {
+        background: $primary;
+      }
+    }
+  }
+
+  .wpcf7-form-control-wrap {
+    margin-bottom: 12px;
+    display: inline-block;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input {
+      width: 100%;
+      background: $white;
+      padding: 16px;
+      font-size: 1.6rem;
+      border: none;
+    }
+  }
+
+  &-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    @include fluid-font(20, 24, 360, 1440);
+  }
+
+  &-price {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+
+  &-wrapper {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $ease-in;
+    opacity: 0;
+    visibility: hidden;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.link {
+  color: $text-dark;
+  border-bottom: 1px solid $text-dark;
+  transition: $ease-in;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,28 @@
+@use '../base/_variables' as *;
+
+.hero {
+  margin-bottom: 20px;
+
+  h1 {
+    @extend %line-decoration;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+    @include fluid-font(54, 84, 360, 1200);
+
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    max-width: 650px;
+  }
+}

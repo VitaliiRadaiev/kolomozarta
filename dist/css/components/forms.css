@@ -1,0 +1,192 @@
+.order__form-buttons .wpcf7-submit,
+.order__form-buttons button {
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #F8DB01;
+  height: 42px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+  color: #454545;
+  font-size: 1.4rem;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  border: 2px solid #F8DB01;
+}
+.order__form-buttons .wpcf7-submit:hover,
+.order__form-buttons button:hover {
+  background-color: transparent;
+}
+
+.order__form {
+  background: #FFF8E8;
+  padding: 25px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 576px;
+  width: 100%;
+  text-align: center;
+}
+.order__form-buttons {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+}
+.order__form-buttons .wpcf7-submit:not(.can-submit) {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.order__form-buttons button {
+  background: transparent;
+}
+.order__form-buttons button:hover {
+  background: #F8DB01;
+}
+.order__form .wpcf7-form-control-wrap {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.order__form .wpcf7-form-control-wrap:last-child {
+  margin-bottom: 0;
+}
+.order__form .wpcf7-form-control-wrap input {
+  width: 100%;
+  background: #FFFFFF;
+  padding: 16px;
+  font-size: 1.6rem;
+  border: none;
+}
+.order__form-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+.order__form-price {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.order__form-wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  visibility: hidden;
+}
+.order__form-wrapper.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.checkbox {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.checkbox input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid #212934;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin-top: 1px;
+}
+.checkbox input[type=checkbox]:checked {
+  background-color: #212934;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMzQ5MjggMTBMMSA2LjI0MzAzTDEuNDgxMTYgNS43MDQwNUw0LjM0OTI4IDguOTIxMjlMMTAuNTE5NSAyTDExIDIuNTM5NzNMNC4zNDkyOCAxMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+.checkbox__label {
+  font-size: 1.4rem;
+  line-height: 1.38em;
+  text-align: start;
+}
+.checkbox__label a {
+  color: #212934;
+  border-bottom: 1px solid #212934;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.checkbox__label a:hover {
+  opacity: 0.7;
+}
+
+.checkbox-wrap {
+  margin-bottom: 12px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.order__form-wrap .wpcf7-form-control-wrap {
+  width: 100%;
+  max-width: 380px;
+}
+
+@media only screen and (min-width: 360px) {
+  .order__form-title {
+    font-size: calc(20px + 4 * (100vw - 360px) / (1440 - 360));
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .order__form-title {
+    font-size: 24px;
+  }
+}

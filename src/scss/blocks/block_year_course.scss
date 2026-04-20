@@ -1,0 +1,125 @@
+@use '../base/_variables' as *;
+
+.year-course {
+  padding-top: 30px;
+  padding-bottom: 48px;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 30px;
+    flex-direction: column;
+
+    @include minw($sm-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__description {
+    @include minw($sm-tablet) {
+      flex: 1 1 auto;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 40px;
+        font-size: 1.4rem;
+        @extend %list-style;
+      }
+    }
+  }
+
+  &__img {
+    & img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @include minw($sm-tablet) {
+      width: 300px;
+      flex: 0 0 auto;
+    }
+  }
+
+  &__video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    iframe {
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+
+  &__lists {
+    h2 {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    &-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+      @include minw($sm-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &-item {
+      ul {
+        li {
+          margin-bottom: 10px;
+          position: relative;
+          padding-left: 40px;
+          font-size: 1.4rem;
+          @extend %list-style;
+
+          a {
+            color: $text-dark;
+            border-bottom: 1px solid $text-dark;
+          }
+        }
+      }
+    }
+
+    &-price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      span {
+        @extend %price;
+      }
+
+      button {
+        @extend %primary-btn;
+      }
+
+    }
+  }
+}
