@@ -2,6 +2,7 @@
 
 include_once 'functions-parts/_assets.php';
 include_once 'functions-parts/_post-type-registration.php';
+include_once 'functions-parts/_taxonomies-registration.php';
 include_once 'functions-parts/_custom-functions.php';
 // include_once 'functions-parts/custom-buttons-tinymce.php';
 
