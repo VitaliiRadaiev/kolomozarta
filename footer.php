@@ -3,7 +3,8 @@
 wp_enqueue_style('footer_styles', get_theme_file_uri('dist/css/components/footer.css'));
 
 //Variables
-
+$whatsapp = get_field('whatsapp', 'option');
+$viber = get_field('viber', 'option');
 $footer_logo = get_field('footer_logo', 'option');
 $footer_quote = get_field('footer_info_quote', 'option');
 $footer_description = get_field('footer_info_description', 'option');
@@ -34,11 +35,11 @@ $footer_menu = build_menu_hierarchy($menu_items);
                         </a>
                     </div>
                 <?php endif; ?>
-                
+
                 <div class="footer__menu">
-                    <?php foreach($footer_menu as $item):?>
+                    <?php foreach ($footer_menu as $item): ?>
                         <?php render_menu_link($item); ?>
-                    <?php endforeach;?>
+                    <?php endforeach; ?>
                 </div>
             </div>
 
@@ -64,12 +65,34 @@ $footer_menu = build_menu_hierarchy($menu_items);
     </div>
     <!--    Footer Copyright-->
     <div class="footer__copyright">
-        <div class="container">
+        <div class="container--fluid">
             <div class="footer__copyright-wrap">
                 <?php
                 if ($footer_copyright): ?>
                     <p><?= $footer_copyright ?></p>
                 <?php endif; ?>
+                <!--    Header Line with contacts and social media-->
+                <ul class="footer-phone-contacts">
+                    <?php
+                    if ($whatsapp): ?>
+                        <li>
+                            <a href="https://wa.me/<?= cleanPhoneNumber($whatsapp) ?>" target="_blank">
+                                <img src="<?= get_theme_file_uri() . '/dist/images/whatsapp.svg' ?>" alt="WhatsApp">
+                                <?= $whatsapp ?>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if ($viber): ?>
+                        <li>
+                            <a href="viber://chat?number=%2B<?= cleanPhoneNumber($viber) ?>" target="_blank">
+                                <img src="<?= get_theme_file_uri() . '/dist/images/viber.svg' ?>" alt="Viber">
+                                <?= $viber ?>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+
                 <?php if (have_rows('social_media', 'option')): ?>
                     <ul class="footer__social">
                         <?php while (have_rows('social_media', 'option')): the_row();

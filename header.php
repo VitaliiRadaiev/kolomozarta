@@ -2,8 +2,6 @@
 wp_enqueue_style('header_styles', get_theme_file_uri('dist/css/components/header.css'));
 
 //Variables
-$whatsapp = get_field('whatsapp', 'option');
-$viber = get_field('viber', 'option');
 $header_logo = get_field('header_logo', 'option');
 $text_cabinet = get_field('text_cabinet', 'option');
 ?>
@@ -31,50 +29,6 @@ $text_cabinet = get_field('text_cabinet', 'option');
     $menu_items = wp_get_nav_menu_items($menu_id);
     $header_menu = build_menu_hierarchy($menu_items);
     ?>
-    <!--    Header Line with contacts and social media-->
-    <div class="entire__line" data-aos="fade">
-        <div class="container">
-            <div class="entire__line-wrap">
-                <ul class="entire__line-contacts">
-                    <?php
-                    if ($whatsapp): ?>
-                        <li>
-                            <a href="https://wa.me/<?= cleanPhoneNumber($whatsapp) ?>" target="_blank">
-                                <img src="<?= get_theme_file_uri() . '/dist/images/whatsapp.svg' ?>" alt="WhatsApp">
-                                <?= $whatsapp ?>
-                            </a>
-                        </li>
-                    <?php endif; ?>
-
-                    <?php if ($viber): ?>
-                        <li>
-                            <a href="viber://chat?number=%2B<?= cleanPhoneNumber($viber) ?>" target="_blank">
-                                <img src="<?= get_theme_file_uri() . '/dist/images/viber.svg' ?>" alt="Viber">
-                                <?= $viber ?>
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-                <?php if (have_rows('social_media', 'option')): ?>
-                    <ul class="entire__line-social">
-                        <?php while (have_rows('social_media', 'option')): the_row();
-                            $icon = get_sub_field('icon')['url'];
-                            $link = get_sub_field('link');
-                        ?>
-                            <li>
-                                <?php if ($link && $icon): ?>
-                                    <a href="<?= esc_url($link); ?>" target="_blank">
-                                        <img src="<?= esc_url($icon); ?>" alt="Social Media Icon">
-                                    </a>
-                                <?php endif; ?>
-                            </li>
-                        <?php endwhile; ?>
-                    </ul>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-
     <header class="header" id="header">
         <!--    Header Navigation-->
         <div class="container">

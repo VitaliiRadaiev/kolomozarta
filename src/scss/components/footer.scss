@@ -76,7 +76,7 @@
       justify-content: space-between;
       align-items: center;
       flex-direction: column;
-      row-gap: 10px;
+      gap: 10px;
 
       @include minw($lg-mob) {
         flex-direction: row;
@@ -95,6 +95,45 @@
         display: flex;
         align-items: center;
       }
+    }
+  }
+}
+
+.footer-phone-contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 2px;
+  column-gap: 12px;
+
+  li {
+    cursor: pointer;
+    position: relative;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    color: $text-dark;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    & img {
+      height: 1.2em;
+      width: auto;
+      flex: 0 0 auto;
     }
   }
 }
