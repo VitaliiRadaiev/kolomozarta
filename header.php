@@ -2,6 +2,8 @@
 wp_enqueue_style('header_styles', get_theme_file_uri('dist/css/components/header.css'));
 
 //Variables
+$whatsapp = get_field('whatsapp', 'option');
+$viber = get_field('viber', 'option');
 $header_logo = get_field('header_logo', 'option');
 $text_cabinet = get_field('text_cabinet', 'option');
 ?>

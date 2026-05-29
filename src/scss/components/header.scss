@@ -1,5 +1,45 @@
 @use '../base/_variables' as *;
 
+.entire__line {
+  background-color: $primary;
+  padding: 12px 0;
+  font-size: 1.2rem;
+  display: none;
+
+  // @include minw($sm-pc) {
+  //   display: block;
+  // }
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include minw($lg-mob) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &-social {
+    display: flex;
+
+    li {
+      padding: 0 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+
+      a {
+        display: flex;
+      }
+    }
+  }
+
+}
+
 .header {
   display: flex;
   @include fluid-font(14, 16, 360, 1200);
