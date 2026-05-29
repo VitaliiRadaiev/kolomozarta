@@ -37,7 +37,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -45,6 +45,54 @@
             "button_label": "Додати рядок",
             "rows_per_page": 20,
             "sub_fields": [
+                {
+                    "key": "field_69faff7e960d9",
+                    "label": "Картка",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0,
+                    "parent_repeater": "field_6728d81a13e7d"
+                },
+                {
+                    "key": "field_69fafed1cdd54",
+                    "label": "Зображення",
+                    "name": "images",
+                    "aria-label": "",
+                    "type": "gallery",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min": "",
+                    "max": "",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "insert": "append",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_6728d81a13e7d"
+                },
                 {
                     "key": "field_6728d82813e7e",
                     "label": "Заголовок",
@@ -68,11 +116,33 @@
                     "parent_repeater": "field_6728d81a13e7d"
                 },
                 {
-                    "key": "field_6728d87613e7f",
-                    "label": "Зображення",
-                    "name": "img",
+                    "key": "field_69faff0fcdd56",
+                    "label": "Текст",
+                    "name": "text",
                     "aria-label": "",
-                    "type": "image",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_6728d81a13e7d"
+                },
+                {
+                    "key": "field_69faff26cdd57",
+                    "label": "Посилання",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -82,16 +152,7 @@
                         "id": ""
                     },
                     "return_format": "array",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
                     "allow_in_bindings": 0,
-                    "preview_size": "medium",
                     "parent_repeater": "field_6728d81a13e7d"
                 }
             ]
@@ -120,5 +181,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730730137
+    "modified": 1778057171
 }
