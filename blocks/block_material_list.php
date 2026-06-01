@@ -1,27 +1,95 @@
 <?php
+wp_enqueue_style('swiper_bundle_style', get_theme_file_uri() . '/dist/css/libs/swiper-bundle.css');
+wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, false);
+
+wp_enqueue_script('material_list_js', get_theme_file_uri('./dist/js/blocks/block_material_list.js'), array('main_js'), null, false);
 wp_enqueue_style('material_list_style', get_theme_file_uri() . '/dist/css/blocks/block_material_list.css');
+
 global $data;
-$material_title = $data['material_title'];
-$material_list = $data['material_list'];
+$material_title   = $data['material_title'];
+$btn_details      = get_field('btn_details', 'option');
+$text_all         = get_field('text_all', 'option');
+$text_categories  = get_field('text_categories', 'option');
+
+$products_query = new WP_Query([
+    'post_type'      => 'product',
+    'posts_per_page' => -1,
+    'post_status'    => 'publish',
+]);
+
+$product_categories = get_terms([
+    'taxonomy'   => 'product_category',
+    'hide_empty' => true,
+]);
 
 ?>
-
 <section class="material">
     <div class="container">
         <div class="material__wrap">
             <div data-aos="fade-up" class="material__title">
                 <h2><?= $material_title ?></h2>
             </div>
-            <?php if (!empty($material_title)): ?>
-                <ul data-aos="fade-up" class="material__list">
-                    <?php foreach ($material_list as $item): ?>
-                        <li class="material__list-item">
-                            <img src="<?= $item['img']['sizes']['large'] ?>" alt="Image">
-                            <h3><?= $item['title'] ?></h3>
-                            <img class="material__list-item-arrow" src="<?= get_template_directory_uri() . '/dist/images/wide-arrow-down.svg' ?>" alt="">
-                        </li>
+
+            <?php if (!is_wp_error($product_categories) && !empty($product_categories)): ?>
+                <div data-aos="fade-up" class="material__tabs">
+                    <?php if (!empty($text_categories)): ?>
+                        <span class="material__tabs-label"><?= esc_html($text_categories) ?>:</span>
+                    <?php endif; ?>
+                    <button class="material__tabs-btn is-active" type="button" data-filter="all"><?= esc_html($text_all) ?></button>
+                    <?php foreach ($product_categories as $term): ?>
+                        <button class="material__tabs-btn" type="button" data-filter="<?= esc_attr($term->slug) ?>"><?= esc_html($term->name) ?></button>
                     <?php endforeach; ?>
-                </ul>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($products_query->have_posts()): ?>
+                <div data-aos="fade-up" class="material__list">
+                    <?php while ($products_query->have_posts()): $products_query->the_post();
+                        $post_id           = get_the_ID();
+                        $title             = get_the_title();
+                        $short_description = get_field('short_description', $post_id);
+                        $price             = get_field('price', $post_id);
+                        $gallery           = get_field('gallery', $post_id);
+                        $link_url          = get_field('link', $post_id);
+                        if (empty($link_url)) {
+                            $link_url = get_permalink($post_id);
+                        }
+                        $post_terms     = wp_get_post_terms($post_id, 'product_category');
+                        $term_slugs     = (!is_wp_error($post_terms) && !empty($post_terms))
+                                            ? wp_list_pluck($post_terms, 'slug')
+                                            : [];
+                        $data_categories = esc_attr(wp_json_encode($term_slugs));
+                    ?>
+                        <a class="material__list-item" href="<?= esc_url($link_url) ?>" data-categories="<?= $data_categories ?>">
+                            <?php if (!empty($gallery)): ?>
+                                <div class="material__list-item-slider">
+                                    <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                            <?php foreach ($gallery as $img_id): ?>
+                                                <div class="swiper-slide">
+                                                    <?= wp_get_attachment_image($img_id, 'large') ?>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                    <button class="material__slider-prev" type="button" aria-label="Попередній слайд"></button>
+                                    <button class="material__slider-next" type="button" aria-label="Наступний слайд"></button>
+                                </div>
+                            <?php endif; ?>
+                            <h3><?= esc_html($title) ?></h3>
+                            <?php if (!empty($short_description)): ?>
+                                <p><?= esc_html($short_description) ?></p>
+                            <?php endif; ?>
+                            <div class="material__list-item-footer">
+                                <?php if (!empty($price)): ?>
+                                    <span class="material__list-item-price"><?= esc_html($price) ?></span>
+                                <?php endif; ?>
+                                <span class="material__list-item-btn btn-default"><?= esc_html($btn_details) ?></span>
+                            </div>
+                        </a>
+                    <?php endwhile; wp_reset_postdata(); ?>
+                </div>
             <?php endif; ?>
         </div>
     </div>

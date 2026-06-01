@@ -1,5 +1,6 @@
 .page__hero {
   overflow: hidden;
+  margin-top: 24px;
 }
 
 .page__wrap {

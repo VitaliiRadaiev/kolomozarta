@@ -777,7 +777,7 @@ presto-player::part(wrapper) {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 10px;
+  gap: 10px;
 }
 .footer__social {
   display: -webkit-box;
@@ -797,6 +797,54 @@ presto-player::part(wrapper) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.footer-phone-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 2px;
+  -webkit-column-gap: 12px;
+     -moz-column-gap: 12px;
+          column-gap: 12px;
+}
+.footer-phone-contacts li {
+  cursor: pointer;
+  position: relative;
+}
+.footer-phone-contacts li:first-child {
+  padding-left: 0;
+}
+.footer-phone-contacts li:last-child {
+  padding-right: 0;
+}
+.footer-phone-contacts li:last-child::after {
+  display: none;
+}
+.footer-phone-contacts a {
+  color: #212934;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+.footer-phone-contacts a img {
+  height: 1.2em;
+  width: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 @media only screen and (min-width: 360px) {
   .order__form-title {

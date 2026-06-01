@@ -94,7 +94,7 @@ function init_post_types()
             'not_found_in_trash' => 'В кошику не знайдено Товарів',
             'menu_name'          => 'Товари',
         ),
-        'public'            => true,
+        'public'            => false,
         'publicly_queryable' => true,
         'exclude_from_search' => false,
         'show_ui'           => true,
@@ -106,14 +106,14 @@ function init_post_types()
         'menu_position'     => 5,
         'menu_icon'         => 'dashicons-products',
         'hierarchical'      => false,
-        'supports'          => array('title', 'thumbnail'),
-        'taxonomies'        => array('product_category', 'product_tag'),
+        'supports'          => array('title'),
+        'taxonomies'        => array('product_category'),
         'has_archive'       => false,
         'rewrite'           => array(
             'slug'       => 'product',
             'with_front' => false,
             'pages'      => true,
         ),
-        'query_var' => true,
+        'query_var' => false,
     ));
 }
