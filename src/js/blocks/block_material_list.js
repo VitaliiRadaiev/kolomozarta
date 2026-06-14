@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
                 el: swiperEl.querySelector('.swiper-pagination'),
                 clickable: true,
+                 dynamicBullets: true,
             },
         });
 
