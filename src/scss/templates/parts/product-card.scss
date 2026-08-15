@@ -1,0 +1,125 @@
+@use '../../base/_variables' as *;
+
+.product-card {
+    padding: 30px;
+    border-radius: 24px;
+    background: $primary-ultra-light;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: $ease-in;
+    text-decoration: none;
+    color: inherit;
+    min-width: 0;
+
+    &:hover {
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .1);
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    &__desc {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 10px;
+        color: $text-accent;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 16px;
+    }
+
+    &__price {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    &__slider {
+        position: relative;
+        margin-bottom: 24px;
+
+        & .swiper {
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        & .swiper-slide {
+            height: 170px;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+
+            @include minw($sm-pc) {
+                height: 200px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        & .swiper-pagination {
+            bottom: 10px;
+        }
+
+        & .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.55);
+            opacity: 1;
+        }
+
+        & .swiper-pagination-bullet-active {
+            background: rgba(255, 255, 255, 0.9);
+        }
+    }
+
+    &__slider-prev,
+    &__slider-next {
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $primary;
+        border: none;
+        cursor: pointer;
+        background-image: $icon-chevron-down;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+        padding: 0;
+        transition: $ease-in;
+
+        &:hover {
+            background-color: $primary-medium;
+        }
+
+        &.swiper-button-disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+    }
+
+    &__slider-prev {
+        left: 8px;
+        transform: translateY(-50%) rotate(90deg);
+    }
+
+    &__slider-next {
+        right: 8px;
+        transform: translateY(-50%) rotate(-90deg);
+    }
+}

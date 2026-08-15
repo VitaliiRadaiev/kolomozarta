@@ -1,8 +1,29 @@
 @use "base/_variables" as *;
 
-.h2 {
-    font-size: 34px;
+.page__title,
+.page-title {
+    @include fluid-font(36, 54, 360, 1200);
+    max-width: 1020px;
+
+    &.bottom-line {
+        padding-bottom: 30px;
+    }
+}
+
+.h1 {
+    @include fluid-font(34, 42, 360, 1200);
     line-height: 1.2em;
+    font-weight: bold;
+
+    &.bottom-line {
+        padding-bottom: 30px;
+    }
+}
+
+.h2 {
+    @include fluid-font(24, 34, 360, 1440);
+    line-height: 1.2em;
+    font-weight: bold;
 
     &.bottom-line {
         padding-bottom: 30px;
@@ -10,13 +31,16 @@
 }
 
 .h3 {
-    font-size: 24px;
+    @include fluid-font(20, 24, 360, 1440);
     line-height: 1.2em;
+    font-weight: bold;
 
     &.bottom-line {
-        padding-bottom: 20px;
+        padding-bottom: 30px;
     }
 }
+
+
 
 .bottom-line {
     position: relative;
@@ -34,4 +58,32 @@
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
     }
+
+    &.text-left {
+        &::after {
+            left: 0;
+            right: auto;
+            transform: translateX(0%);
+        }
+    }
+
+    &.text-right {
+        &::after {
+            left: auto;
+            right: 0;
+            transform: translateX(0%);
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
 }

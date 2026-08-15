@@ -1,7 +1,4 @@
 <?php
-wp_enqueue_style('swiper_bundle_style', get_theme_file_uri() . '/dist/css/libs/swiper-bundle.css');
-wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, false);
-
 wp_enqueue_script('material_list_js', get_theme_file_uri('./dist/js/blocks/block_material_list.js'), array('main_js'), null, false);
 wp_enqueue_style('material_list_style', get_theme_file_uri() . '/dist/css/blocks/block_material_list.css');
 
@@ -56,39 +53,17 @@ $product_categories = get_terms([
                         }
                         $post_terms     = wp_get_post_terms($post_id, 'product_category');
                         $term_slugs     = (!is_wp_error($post_terms) && !empty($post_terms))
-                                            ? wp_list_pluck($post_terms, 'slug')
-                                            : [];
+                            ? wp_list_pluck($post_terms, 'slug')
+                            : [];
                         $data_categories = esc_attr(wp_json_encode($term_slugs));
                     ?>
-                        <a class="material__list-item" href="<?= esc_url($link_url) ?>" data-categories="<?= $data_categories ?>">
-                            <?php if (!empty($gallery)): ?>
-                                <div class="material__list-item-slider">
-                                    <div class="swiper">
-                                        <div class="swiper-wrapper">
-                                            <?php foreach ($gallery as $img_id): ?>
-                                                <div class="swiper-slide">
-                                                    <?= wp_get_attachment_image($img_id, 'large') ?>
-                                                </div>
-                                            <?php endforeach; ?>
-                                        </div>
-                                        <div class="swiper-pagination"></div>
-                                    </div>
-                                    <button class="material__slider-prev" type="button" aria-label="Попередній слайд"></button>
-                                    <button class="material__slider-next" type="button" aria-label="Наступний слайд"></button>
-                                </div>
-                            <?php endif; ?>
-                            <h3><?= esc_html($title) ?></h3>
-                            <?php if (!empty($short_description)): ?>
-                                <p><?= esc_html($short_description) ?></p>
-                            <?php endif; ?>
-                            <div class="material__list-item-footer">
-                                <?php if (!empty($price)): ?>
-                                    <span class="material__list-item-price"><?= esc_html($price) ?></span>
-                                <?php endif; ?>
-                                <span class="material__list-item-btn btn-default"><?= esc_html($btn_details) ?></span>
-                            </div>
-                        </a>
-                    <?php endwhile; wp_reset_postdata(); ?>
+                        <div class="material__list-item" data-categories="<?= $data_categories ?>">
+                            <?php get_template_part(get_part_path('product-card'), null, [
+                                'post_id' => $post_id,
+                            ]) ?>
+                        </div>
+                    <?php endwhile;
+                    wp_reset_postdata(); ?>
                 </div>
             <?php endif; ?>
         </div>

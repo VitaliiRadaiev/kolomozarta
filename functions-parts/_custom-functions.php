@@ -62,11 +62,11 @@ function get_image($image_id, $classes = '', $echo = true, $size = 'full', $attr
 
 function check($var)
 {
-  if (is_string($var)) {
-    $var = trim($var);
-  }
+    if (is_string($var)) {
+        $var = trim($var);
+    }
 
-  return $var && isset($var) && !empty($var);
+    return $var && isset($var) && !empty($var);
 }
 
 function add_inner_wrap_to_li($text)
@@ -74,4 +74,14 @@ function add_inner_wrap_to_li($text)
     $value = preg_replace('/<li([^>]*)>(.*?)<\/li>/is', '<li$1><div>$2</div></li>', $text);
 
     return $value;
+}
+
+function get_section_id($data)
+{
+    return (isset($data['section_utils']) && isset($data['section_utils']['id']) && check($data['section_utils']['id'])) ? 'id="' . $data['section_utils']['id'] . '"' : '';
+}
+
+function get_part_path($file_name)
+{
+  return 'templates/parts/' . $file_name;
 }
