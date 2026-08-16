@@ -1,26 +1,31 @@
 <?php
-wp_enqueue_script('material_list_js', get_theme_file_uri('./dist/js/blocks/block_material_list.js'), array('main_js'), null, false);
-wp_enqueue_style('material_list_style', get_theme_file_uri() . '/dist/css/blocks/block_material_list.css');
-
 global $data;
-$material_title   = $data['material_title'];
-$btn_details      = get_field('btn_details', 'option');
-$text_all         = get_field('text_all', 'option');
-$text_categories  = get_field('text_categories', 'option');
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$products_query = new WP_Query([
-    'post_type'      => 'product',
-    'posts_per_page' => -1,
-    'post_status'    => 'publish',
-]);
+    wp_enqueue_script('material_list_js', get_theme_file_uri('./dist/js/blocks/block_material_list.js'), array('main_js'), null, false);
+    wp_enqueue_style('material_list_style', get_theme_file_uri() . '/dist/css/blocks/block_material_list.css');
 
-$product_categories = get_terms([
-    'taxonomy'   => 'product_category',
-    'hide_empty' => true,
-]);
+    $material_title   = $data['material_title'];
+    $btn_details      = get_field('btn_details', 'option');
+    $text_all         = get_field('text_all', 'option');
+    $text_categories  = get_field('text_categories', 'option');
+
+    $products_query = new WP_Query([
+        'post_type'      => 'product',
+        'posts_per_page' => -1,
+        'post_status'    => 'publish',
+    ]);
+
+    $product_categories = get_terms([
+        'taxonomy'   => 'product_category',
+        'hide_empty' => true,
+    ]);
 
 ?>
-<section class="material">
+<section <?= get_section_id($data) ?> class="material <?= get_section_space_top($data) ?>">
     <div class="container">
         <div class="material__wrap">
             <div data-aos="fade-up" class="material__title">
@@ -69,3 +74,4 @@ $product_categories = get_terms([
         </div>
     </div>
 </section>
+<?php endif; ?>

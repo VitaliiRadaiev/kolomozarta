@@ -1,17 +1,23 @@
 <?php
-wp_enqueue_style('year_course_style', get_theme_file_uri() . '/dist/css/blocks/block_year_course.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$order_btn = get_field('order_btn', 'option');
-$year_course_description = $data['year_course_description'];
-$year_course_img = $data['year_course_img'];
-$year_course_video_title = $data['year_course_video_title'];
-$year_course_video = $data['year_course_video'];
-$year_course_list_title = $data['year_course_list_title'];
-$year_course_list = $data['year_course_list'];
-$year_course_price_title = $data['year_course_price_title'];
-$year_course_price = $data['year_course_price'];
+    wp_enqueue_style('year_course_style', get_theme_file_uri() . '/dist/css/blocks/block_year_course.css');
+
+    $order_btn = get_field('order_btn', 'option');
+    $year_course_description = $data['year_course_description'];
+    $year_course_img = $data['year_course_img'];
+    $year_course_video_title = $data['year_course_video_title'];
+    $year_course_video = $data['year_course_video'];
+    $year_course_list_title = $data['year_course_list_title'];
+    $year_course_list = $data['year_course_list'];
+    $year_course_price_title = $data['year_course_price_title'];
+    $year_course_price = $data['year_course_price'];
 ?>
+    <section <?= get_section_id($data) ?> class="year-course <?= get_section_space_top($data) ?>">
 
 <section class="year-course">
     <div class="container">
@@ -69,3 +75,4 @@ $year_course_price = $data['year_course_price'];
         </div>
     </div>
 </section>
+<?php endif; ?>

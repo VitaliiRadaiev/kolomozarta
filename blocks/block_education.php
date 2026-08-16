@@ -1,16 +1,19 @@
 <?php
-
-wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_education.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$btn_details = get_field('btn_details', 'option');
-$education_title = $data['education_title'];
-$education_subtitle = $data['education_subtitle'];
-$education_info = $data['education_info'];
-$education_works = $data['education_works'];
+    wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_education.css');
+
+    $btn_details = get_field('btn_details', 'option');
+    $education_title = $data['education_title'];
+    $education_subtitle = $data['education_subtitle'];
+    $education_info = $data['education_info'];
+    $education_works = $data['education_works'];
 ?>
-
-<section class="education">
+    <section <?= get_section_id($data) ?> class="education <?= get_section_space_top($data) ?>">
     <div class="container">
         <div class="education__wrap">
             <?php if ($education_title): ?>
@@ -62,3 +65,4 @@ $education_works = $data['education_works'];
         </div>
     </div>
 </section>
+<?php endif; ?>

@@ -1,16 +1,20 @@
 <?php
-wp_enqueue_style('group_description_style', get_theme_file_uri() . '/dist/css/blocks/block_group_description.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$group_desc_title = $data['group_desc_title'];
-$group_desc_subtitle = $data['group_desc_subtitle'];
-$group_desc_img = $data['group_desc_img']['sizes']['large'];
-$group_desc_content = $data['group_desc_content'];
-$group_desc_list_title = $data['group_desc_list_title'];
-$group_desc_list = $data['group_desc_list'];
+    wp_enqueue_style('group_description_style', get_theme_file_uri() . '/dist/css/blocks/block_group_description.css');
+
+    $group_desc_title = $data['group_desc_title'];
+    $group_desc_subtitle = $data['group_desc_subtitle'];
+    $group_desc_img = $data['group_desc_img']['sizes']['large'];
+    $group_desc_content = $data['group_desc_content'];
+    $group_desc_list_title = $data['group_desc_list_title'];
+    $group_desc_list = $data['group_desc_list'];
 ?>
-
-<section class="group-description">
+<section <?= get_section_id($data) ?> class="group-description <?= get_section_space_top($data) ?>">
     <div class="container">
         <div data-aos="fade-up" class="group-description__wrap">
             <div class="group-description__img">
@@ -36,3 +40,4 @@ $group_desc_list = $data['group_desc_list'];
         </div>
     </div>
 </section>
+<?php endif; ?>

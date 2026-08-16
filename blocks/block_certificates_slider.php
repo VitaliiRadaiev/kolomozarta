@@ -1,17 +1,22 @@
 <?php
-wp_enqueue_style('swiper_bundle_style', get_theme_file_uri() . '/dist/css/libs/swiper-bundle.css');
-wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, false);
+global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-wp_enqueue_style('fancybox_style', get_theme_file_uri() . '/dist/css/libs/fancybox.css');
-wp_enqueue_script('fancybox_js', get_theme_file_uri('./dist/js/libs/fancybox.js'), array('main_js'), null, false);
+    wp_enqueue_style('swiper_bundle_style', get_theme_file_uri() . '/dist/css/libs/swiper-bundle.css');
+    wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, false);
 
+    wp_enqueue_style('fancybox_style', get_theme_file_uri() . '/dist/css/libs/fancybox.css');
+    wp_enqueue_script('fancybox_js', get_theme_file_uri('./dist/js/libs/fancybox.js'), array('main_js'), null, false);
 
-wp_enqueue_style('certificates_slider_style', get_theme_file_uri() . '/dist/css/blocks/block_certificates_slider.css');
-wp_enqueue_script('certificates_slider_js', get_theme_file_uri('./dist/js/blocks/block_certificates_slider.js'), array('main_js'), null, false);
+    wp_enqueue_style('certificates_slider_style', get_theme_file_uri() . '/dist/css/blocks/block_certificates_slider.css');
+    wp_enqueue_script('certificates_slider_js', get_theme_file_uri('./dist/js/blocks/block_certificates_slider.js'), array('main_js'), null, false);
 
-if (check($data['certificates'] ?? null)):
+    if (check($data['certificates'] ?? null)):
 ?>
-    <section class="certificates-slider">
+    <section <?= get_section_id($data) ?> class="certificates-slider <?= get_section_space_top($data) ?>">
         <div class="container">
             <?php if (check($data['title'] ?? null)): ?>
                 <h2 class="h2 text-center bottom-line"><?= $data['title'] ?></h2>
@@ -51,4 +56,5 @@ if (check($data['certificates'] ?? null)):
             </div>
         </div>
     </section>
+    <?php endif; ?>
 <?php endif; ?>

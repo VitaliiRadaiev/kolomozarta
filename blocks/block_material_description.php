@@ -1,11 +1,16 @@
 <?php
-wp_enqueue_style('material_description_style', get_theme_file_uri() . '/dist/css/blocks/block_material_description.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$btn_details = get_field('btn_details', 'option');
-$material_desc = $data['material_desc'];
+    wp_enqueue_style('material_description_style', get_theme_file_uri() . '/dist/css/blocks/block_material_description.css');
+
+    $btn_details = get_field('btn_details', 'option');
+    $material_desc = $data['material_desc'];
 ?>
-<section class="material-description">
+<section <?= get_section_id($data) ?> class="material-description <?= get_section_space_top($data) ?>">
     <div class="container">
         <?php if (!empty($material_desc)): ?>
             <div class="material-description__list">
@@ -59,3 +64,4 @@ $material_desc = $data['material_desc'];
         <?php endif; ?>
     </div>
 </section>
+<?php endif; ?>

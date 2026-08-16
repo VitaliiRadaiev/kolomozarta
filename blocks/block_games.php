@@ -1,16 +1,21 @@
 <?php
-wp_enqueue_style('games_style', get_theme_file_uri() . '/dist/css/blocks/block_games.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$games_img = $data["games_img"]['url'];
-$games_subtitle = $data["games_subtitle"];
-$games_list = $data["games_list"];
-$games_price = $data["games_price"];
-$games_pdf = $data["games_pdf"]['url'];
-$order_btn = get_field('order_btn', 'option');
-$instruction_btn = get_field('instruction_btn ', 'option');
+    wp_enqueue_style('games_style', get_theme_file_uri() . '/dist/css/blocks/block_games.css');
+
+    $games_img = $data["games_img"]['url'];
+    $games_subtitle = $data["games_subtitle"];
+    $games_list = $data["games_list"];
+    $games_price = $data["games_price"];
+    $games_pdf = $data["games_pdf"]['url'];
+    $order_btn = get_field('order_btn', 'option');
+    $instruction_btn = get_field('instruction_btn ', 'option');
 ?>
-<section class="games">
+<section <?= get_section_id($data) ?> class="games <?= get_section_space_top($data) ?>">
     <div class="container">
         <div data-aos="fade-up" class="games__wrap">
             <div class="games__list">
@@ -46,3 +51,4 @@ $instruction_btn = get_field('instruction_btn ', 'option');
         </div>
     </div>
 </section>
+<?php endif; ?>

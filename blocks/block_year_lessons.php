@@ -1,13 +1,17 @@
 <?php
-wp_enqueue_style('year_lessons_style', get_theme_file_uri() . '/dist/css/blocks/block_year_lessons.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$year_lessons_title = $data['year_lessons_title'];
-$year_lessons_item = $data['year_lessons_item'];
-$year_lessons_additional = $data['year_lessons_additional'];
+    wp_enqueue_style('year_lessons_style', get_theme_file_uri() . '/dist/css/blocks/block_year_lessons.css');
+
+    $year_lessons_title = $data['year_lessons_title'];
+    $year_lessons_item = $data['year_lessons_item'];
+    $year_lessons_additional = $data['year_lessons_additional'];
 ?>
-
-<section class="year-lessons">
+    <section <?= get_section_id($data) ?> class="year-lessons <?= get_section_space_top($data) ?>">
     <div class="container">
         <div data-aos="fade-up" class="year-lessons__wrap">
             <div class="year-lessons__list">
@@ -44,3 +48,4 @@ $year_lessons_additional = $data['year_lessons_additional'];
         </div>
     </div>
 </section>
+<?php endif; ?>

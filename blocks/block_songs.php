@@ -1,11 +1,16 @@
 <?php
-wp_enqueue_style('songs_style', get_theme_file_uri() . '/dist/css/blocks/block_songs.css');
 global $data;
-$songs_list = $data['songs_list'];
-$order_btn = get_field('order_btn', 'option');
-?>
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-<section class="songs">
+    wp_enqueue_style('songs_style', get_theme_file_uri() . '/dist/css/blocks/block_songs.css');
+
+    $songs_list = $data['songs_list'];
+    $order_btn = get_field('order_btn', 'option');
+?>
+    <section <?= get_section_id($data) ?> class="songs <?= get_section_space_top($data) ?>">
     <div data-aos="fade-up" class="container">
         <?php if (!empty($songs_list)): ?>
             <ul class="songs__wrap">
@@ -59,4 +64,5 @@ $order_btn = get_field('order_btn', 'option');
         <?php endif; ?>
     </div>
 </section>
+<?php endif; ?>
 

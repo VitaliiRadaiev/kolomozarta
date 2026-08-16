@@ -1,15 +1,19 @@
 <?php
-wp_enqueue_style('about_style', get_theme_file_uri() . '/dist/css/blocks/block_text.css');
-
 global $data;
-$space_top = $data['block_text_space_top'];
-$space_bottom = $data['block_text_space_bottom'];
-$text_align = $data['block_text_align'];
-$title = $data['block_text_title'];
-$text = $data['block_text_text'];
-?>
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-<section class="block-text space-top-<?= $space_top ?> space-bottom-<?= $space_bottom ?> text-<?= $text_align ?>">
+    wp_enqueue_style('about_style', get_theme_file_uri() . '/dist/css/blocks/block_text.css');
+
+    $space_top = $data['block_text_space_top'];
+    $space_bottom = $data['block_text_space_bottom'];
+    $text_align = $data['block_text_align'];
+    $title = $data['block_text_title'];
+    $text = $data['block_text_text'];
+?>
+    <section <?= get_section_id($data) ?> class="block-text space-top-<?= $space_top ?> space-bottom-<?= $space_bottom ?> text-<?= $text_align ?> <?= get_section_space_top($data) ?>">>
     <div data-aos="fade-up" class="container">
             <?php if ($title): ?>
                 <div class="block-text__title">
@@ -25,3 +29,4 @@ $text = $data['block_text_text'];
 
     </div>
 </section>
+<?php endif; ?>

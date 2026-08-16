@@ -1,14 +1,18 @@
 <?php
-wp_enqueue_style('year_updates_style', get_theme_file_uri() . '/dist/css/blocks/block_year_updates.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$year_updates_title = $data['year_updates_title'];
-$year_updates_list = $data['year_updates_list'];
-$year_updates_buttons = $data['year_updates_buttons'];
-$order_btn = get_field('order_btn', 'option');
+    wp_enqueue_style('year_updates_style', get_theme_file_uri() . '/dist/css/blocks/block_year_updates.css');
+
+    $year_updates_title = $data['year_updates_title'];
+    $year_updates_list = $data['year_updates_list'];
+    $year_updates_buttons = $data['year_updates_buttons'];
+    $order_btn = get_field('order_btn', 'option');
 ?>
-
-<section class="year-updates">
+    <section <?= get_section_id($data) ?> class="year-updates <?= get_section_space_top($data) ?>">
     <div class="container">
         <div class="year-updates__wrap">
             <?php if ($year_updates_title): ?>
@@ -45,3 +49,4 @@ $order_btn = get_field('order_btn', 'option');
         </div>
     </div>
 </section>
+<?php endif; ?>

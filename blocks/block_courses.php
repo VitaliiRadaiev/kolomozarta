@@ -1,15 +1,17 @@
 <?php
-wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_courses.css');
-
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$btn_details = get_field('btn_details', 'option');
-$courses_title = $data['courses_title'];
-$courses_list = $data['courses_list'];
+    wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_courses.css');
 
+    $btn_details = get_field('btn_details', 'option');
+    $courses_title = $data['courses_title'];
+    $courses_list = $data['courses_list'];
 ?>
-
-<section class="courses">
+    <section <?= get_section_id($data) ?> class="courses <?= get_section_space_top($data) ?>">
     <div class="container">
         <div class="courses__wrap">
             <?php if ($courses_title): ?>
@@ -55,3 +57,4 @@ $courses_list = $data['courses_list'];
         </div>
     </div>
 </section>
+<?php endif; ?>

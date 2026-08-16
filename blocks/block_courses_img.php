@@ -1,14 +1,17 @@
 <?php
-wp_enqueue_style('courses_img_style', get_theme_file_uri() . '/dist/css/blocks/block_courses_img.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$courses_list_img = $data['courses_list_img']['sizes']['large'];
-$courses_list_title = $data['courses_list_tile'];
-$courses_list_wrap = $data['courses_list_wrap'];
+    wp_enqueue_style('courses_img_style', get_theme_file_uri() . '/dist/css/blocks/block_courses_img.css');
 
+    $courses_list_img = $data['courses_list_img']['sizes']['large'];
+    $courses_list_title = $data['courses_list_tile'];
+    $courses_list_wrap = $data['courses_list_wrap'];
 ?>
-
-<section class="courses-img">
+    <section <?= get_section_id($data) ?> class="courses-img <?= get_section_space_top($data) ?>">
     <div class="container">
         <div data-aos="fade-up" class="courses-img__wrap">
             <?php if ($courses_list_img): ?>
@@ -27,3 +30,4 @@ $courses_list_wrap = $data['courses_list_wrap'];
         </div>
     </div>
 </section>
+<?php endif; ?>

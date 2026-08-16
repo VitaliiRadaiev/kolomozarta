@@ -1,19 +1,22 @@
 <?php
-
-wp_enqueue_style('contacts_style', get_theme_file_uri() . '/dist/css/blocks/block_contacts.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$contact_numbers = $data['contact_numbers'];
-$contact_numbers_title = $contact_numbers['contact_numbers_title'];
-$contact_numbers_subtitle = $contact_numbers['contact_numbers_subtitle'];
-$whatsapp = get_field('whatsapp', 'option');
-$viber = get_field('viber', 'option');
-$social_contacts = $data['social_contacts'];
-$contacts_social_title = $data['contacts_social_title'];
-$contacts_img = $data['contacts_img'];
+    wp_enqueue_style('contacts_style', get_theme_file_uri() . '/dist/css/blocks/block_contacts.css');
+
+    $contact_numbers = $data['contact_numbers'];
+    $contact_numbers_title = $contact_numbers['contact_numbers_title'];
+    $contact_numbers_subtitle = $contact_numbers['contact_numbers_subtitle'];
+    $whatsapp = get_field('whatsapp', 'option');
+    $viber = get_field('viber', 'option');
+    $social_contacts = $data['social_contacts'];
+    $contacts_social_title = $data['contacts_social_title'];
+    $contacts_img = $data['contacts_img'];
 ?>
-
-<section class="contacts">
+    <section <?= get_section_id($data) ?> class="contacts <?= get_section_space_top($data) ?>">
     <div class="container">
         <div data-aos="fade-up" class="contacts__wrap">
             <div class="contacts__info">
@@ -69,3 +72,4 @@ $contacts_img = $data['contacts_img'];
         </div>
     </div>
 </section>
+<?php endif; ?>

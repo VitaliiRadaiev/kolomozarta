@@ -1,13 +1,16 @@
 <?php
-
-wp_enqueue_style('groups_style', get_theme_file_uri() . '/dist/css/blocks/block_groups.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$groups_title = $data['groups_title'];
-$groups_list = $data['groups_list'];
+    wp_enqueue_style('groups_style', get_theme_file_uri() . '/dist/css/blocks/block_groups.css');
 
+    $groups_title = $data['groups_title'];
+    $groups_list = $data['groups_list'];
 ?>
-<section class="groups">
+<section <?= get_section_id($data) ?> class="groups <?= get_section_space_top($data) ?>">
     <div class="container">
         <div class="groups__wrap">
             <?php if ($groups_title): ?>
@@ -47,3 +50,4 @@ $groups_list = $data['groups_list'];
         </div>
     </div>
 </section>
+<?php endif; ?>

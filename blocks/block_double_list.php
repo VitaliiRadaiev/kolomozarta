@@ -1,13 +1,15 @@
 <?php
-
-wp_enqueue_style('double_list_style', get_theme_file_uri() . '/dist/css/blocks/block_double_list.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$double_list_wrap = $data["double_list_wrap"];
+    wp_enqueue_style('double_list_style', get_theme_file_uri() . '/dist/css/blocks/block_double_list.css');
 
+    $double_list_wrap = $data["double_list_wrap"];
 ?>
-
-<section class="double-list">
+    <section <?= get_section_id($data) ?> class="double-list <?= get_section_space_top($data) ?>">
     <div class="container">
         <?php if (!empty($double_list_wrap)): ?>
             <div data-aos="fade-up" class="double-list__wrap">
@@ -32,3 +34,4 @@ $double_list_wrap = $data["double_list_wrap"];
         <?php endif; ?>
     </div>
 </section>
+<?php endif; ?>

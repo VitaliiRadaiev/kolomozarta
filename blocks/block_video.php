@@ -1,13 +1,16 @@
 <?php
-wp_enqueue_style('video_style', get_theme_file_uri() . '/dist/css/blocks/block_video.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$video_title = $data['video_title'];
-$video_link = $data['video_link'];
+    wp_enqueue_style('video_style', get_theme_file_uri() . '/dist/css/blocks/block_video.css');
 
+    $video_title = $data['video_title'];
+    $video_link = $data['video_link'];
 ?>
-
-<section class="video">
+    <section <?= get_section_id($data) ?> class="video <?= get_section_space_top($data) ?>">
     <div class="container">
         <div class="video__wrap">
             <?php if ($video_title) : ?>
@@ -21,3 +24,4 @@ $video_link = $data['video_link'];
         </div>
     </div>
 </section>
+<?php endif; ?>

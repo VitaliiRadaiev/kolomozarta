@@ -1,17 +1,19 @@
 <?php
-
-wp_enqueue_style('about_style', get_theme_file_uri() . '/dist/css/blocks/block_about.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$about_img = $data['about_img'];
-$about_img_url = $about_img['url'];
-$about_subtitle = $data['about_subtitle'];
-$about_title = $data['about_title'];
-$about_description = $data['about_description'];
+    wp_enqueue_style('about_style', get_theme_file_uri() . '/dist/css/blocks/block_about.css');
 
+    $about_img = $data['about_img'];
+    $about_img_url = $about_img['url'];
+    $about_subtitle = $data['about_subtitle'];
+    $about_title = $data['about_title'];
+    $about_description = $data['about_description'];
 ?>
-
-<section class="about">
+    <section <?= get_section_id($data) ?> class="about <?= get_section_space_top($data) ?>">
     <div data-aos="fade-up" class="container">
         <div class="about__wrap">
             <?php if ($about_img): ?>
@@ -36,3 +38,4 @@ $about_description = $data['about_description'];
 
     </div>
 </section>
+<?php endif; ?>

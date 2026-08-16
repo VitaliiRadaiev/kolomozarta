@@ -1,14 +1,18 @@
 <?php
-wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_courses.css');
 global $data;
+if (!$data['section_utils']['is_hide']):
+    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+        return;
+    }
 
-$text_more_details = get_field('text_more_details', 'option');
-$text_load_more = get_field('text_load_more', 'option');
-$interesting_list = $data['interesting_list'];
-$chunk_size = 6;
+    wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_courses.css');
+
+    $text_more_details = get_field('text_more_details', 'option');
+    $text_load_more = get_field('text_load_more', 'option');
+    $interesting_list = $data['interesting_list'];
+    $chunk_size = 6;
 ?>
-
-<section data-section="interesting" data-page-id="<?= get_the_ID() ?>" class="interesting">
+<section <?= get_section_id($data) ?> data-section="interesting" data-page-id="<?= get_the_ID() ?>" class="interesting <?= get_section_space_top($data) ?>">
     <div class="container">
         <div data-aos="fade-up" class="interesting__wrap">
             <?php if (!empty($interesting_list)): 
@@ -53,3 +57,4 @@ $chunk_size = 6;
         </div>
     </div>
 </section>
+<?php endif; ?>
