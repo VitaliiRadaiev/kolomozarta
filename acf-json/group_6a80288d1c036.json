@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Товари слайдер\"",
     "fields": [
         {
+            "key": "field_6a81826d18cfc",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_6a80288d3775f",
             "label": "",
             "name": "",
@@ -165,5 +187,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786789944
+    "modified": 1786872447
 }

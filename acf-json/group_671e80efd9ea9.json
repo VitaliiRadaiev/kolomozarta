@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Заголовок сторінки та навігація\"",
     "fields": [
         {
+            "key": "field_6a8183b0232eb",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_671e80f00e676",
             "label": "Заголовок сторінки",
             "name": "page_title",
@@ -47,5 +69,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730053076
+    "modified": 1786872771
 }

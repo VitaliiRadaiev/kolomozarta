@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок текстовий",
     "fields": [
         {
+            "key": "field_6a8182d925d03",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_67f7543621b0c",
             "label": "Відступ зверху",
             "name": "block_text_space_top",
@@ -154,5 +176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1757347732
+    "modified": 1786872557
 }

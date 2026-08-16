@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Річний відеокурс\"",
     "fields": [
         {
+            "key": "field_6a818231c32e2",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_672b56965c13b",
             "label": "Опис річного курсу",
             "name": "year_course_description",
@@ -224,5 +246,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730897826
+    "modified": 1786872391
 }

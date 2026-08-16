@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Як займаються дітки?\"",
     "fields": [
         {
+            "key": "field_6a81829f27695",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_672b9129bd9bf",
             "label": "Заголовок",
             "name": "year_lessons_title",
@@ -175,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730909080
+    "modified": 1786872499
 }
