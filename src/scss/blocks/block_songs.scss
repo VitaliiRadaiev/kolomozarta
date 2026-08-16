@@ -2,11 +2,8 @@
 
 
 .songs {
-  padding-bottom: 36px;
-  padding-top: 40px;
-  @include minw($sm-pc) {
-    padding-top: 80px;
-  }
+
+  
 
   &__wrap {
     display: grid;

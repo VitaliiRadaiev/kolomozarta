@@ -1,10 +1,8 @@
 @use '../base/_variables' as *;
 
 .year-lessons {
-  margin-bottom: 50px;
-  &:not(:first-child) {
-    margin-top: 80px;
-  }
+  
+  
 
   iframe {
     width: 100%;
@@ -12,11 +10,9 @@
 
   &__list {
     h2 {
-      margin-bottom: 50px;
       text-align: center;
 
       @include minw($sm-pc) {
-        margin-bottom: 75px;
       }
     }
 

@@ -63,9 +63,6 @@
   background-color: transparent;
 }
 
-.year-updates:not(:first-child) {
-  margin-top: 55px;
-}
 .year-updates__wrap h2 {
   text-align: center;
   margin-bottom: 50px;

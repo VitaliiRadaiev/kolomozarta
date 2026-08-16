@@ -25,9 +25,6 @@
           mask-repeat: no-repeat;
 }
 
-.about {
-  margin-bottom: 80px;
-}
 .about__wrap {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,13 +1,9 @@
 @use '../base/_variables' as *;
 
 .courses-img {
-  padding-top: 40px;
-  padding-bottom: 40px;
 
-  @include minw($sm-pc) {
-    padding-top: 80px;
-    padding-bottom: 70px;
-  }
+
+  
 
   &__wrap {
     display: flex;

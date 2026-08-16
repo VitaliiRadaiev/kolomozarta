@@ -57,10 +57,6 @@
   background: #FFF8E8;
 }
 
-.songs {
-  padding-bottom: 36px;
-  padding-top: 40px;
-}
 .songs__wrap {
   display: grid;
   grid-template-columns: 1fr;
@@ -196,9 +192,6 @@
   }
 }
 @media only screen and (min-width: 1024px) {
-  .songs {
-    padding-top: 80px;
-  }
   .songs__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 calc(33.33333% - 13.3333333333px);

@@ -1,7 +1,6 @@
 @use '../base/_variables' as *;
 
 .hero {
-  margin-bottom: 20px;
 
   h1 {
     @extend %line-decoration;

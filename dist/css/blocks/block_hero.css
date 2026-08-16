@@ -14,9 +14,6 @@
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.hero {
-  margin-bottom: 20px;
-}
 .hero h1 {
   padding-bottom: 16px;
   margin-bottom: 32px;

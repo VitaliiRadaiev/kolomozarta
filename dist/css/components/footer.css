@@ -757,7 +757,7 @@ presto-player::part(wrapper) {
 }
 
 .footer {
-  background-color: #FFF8E8;
+  background-color: rgba(249, 220, 1, 0.1019607843);
   content-visibility: auto;
 }
 .footer__menu {

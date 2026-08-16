@@ -123,6 +123,11 @@
   -webkit-filter: invert(24%) sepia(0%) saturate(0%) hue-rotate(192deg) brightness(102%) contrast(89%);
           filter: invert(24%) sepia(0%) saturate(0%) hue-rotate(192deg) brightness(102%) contrast(89%);
 }
+
+main:has(> .contacts:last-child) ~ .footer {
+  margin-top: 0 !important;
+}
+
 @media only screen and (min-width: 360px) {
   .contacts__info-numbers h2 {
     font-size: calc(24px + 8 * (100vw - 360px) / (1200 - 360));
@@ -131,6 +136,7 @@
     font-size: calc(24px + 8 * (100vw - 360px) / (1200 - 360));
   }
 }
+
 @media only screen and (min-width: 745px) {
   .contacts__wrap {
     grid-template-columns: repeat(2, 1fr);
@@ -139,11 +145,13 @@
     margin-top: 0;
   }
 }
+
 @media only screen and (min-width: 1024px) {
   .contacts__image {
     min-height: 440px;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   .contacts__info-numbers h2 {
     font-size: 32px;

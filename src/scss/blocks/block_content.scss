@@ -1,11 +1,9 @@
 @use '../base/_variables' as *;
 
 .content {
-  padding-bottom: 90px;
 
-  & *:last-child {
-    margin-bottom: 0;
-  }
+ 
+  
 
   h3 {
     @include fluid-font(24, 28, 360, 1440);

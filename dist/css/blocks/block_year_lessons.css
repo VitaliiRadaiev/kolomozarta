@@ -9,17 +9,10 @@
   top: 0;
 }
 
-.year-lessons {
-  margin-bottom: 50px;
-}
-.year-lessons:not(:first-child) {
-  margin-top: 80px;
-}
 .year-lessons iframe {
   width: 100%;
 }
 .year-lessons__list h2 {
-  margin-bottom: 50px;
   text-align: center;
 }
 .year-lessons__list-wrap {
@@ -78,9 +71,6 @@
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 1024px) {
-  .year-lessons__list h2 {
-    margin-bottom: 75px;
-  }
   .year-lessons__list-wrap {
     grid-template-columns: repeat(2, 1fr);
   }

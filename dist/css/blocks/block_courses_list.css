@@ -18,9 +18,6 @@
 .courses-list__wrap div ul li:last-child {
   margin-bottom: 0;
 }
-.courses-list {
-  padding-bottom: 46px;
-}
 .courses-list__wrap {
   display: grid;
   grid-template-columns: 1fr;

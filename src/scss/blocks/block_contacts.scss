@@ -116,3 +116,7 @@
     }
   }
 }
+
+main:has(>.contacts:last-child) ~ .footer {
+  margin-top: 0 !important;
+}

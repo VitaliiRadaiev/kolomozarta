@@ -25,64 +25,6 @@
             "prefix_name": 0
         },
         {
-            "key": "field_67f7543621b0c",
-            "label": "Відступ зверху",
-            "name": "block_text_space_top",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "no": "no",
-                "sm": "small",
-                "md": "medium",
-                "lg": "large"
-            },
-            "default_value": "no",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_67f7552421b0d",
-            "label": "Відступ знизу",
-            "name": "block_text_space_bottom",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "no": "no",
-                "sm": "small",
-                "md": "medium",
-                "lg": "large"
-            },
-            "default_value": "no",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_67f7554221b0e",
             "label": "Вирівнювання тексту",
             "name": "block_text_align",
@@ -176,5 +118,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786872557
+    "modified": 1786873357
 }

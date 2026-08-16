@@ -29,10 +29,6 @@
 .courses-img__wrap ul li:last-child {
   margin-bottom: 0;
 }
-.courses-img {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
 .courses-img__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,10 +97,6 @@
   }
 }
 @media only screen and (min-width: 1024px) {
-  .courses-img {
-    padding-top: 80px;
-    padding-bottom: 70px;
-  }
   .courses-img__wrap {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

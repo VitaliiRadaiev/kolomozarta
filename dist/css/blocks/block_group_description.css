@@ -32,9 +32,6 @@
           mask-repeat: no-repeat;
 }
 
-.group-description {
-  padding: 34px 0 84px;
-}
 .group-description__wrap {
   display: grid;
   grid-template-columns: 1fr;
