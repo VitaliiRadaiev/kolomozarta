@@ -26,6 +26,7 @@ $text_cabinet = get_field('text_cabinet', 'option');
     <?php
     $text_entrance = get_field('text_entrance', 'options');
     $text_exit = get_field('text_exit', 'options');
+    $text_no_courses = get_field('text_no_courses', 'options');
     $menu_locations = get_nav_menu_locations();
     $menu_id = $menu_locations['headerMenuLocation'];
     $menu_items = wp_get_nav_menu_items($menu_id);
@@ -201,6 +202,11 @@ $text_cabinet = get_field('text_cabinet', 'option');
                                     </li>
                                 <?php else: ?>
                                     <li class="menu-item menu-item-type-post_type">
+                                        <?php if(check($text_no_courses ?? null)):?>
+                                            <p>
+                                                <?= $text_no_courses ?>
+                                            </p>
+                                        <?php endif;?>
                                         <a href="<?= esc_url($logout_url) ?>" target="_self" class=""> <?= $text_exit ?> </a>
                                     </li>
                                 <?php endif; ?>

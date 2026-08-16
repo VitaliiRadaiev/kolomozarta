@@ -24,9 +24,51 @@
             "new_lines": ""
         },
         {
+            "key": "field_6a81963272858",
+            "label": "Попередня ціна",
+            "name": "old_price",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6a19bedcd28d6",
             "label": "Ціна",
             "name": "price",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a81ab021c5cd",
+            "label": "Допис до ціни для форм",
+            "name": "price_subtitle",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -108,5 +150,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1780072766
+    "modified": 1786882911
 }

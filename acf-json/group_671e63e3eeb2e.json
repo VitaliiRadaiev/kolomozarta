@@ -785,6 +785,27 @@
             "append": ""
         },
         {
+            "key": "field_6a81979c3d95c",
+            "label": "Текст \"Користувач не має доступів до жодного курсу\"",
+            "name": "text_no_courses",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "52",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Немає жодного курсу",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68524dd0e215c",
             "label": "Сторінка недоступна",
             "name": "",
@@ -1019,5 +1040,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1780074965
+    "modified": 1786878072
 }

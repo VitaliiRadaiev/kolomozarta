@@ -1,6 +1,6 @@
 <?php
 $title_data = $args['title_data'] ?? [];
-$classes = $args['classes'] ?? 'text-gradient-blue';
+$classes = $args['classes'] ?? '';
 $attributes = $args['attributes'] ?? '';
 $size = $args['size'] ?? 'h2';
 

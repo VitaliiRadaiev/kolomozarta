@@ -880,6 +880,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6a819e4dbdafc": {
+                    "key": "layout_6a819e4dbdafc",
+                    "name": "block_cta",
+                    "label": "Блок \"CTA\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a819e4dbdafe",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a819c424b2fe"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -905,5 +937,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786784353
+    "modified": 1786879612
 }

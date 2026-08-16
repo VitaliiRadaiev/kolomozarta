@@ -94,9 +94,9 @@
                         "id": ""
                     },
                     "choices": {
-                        "left: Ліворуч": "left: Ліворуч",
-                        "center: По середині": "center: По середині",
-                        "right: Праворуч": "right: Праворуч"
+                        "left": "Ліворуч",
+                        "center": "По середині",
+                        "right": "Праворуч"
                     },
                     "default_value": "center",
                     "return_format": "value",
@@ -170,5 +170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786789918
+    "modified": 1786879791
 }

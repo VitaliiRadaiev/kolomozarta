@@ -18,7 +18,7 @@
     }
 
 
-    const popupCloseIcon = document.querySelectorAll('[data-action="close-popup"]');
+    const popupCloseIcon = document.querySelectorAll('[data-action="close-popup"], .closeOrderPopup');
     if (popupCloseIcon.length > 0) {
         for (let index = 0; index < popupCloseIcon.length; index++) {
             const el = popupCloseIcon[index];
@@ -49,7 +49,7 @@
 
     function popupClose(popupActive, doUnlock = true) {
         if (unlock) {
-            popupActive.classList.remove('popup--open');
+            popupActive?.classList.remove('popup--open');
 
             if (doUnlock) {
                 bodyUnlock();

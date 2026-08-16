@@ -55,6 +55,9 @@
 .material__list-item[hidden] {
   display: none;
 }
+.material__list-item .product-card {
+  height: 100%;
+}
 @media only screen and (min-width: 745px) {
   .material__list {
     grid-template-columns: 1fr 1fr;

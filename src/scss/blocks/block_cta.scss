@@ -1,0 +1,48 @@
+@use "../base/_variables" as *;
+
+.block-cta {
+    &__inner {
+        padding: 20px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media (min-width: $mq-md) {
+            flex-direction: row;   
+        }
+
+        @media (min-width: $mq-lg) {
+            padding: 34px;
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media (min-width: $mq-md) {
+            flex: 1 1 auto;
+        }
+
+        & .text-content {
+            margin: 0 !important;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media (min-width: $mq-md) {
+            flex: 0 0 auto;
+            min-width: 200px;
+        }
+
+        & .btn-default {
+            min-width: 100%;
+        }
+    }
+}
