@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Опис груп\"",
     "fields": [
         {
+            "key": "field_6a817f3063232",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_6727d068ea272",
             "label": "Заголовок",
             "name": "group_desc_title",
@@ -209,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730663395
+    "modified": 1786871623
 }

@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Картки з матеріалами\"",
     "fields": [
         {
+            "key": "field_6a817e6fb5889",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_69fafefdcdd55",
             "label": "",
             "name": "image_id",
@@ -73,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1780423491
+    "modified": 1786871427
 }

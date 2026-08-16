@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Опис курсу\" (тільки текст)",
     "fields": [
         {
+            "key": "field_6a817f6d54438",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_67278f7d3638d",
             "label": "Опис курсу",
             "name": "courses_info",
@@ -47,5 +69,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730645984
+    "modified": 1786871679
 }

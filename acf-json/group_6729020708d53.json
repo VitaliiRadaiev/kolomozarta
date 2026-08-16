@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Опис курсів із скарбнички\"",
     "fields": [
         {
+            "key": "field_6a817f5024484",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_6729020708b21",
             "label": "Курси\/програми",
             "name": "material_desc",
@@ -185,5 +207,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742972401
+    "modified": 1786871653
 }

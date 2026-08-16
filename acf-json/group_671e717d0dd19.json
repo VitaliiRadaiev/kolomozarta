@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Курси та програми\"",
     "fields": [
         {
+            "key": "field_6a817eaea711e",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_671e717d3ac9c",
             "label": "Заголовок",
             "name": "courses_title",
@@ -74,5 +96,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730049490
+    "modified": 1786871488
 }

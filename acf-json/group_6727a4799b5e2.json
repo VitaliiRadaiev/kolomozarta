@@ -3,6 +3,28 @@
     "title": "[C-Block] Блок \"Опис курсу\"(фото та список)",
     "fields": [
         {
+            "key": "field_6a817fb1adc2a",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_68cac8b81e59e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_6727a479f447b",
             "label": "Зображення",
             "name": "courses_list_img",
@@ -119,5 +141,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730651895
+    "modified": 1786871753
 }
