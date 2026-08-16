@@ -33,7 +33,7 @@ body {
 
 //Scrollbar
 
-.styled-scrollbar { 
+.styled-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: $primary $primary-ultra-light;
 
@@ -41,12 +41,12 @@ body {
     width: 4px;
     height: 4px;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: $primary-ultra-light;
     border-radius: 4px;
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background-color: $primary;
     border-radius: 4px;
@@ -456,14 +456,31 @@ presto-player::part(wrapper) {
   margin-right: auto;
 }
 
-.section-space-top {
-  margin-top: 60px;
-
-  @media (min-width: $mq-md) {
-    margin-top: 80px;
-  }
+.section-space-top-lg {
+  margin-top: 80px;
 
   @media (min-width: $mq-xl) {
     margin-top: 100px;
   }
+}
+
+.section-space-top-md {
+  margin-top: 40px;
+
+
+  @media (min-width: $mq-xl) {
+    margin-top: 50px;
+  }
+}
+
+.section-space-top-sm {
+  margin-top: 20px;
+
+  @media (min-width: $mq-xl) {
+    margin-top: 25px;
+  }
+}
+
+.section-space-top-0 {
+  margin-top: 0px;
 }

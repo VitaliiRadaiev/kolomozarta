@@ -740,8 +740,20 @@ presto-player::part(wrapper) {
   margin-right: auto;
 }
 
-.section-space-top {
-  margin-top: 60px;
+.section-space-top-lg {
+  margin-top: 80px;
+}
+
+.section-space-top-md {
+  margin-top: 40px;
+}
+
+.section-space-top-sm {
+  margin-top: 20px;
+}
+
+.section-space-top-0 {
+  margin-top: 0px;
 }
 
 @media only screen and (min-width: 360px) {
@@ -808,12 +820,6 @@ presto-player::part(wrapper) {
   }
 }
 
-@media (min-width: 768px) {
-  .section-space-top {
-    margin-top: 80px;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
   .swiper-has-buttons {
     padding-top: 50px;
@@ -866,8 +872,14 @@ presto-player::part(wrapper) {
 }
 
 @media (min-width: 1280px) {
-  .section-space-top {
+  .section-space-top-lg {
     margin-top: 100px;
+  }
+  .section-space-top-md {
+    margin-top: 50px;
+  }
+  .section-space-top-sm {
+    margin-top: 25px;
   }
 }
 

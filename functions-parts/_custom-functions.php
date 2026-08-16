@@ -85,3 +85,8 @@ function get_part_path($file_name)
 {
   return 'templates/parts/' . $file_name;
 }
+
+function get_section_space_top($data) {
+    $value = check($data['section_utils']['space_top'] ?? null) ? $data['section_utils']['space_top'] : 'lg';
+    return 'section-space-top-' . $value;
+}

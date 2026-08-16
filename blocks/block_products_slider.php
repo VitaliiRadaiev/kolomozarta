@@ -37,8 +37,10 @@ if (!$data['section_utils']['is_hide']):
         $the_posts = get_posts($query_args);
     }
 ?>
-
-    <section <?= get_section_id($data) ?> class="products-slider section-space-top">
+<script>
+    console.log( <?= json_encode($data); ?> );
+</script>
+    <section <?= get_section_id($data) ?> class="products-slider <?= get_section_space_top($data) ?>">
         <div class="container">
             <?php get_template_part(get_part_path('title'), null, [
                 'title_data' => $data['title']

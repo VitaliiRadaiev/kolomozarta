@@ -22,7 +22,7 @@ $footer_menu = build_menu_hierarchy($menu_items);
 </main>
 
 
-<footer class="footer section-space-top" id="footer">
+<footer class="footer section-space-top-lg" id="footer">
     <!--    Footer Content-->
     <div class="container--fluid">
         <div class="footer__content">
