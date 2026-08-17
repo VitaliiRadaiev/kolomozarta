@@ -35,6 +35,24 @@
   padding-bottom: 30px;
 }
 
+.h4 {
+  font-size: 16px;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+.h4.bottom-line {
+  padding-bottom: 20px;
+}
+
+.h5 {
+  font-size: 12px;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+.h5.bottom-line {
+  padding-bottom: 20px;
+}
+
 .bottom-line {
   position: relative;
 }
@@ -293,6 +311,12 @@ ol:not(.no-style) li:last-child {
   .h3 {
     font-size: calc(20px + 4 * (100vw - 360px) / (1440 - 360));
   }
+  .h4 {
+    font-size: calc(16px + 4 * (100vw - 360px) / (1440 - 360));
+  }
+  .h5 {
+    font-size: calc(12px + 4 * (100vw - 360px) / (1440 - 360));
+  }
   .article__text-content h1, .article__text-content .text-h1,
   .text-content h1,
   .text-content .text-h1 {
@@ -339,6 +363,12 @@ ol:not(.no-style) li:last-child {
   }
   .h3 {
     font-size: 24px;
+  }
+  .h4 {
+    font-size: 20px;
+  }
+  .h5 {
+    font-size: 16px;
   }
   .article__text-content h1, .article__text-content .text-h1,
   .text-content h1,

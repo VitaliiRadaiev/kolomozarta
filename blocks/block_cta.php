@@ -8,9 +8,6 @@ if (!$data['section_utils']['is_hide']):
     wp_enqueue_style('block_cta_style', get_theme_file_uri('./dist/css/blocks/block_cta.css'));
 
 ?>
-    <script>
-        console.log(<?= json_encode($data); ?>);
-    </script>
     <section <?= get_section_id($data) ?> class="block-cta <?= get_section_space_top($data) ?>">
         <div class="container">
             <div style="background-color: <?= $data['bg_color'] ?>;" class="block-cta__inner">
@@ -19,40 +16,27 @@ if (!$data['section_utils']['is_hide']):
                         'title_data' => $data['title']
                     ]) ?>
 
-                    <?php if(check($data['text'] ?? null)):?>
+                    <?php if (check($data['text'] ?? null)): ?>
                         <div class="text-content">
                             <?= $data['text'] ?>
                         </div>
-                    <?php endif;?>
+                    <?php endif; ?>
                 </div>
-                <?php if(
-                    ( check($data['is_show_product_price'] ?? null) && check($data['product_for_price'] ?? null) )
-                    || check($data['button']['link'] ?? null) || check($data['button']['button_text'] ?? null) ):?>
+                <?php if (
+                    (check($data['is_show_product_price'] ?? null) && check($data['product_for_price'] ?? null))
+                    || check($data['button']['link'] ?? null) || check($data['button']['button_text'] ?? null)
+                ): ?>
                     <div class="block-cta__right">
-                        <?php if(( check($data['is_show_product_price'] ?? null) && check($data['product_for_price'] ?? null) )):?>
-                            <?php 
-                                $old_price = get_field('old_price', $data['product_for_price']);    
-                                $price = get_field('price', $data['product_for_price']);    
-                            ?>
-                            <div class="price">
-                                <?php if(check($old_price ?? null)):?>
-                                    <div class="price__old">
-                                        <?= $old_price ?>
-                                    </div>
-                                <?php endif;?>
-                                <?php if(check($price ?? null)):?>
-                                    <div class="price__main">
-                                        <?= $price ?>
-                                    </div>     
-                                <?php endif;?>
-                            </div>
-                        <?php endif;?>
+                        <?php get_template_part(get_part_path('product-price'), null, [
+                            'product_price_data' => $data['product-price']
+                        ]) ?>
+
 
                         <?php get_template_part(get_part_path('button'), null, [
                             'button_data' => $data['button']
-                        ])?>
+                        ]) ?>
                     </div>
-                <?php endif;?>
+                <?php endif; ?>
             </div>
         </div>
     </section>

@@ -1,9 +1,9 @@
 {
-    "key": "group_6a819c424b2fe",
-    "title": "[C-Block] Блок \"CTA\"",
+    "key": "group_6a8338cb6b588",
+    "title": "[C-Block] Блок \"Кнопка + Ціна + Заголовок\"",
     "fields": [
         {
-            "key": "field_6a819c42bd0e1",
+            "key": "field_6a8338cbc66b1",
             "label": "",
             "name": "",
             "aria-label": "",
@@ -25,26 +25,7 @@
             "prefix_name": 0
         },
         {
-            "key": "field_6a819c8dbd0e2",
-            "label": "Колір заднього фону",
-            "name": "bg_color",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#FFF8E8",
-            "enable_opacity": 1,
-            "return_format": "string",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_6a819eae07fab",
+            "key": "field_6a833c7112ac3",
             "label": "",
             "name": "",
             "aria-label": "",
@@ -58,7 +39,7 @@
                 "id": ""
             },
             "clone": [
-                "group_6a8025a2ed463"
+                "group_6a833bef8614e"
             ],
             "display": "seamless",
             "layout": "block",
@@ -66,11 +47,11 @@
             "prefix_name": 0
         },
         {
-            "key": "field_6a819cc8bd0e3",
-            "label": "Текст",
-            "name": "text",
+            "key": "field_6a83395cc66b2",
+            "label": "Заголовок",
+            "name": "title",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -79,38 +60,10 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_6a83437bf9f36",
-            "label": "Ціна товара",
-            "name": "product-price",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6a819c8dbd0e2",
-                        "operator": "!=empty"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_6a83438ef9f37",
+                    "key": "field_6a833b6bc66b5",
                     "label": "",
                     "name": "",
                     "aria-label": "",
@@ -124,8 +77,10 @@
                         "id": ""
                     },
                     "clone": [
-                        "field_6a8339fa6b5ec",
-                        "field_6a833a736b5ef"
+                        "field_6a8025a302499",
+                        "field_6a802695ed072",
+                        "field_6a802761ed074",
+                        "field_6a8027bded075"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -135,7 +90,29 @@
             ]
         },
         {
-            "key": "field_6a819da5bd0e6",
+            "key": "field_6a833afac66b3",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6a8339fa263d6"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_6a833b21c66b4",
             "label": "",
             "name": "",
             "aria-label": "",
@@ -155,6 +132,27 @@
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 0
+        },
+        {
+            "key": "field_6a833b9f283f2",
+            "label": "Текст",
+            "name": "text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -175,5 +173,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786987486
+    "modified": 1786985603
 }

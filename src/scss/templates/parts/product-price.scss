@@ -1,0 +1,51 @@
+@use '../../base/_variables' as *;
+
+.price {
+    &__old {
+        margin-left: 40px;
+        font-weight: bold;
+        text-decoration: line-through;
+    }
+
+    &__main {
+        font-size: 2rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: fit-content;
+
+        &::before {
+            content: "";
+            background-image: url('data:image/svg+xml,<svg width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3643 9.02808C21.1064 9.77026 21.1064 10.9812 20.3643 11.6843L12.3955 19.6531C11.6924 20.3953 10.4814 20.3953 9.73926 19.6531L1.49707 11.4109C1.14551 11.0593 0.950195 10.5906 0.950195 10.0828V2.07495C0.950195 1.05933 1.77051 0.199951 2.8252 0.199951H10.7939C11.3018 0.199951 11.7705 0.434326 12.1221 0.785889L20.3643 9.02808ZM5.3252 6.44995C6.34082 6.44995 7.2002 5.62964 7.2002 4.57495C7.2002 3.55933 6.34082 2.69995 5.3252 2.69995C4.27051 2.69995 3.4502 3.55933 3.4502 4.57495C3.4502 5.62964 4.27051 6.44995 5.3252 6.44995ZM25.3643 11.6843L17.3955 19.6531C16.6924 20.3953 15.4814 20.3953 14.7393 19.6531L21.5361 12.8562C22.2002 12.1921 22.5908 11.2937 22.5908 10.3562C22.5908 9.4187 22.2002 8.55933 21.5361 7.89526L13.8799 0.199951H15.7939C16.3018 0.199951 16.7705 0.434326 17.1221 0.785889L25.3643 9.02808C26.1064 9.77026 26.1064 10.9812 25.3643 11.6843Z" fill="%23454545"/></svg>');
+            background-size: cover;
+            width: 25px;
+            height: 20px;
+            flex: 0 0 auto;
+        }
+    }
+
+    // лінія — border під самою ціною, а не глобальний .bottom-line::after
+    &.bottom-line {
+
+        &::after {
+            content: none;
+        }
+
+        & .price__main {
+            padding: 0 25px 10px 0px;
+            border-bottom: 3px solid $primary;
+        }
+    }
+
+    &.text-center .price__main {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 25px 10px;
+    }
+
+    &.text-right .price__main {
+        margin-left: auto;
+        padding: 0 0px 10px 25px;
+    }
+}

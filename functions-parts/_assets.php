@@ -3,8 +3,8 @@
 function learning_files()
 {
     // CSS styles
-    wp_enqueue_style('learning_main_styles', get_theme_file_uri('./dist/css/main.css'));
-    wp_enqueue_style('main_aos', get_theme_file_uri('./dist/css/libs/aos.css'));
+    wp_enqueue_style('learning_main_styles', get_theme_file_uri('./dist/css/main.css'), array(), filemtime(get_theme_file_path('./dist/css/main.css')));
+    wp_enqueue_style('main_aos', get_theme_file_uri('./dist/css/libs/aos.css'), array(), filemtime(get_theme_file_path('./dist/css/libs/aos.css')));
 
 
     // Scripts
@@ -14,8 +14,8 @@ function learning_files()
     wp_enqueue_script('utils_js', get_theme_file_uri('./dist/js/utils.js'), array('jquery'), '1.0', true);
 
     if (is_front_page()) {
-        wp_enqueue_style('hero_style', get_theme_file_uri() . '/dist/css/blocks/block_hero.css');
-        wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_courses.css');
+        wp_enqueue_style('hero_style', get_theme_file_uri() . '/dist/css/blocks/block_hero.css', array(), filemtime(get_theme_file_path('/dist/css/blocks/block_hero.css')));
+        wp_enqueue_style('courses_style', get_theme_file_uri() . '/dist/css/blocks/block_courses.css', array(), filemtime(get_theme_file_path('/dist/css/blocks/block_courses.css')));
     }
 }
 

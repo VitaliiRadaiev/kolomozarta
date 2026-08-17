@@ -40,6 +40,26 @@
     }
 }
 
+.h4 {
+    @include fluid-font(16, 20, 360, 1440);
+    line-height: 1.2em;
+    font-weight: bold;
+
+    &.bottom-line {
+        padding-bottom: 20px;
+    }
+}
+
+.h5 {
+    @include fluid-font(12, 16, 360, 1440);
+    line-height: 1.2em;
+    font-weight: bold;
+
+    &.bottom-line {
+        padding-bottom: 20px;
+    }
+}
+
 
 
 .bottom-line {

@@ -912,6 +912,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6a833d5840eba": {
+                    "key": "layout_6a833d5840eba",
+                    "name": "block_button_price_title",
+                    "label": "Блок \"Кнопка + Ціна + Заголовок\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a833d5840ebc",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a8338cb6b588"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -937,5 +969,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786879612
+    "modified": 1786985893
 }
