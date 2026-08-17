@@ -202,7 +202,7 @@
 .article__text-content img,
 .text-content img {
   border-radius: 4px;
-  width: 100%;
+  max-width: 100%;
 }
 .article__text-content iframe, .article__text-content .wp-video,
 .text-content iframe,
@@ -322,12 +322,6 @@ ol:not(.no-style) li:last-child {
   .text-content h6,
   .text-content .text-h6 {
     font-size: calc(16px + 6 * (100vw - 360px) / (1440 - 360));
-  }
-}
-@media only screen and (min-width: 600px) {
-  .article__text-content img,
-  .text-content img {
-    width: auto;
   }
 }
 @media only screen and (min-width: 1200px) {

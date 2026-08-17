@@ -19,10 +19,6 @@ $button_style_map = [
 ];
 ?>
 
-<script>
-    console.log(<?= json_encode($button_data); ?>);
-</script>
-
 <?php if ($button_data['button_type'] === 'link' && check($button_data['link'])): ?>
     <a href="btn-default <?= $button_data['link']['url'] ?>"
         target="<?= check($button_data['link']['target']) ? $button_data['link']['target'] : '_self' ?>"

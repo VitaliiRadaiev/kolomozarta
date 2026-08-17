@@ -171,9 +171,55 @@ h5 {
 }
 
 
+// buttons
 .btn-default {
   @extend %primary-btn;
 }
+
+.stroke_theme {
+  padding: 6px 25px;
+  border-radius: 4px;
+  border: 2px solid $primary;
+  background: transparent;
+  cursor: pointer;
+  color: $text;
+  font-size: 1.4rem;
+  transition: $ease-in;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 42px;
+
+  &.is-active,
+  &:hover {
+    background: $primary;
+  }
+}
+
+.stroke_dark {
+  padding: 6px 25px;
+  border-radius: 4px;
+  border: 2px solid $text;
+  background: transparent;
+  cursor: pointer;
+  color: $text;
+  font-size: 1.4rem;
+  transition: $ease-in;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 42px;
+
+  &.is-active,
+  &:hover {
+    background: $primary;
+    border-color: $primary;
+  }
+}
+
+// and buttons
 
 .disabled {
   opacity: 0.7;
