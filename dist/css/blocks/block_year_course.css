@@ -123,6 +123,7 @@
   margin-bottom: 70px;
 }
 .year-course__lists-wrap {
+  margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;

@@ -16,6 +16,7 @@
   text-align: center;
 }
 .year-lessons__list-wrap {
+  margin-top: 15px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;

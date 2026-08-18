@@ -1,0 +1,18 @@
+@use '../base/_variables' as *;
+
+.block-faq {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width:800px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}

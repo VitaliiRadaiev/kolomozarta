@@ -116,4 +116,38 @@ function init_post_types()
         ),
         'query_var' => false,
     ));
+
+    register_post_type('faq', array(
+        'label' => 'Часті питання',
+        'labels' => array(
+            'name'               => 'Часті питання',
+            'singular_name'      => 'Питання',
+            'add_new'            => 'Додати Питання',
+            'add_new_item'       => 'Додати нове Питання',
+            'edit_item'          => 'Редагувати Питання',
+            'new_item'           => 'Нове Питання',
+            'view_item'          => 'Переглянути Питання',
+            'search_items'       => 'Пошук Питань',
+            'not_found'          => 'Питань не знайдено',
+            'not_found_in_trash' => 'В кошику не знайдено Питань',
+            'menu_name'          => 'FAQ',
+        ),
+        'public'             => true,
+        'publicly_queryable' => false,
+        'exclude_from_search' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_admin_bar'  => true,
+        'show_in_nav_menus'  => false,
+        'show_in_rest'       => true,
+        'rest_base'          => 'faq',
+        'menu_position'      => 9,
+        'menu_icon'          => 'dashicons-editor-help',
+        'hierarchical'       => false,
+        'supports'           => array('title', 'editor'),
+        'taxonomies'         => array('faq_category'),
+        'has_archive'        => false,
+        'rewrite'            => false,
+        'query_var'          => false,
+    ));
 }

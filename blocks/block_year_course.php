@@ -59,19 +59,6 @@ if (!$data['section_utils']['is_hide']):
                     </div>
                 <?php endif; ?>
             </div>
-            <div data-aos="fade-up" class="year-course__lists-price">
-                <?php if ($year_course_price_title): ?>
-                    <p><?= $year_course_price_title ?></p>
-                <?php endif; ?>
-                <?php if ($year_course_price) : ?>
-                    <span><?= $year_course_price ?></span>
-                <?php endif; ?>
-                <button class="openOrderPopup"
-                        data-price="<?= $year_course_price ?>"
-                        data-title="<?= the_title() ?>"
-                        data-subtitle="<?= $year_course_price_title ?>"
-                        ><?= $order_btn ?></button>
-            </div>
         </div>
     </div>
 </section>

@@ -1,0 +1,106 @@
+@use '../../base/_variables' as *;
+
+.faq-item {
+    overflow: hidden;
+    border-radius: $radius-lg;
+    background-color: $primary-ultra-light;
+    transition: background-color 0.3s ease-in-out;
+
+    &.active {
+        background-color: $primary-light;
+    }
+
+    &__heading {
+        margin: 0;
+    }
+
+    &__trigger {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 8px;
+        border: none;
+        background: none;
+        text-align: left;
+        cursor: pointer;
+        color: inherit;
+        font-family: inherit;
+
+        @media (min-width: $mq-md) {
+            gap: 24px;
+        }
+
+        &.is-locked {
+            pointer-events: none;
+        }
+    }
+
+    &__title {
+        flex: 1 1 auto;
+        padding-left: 10px;
+        color: $text;
+
+        @media (min-width: $mq-md) {
+            padding-left: 18px;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $primary;
+
+        @media (min-width: $mq-md) {
+            width: 50px;
+            height: 50px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 16px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: $text;
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            transition: transform 0.3s ease-in-out;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+    }
+
+    &.active &__icon {
+        &::after {
+            transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+        }
+    }
+
+    &__panel {
+        padding: 0 16px 16px;
+
+        &[hidden] {
+            display: none;
+        }
+
+        @media (min-width: $mq-md) {
+            padding: 0 82px 26px 26px;
+        }
+    }
+
+    &__text {
+        color: $text;
+
+        &.text-content {
+            margin: 0;
+        }
+    }
+}

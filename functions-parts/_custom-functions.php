@@ -90,3 +90,25 @@ function get_section_space_top($data) {
     $value = check($data['section_utils']['space_top'] ?? null) ? $data['section_utils']['space_top'] : 'lg';
     return 'section-space-top-' . $value;
 }
+
+function get_faq_schema(array $items)
+{
+    $entities = array_map(function ($item) {
+        return [
+            '@type'          => 'Question',
+            'name'           => wp_strip_all_tags($item['name'] ?? ''),
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text'  => strip_tags($item['text'] ?? '', '<p><br><ul><ol><li><b><strong><i><em><a>'),
+            ],
+        ];
+    }, $items);
+
+    $schema = [
+        '@context'   => 'https://schema.org',
+        '@type'      => 'FAQPage',
+        'mainEntity' => $entities,
+    ];
+
+    return '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>';
+}

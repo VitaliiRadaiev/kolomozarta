@@ -944,6 +944,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6a848891c175b": {
+                    "key": "layout_6a848891c175b",
+                    "name": "block_faq",
+                    "label": "Блок \"Питання та відповіді\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a848891c175d",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a848728e6a3d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -969,5 +1001,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786985893
+    "modified": 1787070662
 }
