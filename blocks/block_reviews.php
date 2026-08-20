@@ -6,10 +6,10 @@ if (!$data['section_utils']['is_hide']):
     }
 
     wp_enqueue_style('swiper_bundle_style', get_theme_file_uri() . '/dist/css/libs/swiper-bundle.css');
-    wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, false);
+    wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, true);
 
     wp_enqueue_style('reviews_style', get_theme_file_uri() . '/dist/css/blocks/block_reviews.css');
-    wp_enqueue_script('reviews_js', get_theme_file_uri('./dist/js/blocks/block_reviews.js'), array('main_js'), null, false);
+    wp_enqueue_script('reviews_js', get_theme_file_uri('./dist/js/blocks/block_reviews.js'), array('main_js'), null, true);
 
     $reviews_title = $data['reviews_title'];
     $reviews_list = $data['reviews_list'];

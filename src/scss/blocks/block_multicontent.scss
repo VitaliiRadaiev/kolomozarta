@@ -1,0 +1,93 @@
+@use '../base/_variables' as *;
+
+.multicontent {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__grid {
+        display: grid;
+        gap: 20px;
+        width: 100%;
+
+        @media (min-width: $mq-md) {
+            grid-template-columns: repeat(12, 1fr);
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media (min-width: $mq-md) {
+            grid-column: span var(--col-size) / span var(--col-size);
+        }
+
+        &.alignment-left {
+            text-align: left;
+            align-items: flex-start;
+        }
+
+        &.alignment-center {
+            text-align: center;
+            align-items: center;
+
+            & .price__main {
+                padding: 0 25px 10px;
+            }
+
+            & .price__old {
+                margin-left: 66px;
+            }
+        }
+
+        &.alignment-right {
+            text-align: right;
+            align-items: flex-end;
+
+            & .price__main {
+                padding: 0 0px 10px 25px;
+            }
+
+            & .price__old {
+                margin-left: 66px;
+            }
+        }
+
+        & .text-content {
+            margin: 0;
+        }
+
+        & .content-img,
+        &>iframe,
+        &>video {
+            background-color: rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+
+        & .content-img {
+            object-fit: cover;
+        }
+    }
+}
+
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-vertical {
+    aspect-ratio: 9 / 16;
+}

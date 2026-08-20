@@ -5,7 +5,7 @@ if (!$data['section_utils']['is_hide']):
         return;
     }
 
-    wp_enqueue_script('material_list_js', get_theme_file_uri('./dist/js/blocks/block_material_list.js'), array('main_js'), null, false);
+    wp_enqueue_script('material_list_js', get_theme_file_uri('./dist/js/blocks/block_material_list.js'), array('main_js'), null, true);
     wp_enqueue_style('material_list_style', get_theme_file_uri() . '/dist/css/blocks/block_material_list.css');
 
     $material_title   = $data['material_title'];
@@ -45,7 +45,7 @@ if (!$data['section_utils']['is_hide']):
             <?php endif; ?>
 
             <?php if ($products_query->have_posts()): ?>
-                <div data-aos="fade-up" class="material__list">
+                <ul data-aos="fade-up" class="material__list">
                     <?php while ($products_query->have_posts()): $products_query->the_post();
                         $post_id           = get_the_ID();
                         $title             = get_the_title();
@@ -62,14 +62,14 @@ if (!$data['section_utils']['is_hide']):
                             : [];
                         $data_categories = esc_attr(wp_json_encode($term_slugs));
                     ?>
-                        <div class="material__list-item" data-categories="<?= $data_categories ?>">
+                        <li class="material__list-item" data-categories="<?= $data_categories ?>">
                             <?php get_template_part(get_part_path('product-card'), null, [
                                 'post_id' => $post_id,
                             ]) ?>
-                        </div>
+                        </li>
                     <?php endwhile;
                     wp_reset_postdata(); ?>
-                </div>
+                </ul>
             <?php endif; ?>
         </div>
     </div>

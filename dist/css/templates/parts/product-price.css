@@ -2,6 +2,7 @@
   margin-left: 40px;
   font-weight: bold;
   text-decoration: line-through;
+  text-align: left;
 }
 .price__main {
   font-size: 2rem;

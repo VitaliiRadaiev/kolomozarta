@@ -913,38 +913,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_6a833d5840eba": {
-                    "key": "layout_6a833d5840eba",
-                    "name": "block_button_price_title",
-                    "label": "Блок \"Кнопка + Ціна + Заголовок\"",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_6a833d5840ebc",
-                            "label": "",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_6a8338cb6b588"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_6a848891c175b": {
                     "key": "layout_6a848891c175b",
                     "name": "block_faq",
@@ -967,6 +935,38 @@
                             },
                             "clone": [
                                 "group_6a848728e6a3d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6a8496b6d5e8a": {
+                    "key": "layout_6a8496b6d5e8a",
+                    "name": "block_multicontent",
+                    "label": "Блок \"Мультіконтент дві колонки\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a8496b6d5e8c",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a84932245285"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1001,5 +1001,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787070662
+    "modified": 1787245549
 }

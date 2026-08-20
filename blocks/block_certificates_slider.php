@@ -6,13 +6,13 @@ if (!$data['section_utils']['is_hide']):
     }
 
     wp_enqueue_style('swiper_bundle_style', get_theme_file_uri() . '/dist/css/libs/swiper-bundle.css');
-    wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, false);
+    wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, true);
 
     wp_enqueue_style('fancybox_style', get_theme_file_uri() . '/dist/css/libs/fancybox.css');
-    wp_enqueue_script('fancybox_js', get_theme_file_uri('./dist/js/libs/fancybox.js'), array('main_js'), null, false);
+    wp_enqueue_script('fancybox_js', get_theme_file_uri('./dist/js/libs/fancybox.js'), array('main_js'), null, true);
 
     wp_enqueue_style('certificates_slider_style', get_theme_file_uri() . '/dist/css/blocks/block_certificates_slider.css');
-    wp_enqueue_script('certificates_slider_js', get_theme_file_uri('./dist/js/blocks/block_certificates_slider.js'), array('main_js'), null, false);
+    wp_enqueue_script('certificates_slider_js', get_theme_file_uri('./dist/js/blocks/block_certificates_slider.js'), array('main_js'), null, true);
 
     if (check($data['certificates'] ?? null)):
 ?>

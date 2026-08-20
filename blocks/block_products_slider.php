@@ -6,10 +6,10 @@ if (!$data['section_utils']['is_hide']):
     }
 
     wp_enqueue_style('swiper_bundle_style', get_theme_file_uri() . '/dist/css/libs/swiper-bundle.css');
-    wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, false);
+    wp_enqueue_script('swiper_bundle_js', get_theme_file_uri('./dist/js/libs/swiper-bundle.js'), array('main_js'), null, true);
 
-    wp_enqueue_style('certificates_slider_style', get_theme_file_uri('./dist/css/blocks/block_products_slider.css'));
-    wp_enqueue_script('certificates_slider_js', get_theme_file_uri('./dist/js/blocks/block_products_slider.js'), array('main_js'), null, true);
+    wp_enqueue_style('products_slider_style', get_theme_file_uri('./dist/css/blocks/block_products_slider.css'));
+    wp_enqueue_script('products_slider_js', get_theme_file_uri('./dist/js/blocks/block_products_slider.js'), array('main_js'), null, true);
 
     $display_mode = $data['display_mode'] ?? 'default';
 

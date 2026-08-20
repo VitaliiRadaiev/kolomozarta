@@ -1,0 +1,91 @@
+.multicontent__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+.multicontent__grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
+.multicontent__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.multicontent__col.alignment-left {
+  text-align: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.multicontent__col.alignment-center {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.multicontent__col.alignment-center .price__main {
+  padding: 0 25px 10px;
+}
+.multicontent__col.alignment-center .price__old {
+  margin-left: 66px;
+}
+.multicontent__col.alignment-right {
+  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.multicontent__col.alignment-right .price__main {
+  padding: 0 0px 10px 25px;
+}
+.multicontent__col.alignment-right .price__old {
+  margin-left: 66px;
+}
+.multicontent__col .text-content {
+  margin: 0;
+}
+.multicontent__col .content-img, .multicontent__col > iframe, .multicontent__col > video {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+.multicontent__col .content-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.aspect-square {
+  aspect-ratio: 1/1;
+}
+
+.aspect-video {
+  aspect-ratio: 16/9;
+}
+
+.aspect-vertical {
+  aspect-ratio: 9/16;
+}
+
+@media (min-width: 768px) {
+  .multicontent__grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .multicontent__col {
+    grid-column: span var(--col-size)/span var(--col-size);
+  }
+}

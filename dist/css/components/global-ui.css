@@ -20,10 +20,17 @@
 .swiper-button {
   display: none;
 }
-
-@media only screen and (min-width: 1024px) {
+.main-buttons-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 12px;
+}
+@media (min-width: 1024px) {
   .swiper-has-buttons {
-    padding-top: 50px;
+    padding-top: 50px !important;
   }
   .swiper-button {
     display: -webkit-box;
@@ -59,5 +66,10 @@
   .swiper-button svg {
     height: 18px;
     width: 18px;
+  }
+}
+@media (min-width: 1280px) {
+  .main-buttons-group {
+    gap: 18px;
   }
 }

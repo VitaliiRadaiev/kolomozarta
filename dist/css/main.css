@@ -229,6 +229,15 @@
 .swiper-button {
   display: none;
 }
+.main-buttons-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 12px;
+}
+
 .page__title,
 .page-title {
   font-size: 36px;
@@ -893,9 +902,9 @@ presto-player::part(wrapper) {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .swiper-has-buttons {
-    padding-top: 50px;
+    padding-top: 50px !important;
   }
   .swiper-button {
     display: -webkit-box;
@@ -945,6 +954,9 @@ presto-player::part(wrapper) {
 }
 
 @media (min-width: 1280px) {
+  .main-buttons-group {
+    gap: 18px;
+  }
   .section-space-top-lg {
     margin-top: 100px;
   }

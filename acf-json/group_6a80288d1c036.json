@@ -25,28 +25,6 @@
             "prefix_name": 0
         },
         {
-            "key": "field_6a80288d3775f",
-            "label": "",
-            "name": "",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_68cac8b81e59e"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
             "key": "field_6a8028b337760",
             "label": "",
             "name": "",
@@ -187,5 +165,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786879024
+    "modified": 1787246802
 }
