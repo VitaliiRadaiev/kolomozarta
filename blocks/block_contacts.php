@@ -17,59 +17,59 @@ if (!$data['section_utils']['is_hide']):
     $contacts_img = $data['contacts_img'];
 ?>
     <section <?= get_section_id($data) ?> class="contacts <?= get_section_space_top($data) ?>">
-    <div class="container">
-        <div data-aos="fade-up" class="contacts__wrap">
-            <div class="contacts__info">
-                <div class="contacts__info-numbers">
-                    <?php if ($contact_numbers_title): ?>
-                        <h2><?= $contact_numbers_title ?></h2>
-                    <?php endif; ?>
-                    <?php if ($contact_numbers_subtitle): ?>
-                        <p><?= $contact_numbers_subtitle ?></p>
-                    <?php endif; ?>
-                    <ul>
-                        <li>
-                            <?php if ($viber): ?>
-                                <a href="viber://chat?number=%2B<?= cleanPhoneNumber($viber) ?>" target="_blank">
-                                    <img src="<?= get_theme_file_uri() . '/dist/images/viber.svg' ?>" alt="Viber">
-                                    <?= $viber ?>(Viber)
-                                </a>
-                            <?php endif; ?>
-                        </li>
-                        <li>
-                            <?php if ($whatsapp): ?>
-                                <a href="https://wa.me/<?= cleanPhoneNumber($whatsapp) ?>" target="_blank">
-                                    <img src="<?= get_theme_file_uri() . '/dist/images/whatsapp.svg' ?>"
-                                         alt="WhatsApp">
-                                    <?= $whatsapp ?>(WhatsApp)
-                                </a>
-                            <?php endif; ?>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contacts__info-socials">
-                    <?php if ($contacts_social_title): ?>
-                        <h2><?= $contacts_social_title ?></h2>
-                    <?php endif; ?>
-                    <?php if (!empty($social_contacts)): ?>
+        <div class="container">
+            <div data-aos="fade-up" class="contacts__wrap">
+                <div class="contacts__info">
+                    <div class="contacts__info-numbers">
+                        <?php if ($contact_numbers_title): ?>
+                            <h2><?= $contact_numbers_title ?></h2>
+                        <?php endif; ?>
+                        <?php if ($contact_numbers_subtitle): ?>
+                            <p><?= $contact_numbers_subtitle ?></p>
+                        <?php endif; ?>
                         <ul>
-                            <?php foreach ($social_contacts as $social_contact): ?>
-                                <li>
-                                    <a target="_blank"
-                                       href="<?= $social_contact['link'] ?>"><img
-                                                src="<?= $social_contact['icon']['url'] ?>" alt="Icon"></a>
-                                </li>
-                            <?php endforeach; ?>
+                            <li>
+                                <?php if ($viber): ?>
+                                    <a href="viber://chat?number=%2B<?= cleanPhoneNumber($viber) ?>" target="_blank">
+                                        <img src="<?= get_theme_file_uri() . '/dist/images/viber.svg' ?>" alt="Viber">
+                                        <?= $viber ?>(Viber)
+                                    </a>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <?php if ($whatsapp): ?>
+                                    <a href="https://wa.me/<?= cleanPhoneNumber($whatsapp) ?>" target="_blank">
+                                        <img src="<?= get_theme_file_uri() . '/dist/images/whatsapp.svg' ?>"
+                                            alt="WhatsApp">
+                                        <?= $whatsapp ?>(WhatsApp)
+                                    </a>
+                                <?php endif; ?>
+                            </li>
                         </ul>
+                    </div>
+                    <div class="contacts__info-socials">
+                        <?php if ($contacts_social_title): ?>
+                            <h2><?= $contacts_social_title ?></h2>
+                        <?php endif; ?>
+                        <?php if (!empty($social_contacts)): ?>
+                            <ul>
+                                <?php foreach ($social_contacts as $social_contact): ?>
+                                    <li>
+                                        <a target="_blank"
+                                            href="<?= $social_contact['link'] ?>"><img
+                                                src="<?= $social_contact['icon']['url'] ?>" alt="Icon"></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="contacts__image">
+                    <?php if ($contacts_img): ?>
+                        <img src="<?= $contacts_img['url'] ?>" alt="Contacts">
                     <?php endif; ?>
                 </div>
-            </div>
-            <div class="contacts__image">
-                <?php if ($contacts_img): ?>
-                    <img src="<?= $contacts_img['url'] ?>" alt="Contacts">
-                <?php endif; ?>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php endif; ?>

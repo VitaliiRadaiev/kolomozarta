@@ -9,12 +9,12 @@ if (!$data['section_utils']['is_hide']):
     $songs_info = $data['songs_info'];
 ?>
     <section <?= get_section_id($data) ?> class="content <?= get_section_space_top($data) ?>">
-    <div data-aos="fade-up" class="container">
-        <div class="content__wrap text-content">
-            <?php if ($songs_info): ?>
-                <?= add_inner_wrap_to_li($songs_info) ?>
-            <?php endif; ?>
+        <div data-aos="fade-up" class="container">
+            <div class="content__wrap text-content">
+                <?php if ($songs_info): ?>
+                    <?= add_inner_wrap_to_li($songs_info) ?>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php endif; ?>

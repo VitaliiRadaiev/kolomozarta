@@ -11,16 +11,16 @@ if (!$data['section_utils']['is_hide']):
     $course_list_description = $data['course_list_description'];
 ?>
     <section <?= get_section_id($data) ?> class="courses-list <?= get_section_space_top($data) ?>">
-    <div class="container">
-        <div data-aos="fade-up" class="courses-list__wrap">
-            <?php if ($course_list_title): ?>
-                <h2><?= $course_list_title ?></h2>
-            <?php endif; ?>
-            <?php if ($course_list_description): ?>
-                <div><?= $course_list_description ?></div>
-            <?php endif; ?>
+        <div class="container">
+            <div data-aos="fade-up" class="courses-list__wrap">
+                <?php if ($course_list_title): ?>
+                    <h2><?= $course_list_title ?></h2>
+                <?php endif; ?>
+                <?php if ($course_list_description): ?>
+                    <div><?= $course_list_description ?></div>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <?php endif; ?>

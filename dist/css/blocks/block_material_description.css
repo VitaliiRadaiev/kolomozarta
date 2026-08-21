@@ -53,6 +53,9 @@
   padding: 60px 0 40px;
   position: relative;
 }
+.material-description__item:first-child {
+  padding-top: 0;
+}
 .material-description__item:nth-child(2n):before {
   position: absolute;
   display: block;

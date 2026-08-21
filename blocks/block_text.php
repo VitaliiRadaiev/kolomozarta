@@ -12,7 +12,7 @@ if (!$data['section_utils']['is_hide']):
     $text = $data['block_text_text'];
 ?>
     <section <?= get_section_id($data) ?> class="block-text text-<?= $text_align ?> <?= get_section_space_top($data) ?>">>
-    <div data-aos="fade-up" class="container">
+        <div data-aos="fade-up" class="container">
             <?php if ($title): ?>
                 <div class="block-text__title">
                     <?= $title ?>
@@ -25,6 +25,6 @@ if (!$data['section_utils']['is_hide']):
                 </div>
             <?php endif; ?>
 
-    </div>
-</section>
+        </div>
+    </section>
 <?php endif; ?>

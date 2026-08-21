@@ -10,28 +10,28 @@ if (!$data['section_utils']['is_hide']):
     $double_list_wrap = $data["double_list_wrap"];
 ?>
     <section <?= get_section_id($data) ?> class="double-list <?= get_section_space_top($data) ?>">
-    <div class="container">
-        <?php if (!empty($double_list_wrap)): ?>
-            <div data-aos="fade-up" class="double-list__wrap">
-                <?php foreach ($double_list_wrap as $item):
-                    $double_list = $item["double_list"];
-                    $double_list_title = $item["double_list_title"];
+        <div class="container">
+            <?php if (!empty($double_list_wrap)): ?>
+                <div data-aos="fade-up" class="double-list__wrap">
+                    <?php foreach ($double_list_wrap as $item):
+                        $double_list = $item["double_list"];
+                        $double_list_title = $item["double_list_title"];
                     ?>
-                    <div class="double-list__item">
-                        <?php if ($double_list_title): ?>
-                            <h3><?= $double_list_title ?></h3>
-                        <?php endif; ?>
-                        <?php if (!empty($double_list)): ?>
-                            <ul>
-                                <?php foreach ($double_list as $list_item): ?>
-                                    <li><?= $list_item['content'] ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        <?php endif; ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
-    </div>
-</section>
+                        <div class="double-list__item">
+                            <?php if ($double_list_title): ?>
+                                <h3><?= $double_list_title ?></h3>
+                            <?php endif; ?>
+                            <?php if (!empty($double_list)): ?>
+                                <ul>
+                                    <?php foreach ($double_list as $list_item): ?>
+                                        <li><?= $list_item['content'] ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
 <?php endif; ?>

@@ -13,40 +13,39 @@ if (!$data['section_utils']['is_hide']):
     $order_btn = get_field('order_btn', 'option');
 ?>
     <section <?= get_section_id($data) ?> class="year-updates <?= get_section_space_top($data) ?>">
-    <div class="container">
-        <div class="year-updates__wrap">
-            <?php if ($year_updates_title): ?>
-                <h2><?= $year_updates_title ?></h2>
-            <?php endif; ?>
-            <?php if (!empty($year_updates_list)): ?>
-                <div class="year-updates__list">
-                    <?php foreach ($year_updates_list as $year_update): ?>
-                        <div class="year-updates__item">
-                            <?= $year_update['item'] ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
-            <?php if (!empty($year_updates_buttons)): ?>
-                <div class="year-updates__buttons">
-                    <?php foreach ($year_updates_buttons as $button): ?>
-                        <div class="year-updates__buttons-item">
-                            <?php if ($button['title']): ?>
-                                <p><?= $button['title'] ?></p>
-                            <?php endif; ?>
-                            <?php if ($button['price']) : ?>
-                                <span><?= $button['price'] ?></span>
-                            <?php endif; ?>
-                            <button class="openOrderPopup"
+        <div class="container">
+            <div class="year-updates__wrap">
+                <?php if ($year_updates_title): ?>
+                    <h2><?= $year_updates_title ?></h2>
+                <?php endif; ?>
+                <?php if (!empty($year_updates_list)): ?>
+                    <div class="year-updates__list">
+                        <?php foreach ($year_updates_list as $year_update): ?>
+                            <div class="year-updates__item">
+                                <?= $year_update['item'] ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (!empty($year_updates_buttons)): ?>
+                    <div class="year-updates__buttons">
+                        <?php foreach ($year_updates_buttons as $button): ?>
+                            <div class="year-updates__buttons-item">
+                                <?php if ($button['title']): ?>
+                                    <p><?= $button['title'] ?></p>
+                                <?php endif; ?>
+                                <?php if ($button['price']) : ?>
+                                    <span><?= $button['price'] ?></span>
+                                <?php endif; ?>
+                                <button class="openOrderPopup"
                                     data-price="<?= $button['price'] ?>"
                                     data-title="<?= the_title() ?>"
-                                    data-subtitle="<?= $button['title'] ?>"
-                                    ><?= $order_btn ?></button>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
+                                    data-subtitle="<?= $button['title'] ?>"><?= $order_btn ?></button>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php endif; ?>

@@ -34,17 +34,17 @@ if ($updates_toggle): ?>
                         $presto_player_video = $updates_video['presto_player'];
                         $presto_player_audio_minus = $updates_audio['presto_player_minus'];
                         $presto_player_audio_plus = $updates_audio['presto_player_plus'];
-                        ?>
+                    ?>
                         <li class="updates__list-item">
                             <div class="updates__list-item-video">
                                 <?php if ($presto_player_video->ID) : ?>
                                     <?= do_shortcode('[presto_player id="' . $presto_player_video->ID . '"]'); ?>
                                 <?php elseif (!empty($updates_video_id)): ?>
                                     <iframe width="560" height="315"
-                                            src="https://www.youtube.com/embed/<?= esc_html($updates_video_id); ?>"
-                                            frameborder="0"
-                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen></iframe>
+                                        src="https://www.youtube.com/embed/<?= esc_html($updates_video_id); ?>"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
                                 <?php else: ?>
                                     <video src="<?= $updates_video_file['url'] ?>" controls></video>
                                 <?php endif; ?>

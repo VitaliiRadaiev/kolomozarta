@@ -11,12 +11,12 @@ if (!$data['section_utils']['is_hide']):
 
     if ($courses_info):
 ?>
-    <section <?= get_section_id($data) ?> class="courses-info <?= get_section_space_top($data) ?>">
-        <div class="container">
-            <div data-aos="fade-up" class="courses-info__wrap">
-                <?= $courses_info ?>
+        <section <?= get_section_id($data) ?> class="courses-info <?= get_section_space_top($data) ?>">
+            <div class="container">
+                <div data-aos="fade-up" class="courses-info__wrap">
+                    <?= $courses_info ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     <?php endif; ?>
 <?php endif; ?>

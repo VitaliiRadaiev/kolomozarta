@@ -11,17 +11,17 @@ if (!$data['section_utils']['is_hide']):
     $video_link = $data['video_link'];
 ?>
     <section <?= get_section_id($data) ?> class="video <?= get_section_space_top($data) ?>">
-    <div class="container">
-        <div class="video__wrap">
-            <?php if ($video_title) : ?>
-                <h2 data-aos="fade-up"><?= $video_title ?></h2>
-            <?php endif; ?>
-            <?php if ($video_link): ?>
-                <iframe data-aos="fade-up" width="560" height="315" src="https://www.youtube.com/embed/<?= esc_attr($video_link); ?>"
+        <div class="container">
+            <div class="video__wrap">
+                <?php if ($video_title) : ?>
+                    <h2 data-aos="fade-up"><?= $video_title ?></h2>
+                <?php endif; ?>
+                <?php if ($video_link): ?>
+                    <iframe data-aos="fade-up" width="560" height="315" src="https://www.youtube.com/embed/<?= esc_attr($video_link); ?>"
                         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php endif; ?>

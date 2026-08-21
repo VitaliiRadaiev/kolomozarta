@@ -12,22 +12,22 @@ if (!$data['section_utils']['is_hide']):
     $courses_list_wrap = $data['courses_list_wrap'];
 ?>
     <section <?= get_section_id($data) ?> class="courses-img <?= get_section_space_top($data) ?>">
-    <div class="container">
-        <div data-aos="fade-up" class="courses-img__wrap">
-            <?php if ($courses_list_img): ?>
-                <img src="<?= $courses_list_img ?>" alt="Image">
-            <?php endif; ?>
-            <div class="courses-img__list">
-                <h2><?= $courses_list_title ?></h2>
-                <?php if (!empty($courses_list_wrap)): ?>
-                    <ul>
-                        <?php foreach ($courses_list_wrap as $item): ?>
-                            <li><?= $item['courses_list_wrap_item'] ?></li>
-                        <?php endforeach; ?>
-                    </ul>
+        <div class="container">
+            <div data-aos="fade-up" class="courses-img__wrap">
+                <?php if ($courses_list_img): ?>
+                    <img src="<?= $courses_list_img ?>" alt="Image">
                 <?php endif; ?>
+                <div class="courses-img__list">
+                    <h2><?= $courses_list_title ?></h2>
+                    <?php if (!empty($courses_list_wrap)): ?>
+                        <ul>
+                            <?php foreach ($courses_list_wrap as $item): ?>
+                                <li><?= $item['courses_list_wrap_item'] ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php endif; ?>

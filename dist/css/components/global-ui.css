@@ -33,6 +33,16 @@
   width: 100%;
 }
 
+.space-to-title:not(:first-child) {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .space-to-title:not(:first-child) {
+    margin-top: 30px;
+  }
+}
+
 @media (min-width: 1024px) {
   .swiper-has-buttons {
     padding-top: 50px !important;

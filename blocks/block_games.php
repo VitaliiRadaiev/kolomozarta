@@ -15,40 +15,40 @@ if (!$data['section_utils']['is_hide']):
     $order_btn = get_field('order_btn', 'option');
     $instruction_btn = get_field('instruction_btn ', 'option');
 ?>
-<section <?= get_section_id($data) ?> class="games <?= get_section_space_top($data) ?>">
-    <div class="container">
-        <div data-aos="fade-up" class="games__wrap">
-            <div class="games__list">
-                <?php if ($games_subtitle): ?>
-                    <h2><?= $games_subtitle ?></h2>
-                <?php endif; ?>
-                <?php if (!empty($games_list)): ?>
-                    <ul>
-                        <?php foreach ($games_list as $game): ?>
-                            <li><?= $game['text'] ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endif; ?>
-                <?php if ($games_price): ?>
-                    <span><?= $games_price ?></span>
-                <?php endif; ?>
-                <div class="games__btn">
-                    <?php if ($order_btn): ?>
-                        <button class="openOrderPopup"
+    <section <?= get_section_id($data) ?> class="games <?= get_section_space_top($data) ?>">
+        <div class="container">
+            <div data-aos="fade-up" class="games__wrap">
+                <div class="games__list">
+                    <?php if ($games_subtitle): ?>
+                        <h2><?= $games_subtitle ?></h2>
+                    <?php endif; ?>
+                    <?php if (!empty($games_list)): ?>
+                        <ul>
+                            <?php foreach ($games_list as $game): ?>
+                                <li><?= $game['text'] ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                    <?php if ($games_price): ?>
+                        <span><?= $games_price ?></span>
+                    <?php endif; ?>
+                    <div class="games__btn">
+                        <?php if ($order_btn): ?>
+                            <button class="openOrderPopup"
                                 data-price="<?= $games_price ?>"
                                 data-title="<?= the_title() ?>"><?= $order_btn ?></button>
-                    <?php endif; ?>
-                    <?php if ($instruction_btn && $games_pdf): ?>
-                        <a href="<?= $games_pdf ?>" target="_blank"><?= $instruction_btn ?></a>
+                        <?php endif; ?>
+                        <?php if ($instruction_btn && $games_pdf): ?>
+                            <a href="<?= $games_pdf ?>" target="_blank"><?= $instruction_btn ?></a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="games__img">
+                    <?php if ($games_img): ?>
+                        <img src="<?= $games_img ?>" alt="Thumbnail">
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="games__img">
-                <?php if ($games_img): ?>
-                    <img src="<?= $games_img ?>" alt="Thumbnail">
-                <?php endif; ?>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php endif; ?>

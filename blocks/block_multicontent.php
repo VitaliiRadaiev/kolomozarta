@@ -14,9 +14,6 @@ if (!$data['section_utils']['is_hide']):
     $bg_color = $data['bg-color'];
     $columns = $data['columns'] ?? [];
 ?>
-    <script>
-        console.log(<?= json_encode($data); ?>);
-    </script>
     <section <?= $is_show_colour_bg ? 'style="background-color:' . $bg_color . ';"' : '' ?> <?= get_section_id($data) ?> class="multicontent <?= $is_show_colour_bg ? 'multicontent--bg' : '' ?> <?= get_section_space_top($data) ?>">
         <div class="container multicontent__container">
             <?php get_template_part(get_part_path('title'), null, [
