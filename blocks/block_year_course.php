@@ -14,8 +14,6 @@ if (!$data['section_utils']['is_hide']):
     $year_course_video = $data['year_course_video'];
     $year_course_list_title = $data['year_course_list_title'];
     $year_course_list = $data['year_course_list'];
-    $year_course_price_title = $data['year_course_price_title'];
-    $year_course_price = $data['year_course_price'];
 ?>
     <section <?= get_section_id($data) ?> class="year-course <?= get_section_space_top($data) ?>">
 

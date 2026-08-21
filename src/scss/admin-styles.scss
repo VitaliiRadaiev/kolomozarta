@@ -1,0 +1,62 @@
+@use "base/_variables" as *;
+@use "base/_fonts";
+@use "base/_wysiwyg-content" as *;
+
+// Стили админки и контента внутри iframe TinyMCE.
+// Файл подключается дважды (functions-parts/_assets.php):
+//   * add_editor_style()      — внутрь iframe редактора;
+//   * admin_enqueue_scripts   — на КАЖДОМ экране wp-admin.
+// Поэтому всё, кроме правила ниже, обязано быть заскоуплено под
+// `.mce-content-body`: незаскоупленные `ol:not(.no-style)`, `.link`, `*{margin:0}`
+// поломали бы вид самой админки.
+
+// В iframe редактора нет `html{font-size:62.5%}` из main.scss, на которое
+// опирается `font-size: 1.4rem`. В wp-admin у html нет дочернего
+// body.mce-content-body, так что правило там не срабатывает.
+html:has(> body.mce-content-body) {
+    font-size: 62.5%;
+}
+
+.mce-content-body {
+    font-family: $primary-font;
+    color: $text;
+    line-height: 1.8em;
+    font-weight: 400;
+    padding: 16px;
+
+    // Объявления миксина идут сразу за объявлениями выше — до любых
+    // вложенных правил, иначе Sass ругается на mixed-decls.
+    @include wysiwyg-content;
+
+    // Гасим `margin-top: 20px` из миксина — в редакторе отступ сверху не нужен.
+    // Обёртка `& {}` — чтобы объявления после вложенных правил не зависели от
+    // устаревающего поведения Sass (mixed-decls).
+    & {
+        margin-top: 0;
+        // Дубль `1.4rem` из миксина в px: если браузер не поддерживает `:has`,
+        // правило `font-size: 62.5%` выше не сработает и базовый текст поехал бы.
+        font-size: 14px;
+    }
+
+    // Аналог base/_reset.scss, но только внутри редактора.
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    ul,
+    ol {
+        list-style-type: none;
+    }
+
+    & ol:not(.no-style) {
+        @include custom-ol;
+    }
+
+    // Подсказка редактору: где начинается и заканчивается обёртка.
+    & .text-div-wrapper {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+}

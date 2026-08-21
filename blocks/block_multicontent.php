@@ -1,80 +1,82 @@
 <?php
 global $data;
-
-$left_col_size = (int) $data['columns_size'];
-$right_col_size = 12 - $left_col_size;
-$left_column = $data['left_column'];
-$right_column = $data['right_column'];
-
-function render_content($content)
-{
-    foreach ($content as $item):
-?>
-
-        <?php if ($item['acf_fc_layout'] == 'text'): ?>
-            <div class="text-content">
-                <?= add_inner_wrap_to_li($item['text']); ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if ($item['acf_fc_layout'] == 'price'): ?>
-            <?php get_template_part(get_part_path('product-price'), null, [
-                'product_price_data' => $item['product-price'] ?? [],
-            ]) ?>
-        <?php endif; ?>
-
-        <?php if ($item['acf_fc_layout'] == 'buttons-group'): ?>
-            <?php get_template_part(get_part_path('buttons-group'), null, [
-                'buttons' => $item['buttons-group']
-            ]) ?>
-        <?php endif; ?>
-
-        <?php if ($item['acf_fc_layout'] == 'image'): ?>
-            <?php get_image($item['image_id'], 'content-img aspect-' . $item['ratio']); ?>
-        <?php endif; ?>
-
-        <?php if ($item['acf_fc_layout'] == 'youtube-video'): ?>
-            <iframe width="560" height="315" class="aspect-<?= $item['ratio'] ?>" src="https://www.youtube.com/embed/<?= $item['id'] ?>"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        <?php endif; ?>
-
-        <?php if ($item['acf_fc_layout'] == 'video'): ?>
-            <video class="aspect-<?= $item['ratio'] ?>" controls='true' type='video/mp4' preload="auto" poster="<?= $item['poster'] ?>" src='<?= $item['video_url'] ?>'></video>
-        <?php endif; ?>
-<?php
-    endforeach;
-}
-?>
-
-<?php
-global $data;
 if (!$data['section_utils']['is_hide']):
     if (is_admin() && $data['section_utils']['is_hide_for_users']) {
         return;
     }
 
-    wp_enqueue_style('block_multicontent_style', get_theme_file_uri('./dist/css/blocks/block_multicontent.css'));
-?>
+    wp_enqueue_style('fancybox_style', get_theme_file_uri() . '/dist/css/libs/fancybox.css');
+    wp_enqueue_script('fancybox_js', get_theme_file_uri('./dist/js/libs/fancybox.js'), array('main_js'), null, true);
 
-    <section <?= get_section_id($data) ?> class="multicontent <?= get_section_space_top($data) ?>">
+    wp_enqueue_style('block_multicontent_style', get_theme_file_uri('./dist/css/blocks/block_multicontent.css'));
+
+    $is_show_colour_bg = $data['is_show_colour_bg'] ?? false;
+    $bg_color = $data['bg-color'];
+    $columns = $data['columns'] ?? [];
+?>
+    <script>
+        console.log(<?= json_encode($data); ?>);
+    </script>
+    <section <?= $is_show_colour_bg ? 'style="background-color:' . $bg_color . ';"' : '' ?> <?= get_section_id($data) ?> class="multicontent <?= $is_show_colour_bg ? 'multicontent--bg' : '' ?> <?= get_section_space_top($data) ?>">
         <div class="container multicontent__container">
             <?php get_template_part(get_part_path('title'), null, [
                 'title_data' => $data['title']
             ]) ?>
 
             <div class="multicontent__grid">
-                <?php if (!($left_col_size == 0)): ?>
-                    <div style="--col-size: <?= $left_col_size ?>;" class="multicontent__col alignment-<?= $left_column['alignment'] ?>">
-                        <?php render_content($left_column['content']); ?>
+                <?php
+                foreach ($columns as $column):
+                    $alignment = $column['alignment'];
+                    $col_sizes = $column['col_sizes'];
+                    $content = $column['content'];
+                ?>
+                    <div style="--col-size-mob: <?= $col_sizes['mob_size'] ?>; --col-size-tablet: <?= $col_sizes['tablet_size'] ?>; --col-size-desk: <?= $col_sizes['desk_size'] ?>;" class="multicontent__col alignment-<?= $alignment ?>">
+                        <?php foreach ($content as $item): ?>
+                            <?php if ($item['acf_fc_layout'] == 'text'): ?>
+                                <div <?= get_space_top($item['space-top']); ?> class="text-content multicontent-space-top">
+                                    <?= add_inner_wrap_to_li($item['text']); ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($item['acf_fc_layout'] == 'price'): ?>
+                                <div <?= get_space_top($item['space-top']); ?> class="multicontent-space-top">
+                                    <?php get_template_part(get_part_path('product-price'), null, [
+                                        'product_price_data' => $item['product-price'] ?? [],
+                                    ]) ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($item['acf_fc_layout'] == 'buttons-group'): ?>
+                                <div <?= get_space_top($item['space-top']); ?> class="multicontent-space-top">
+                                    <?php get_template_part(get_part_path('buttons-group'), null, [
+                                        'buttons' => $item['buttons-group']
+                                    ]) ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($item['acf_fc_layout'] == 'image'): ?>
+                                <a href="<?= wp_get_attachment_url($item['image_id'], 'full') ?>" <?= get_space_top($item['space-top']); ?> data-fancybox="" class="multicontent-space-top w-full">
+                                    <?php get_image($item['image_id'], 'multicontent-img aspect-' . $item['ratio']); ?>
+                                </a>
+                            <?php endif; ?>
+
+                            <?php if ($item['acf_fc_layout'] == 'youtube-video'): ?>
+                                <div <?= get_space_top($item['space-top']); ?> class="multicontent-space-top w-full">
+                                    <iframe width="560" height="315" class="multicontent-iframe aspect-<?= $item['ratio'] ?>" src="https://www.youtube.com/embed/<?= $item['id'] ?>"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($item['acf_fc_layout'] == 'video'): ?>
+                                <div <?= get_space_top($item['space-top']); ?> class="multicontent-space-top w-full">
+                                    <video class="multicontent-video aspect-<?= $item['ratio'] ?>" controls='true' type='video/mp4' preload="auto" poster="<?= $item['poster'] ?>" src='<?= $item['video_url'] ?>'></video>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </div>
-                <?php endif; ?>
-                <?php if (!($right_col_size == 0)): ?>
-                    <div style="--col-size: <?= $right_col_size ?>;" class="multicontent__col alignment-<?= $right_column['alignment'] ?>">
-                        <?php render_content($right_column['content']); ?>
-                    </div>
-                <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>

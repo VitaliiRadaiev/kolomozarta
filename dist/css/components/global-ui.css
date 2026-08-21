@@ -28,6 +28,11 @@
       flex-wrap: wrap;
   gap: 12px;
 }
+
+.w-full {
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
   .swiper-has-buttons {
     padding-top: 50px !important;
@@ -68,6 +73,7 @@
     width: 18px;
   }
 }
+
 @media (min-width: 1280px) {
   .main-buttons-group {
     gap: 18px;

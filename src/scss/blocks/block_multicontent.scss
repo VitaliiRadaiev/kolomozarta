@@ -2,6 +2,16 @@
 
 .multicontent {
 
+    &--bg {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        @media (min-width: $mq-lg) {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+
     &__container {
         display: flex;
         flex-direction: column;
@@ -10,21 +20,34 @@
 
     &__grid {
         display: grid;
-        gap: 20px;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 8px;
         width: 100%;
 
         @media (min-width: $mq-md) {
-            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+
+        @media (min-width: $mq-lg) {
+            gap: 20px;
         }
     }
 
     &__col {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        grid-column: span var(--col-size-mob) / span var(--col-size-mob);
 
         @media (min-width: $mq-md) {
-            grid-column: span var(--col-size) / span var(--col-size);
+            grid-column: span var(--col-size-tablet) / span var(--col-size-tablet);
+        }
+
+        @media (min-width: $mq-lg) {
+            grid-column: span var(--col-size-desk) / span var(--col-size-desk);
+        }
+
+        &>*:first-child {
+            margin-top: 0;
         }
 
         &.alignment-left {
@@ -62,9 +85,9 @@
             margin: 0;
         }
 
-        & .content-img,
-        &>iframe,
-        &>video {
+        & .multicontent-img,
+        & .multicontent-iframe,
+        & .multicontent-video {
             background-color: rgba(0, 0, 0, 0.06);
             border-radius: 12px;
             width: 100%;
@@ -73,7 +96,7 @@
             display: block;
         }
 
-        & .content-img {
+        & .multicontent-img {
             object-fit: cover;
         }
     }
@@ -90,4 +113,9 @@
 
 .aspect-vertical {
     aspect-ratio: 9 / 16;
+}
+
+.multicontent-space-top {
+    margin-top: var(--space-top);
+    display: block;
 }

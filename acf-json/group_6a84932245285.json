@@ -25,6 +25,54 @@
             "prefix_name": 0
         },
         {
+            "key": "field_6a886f02d33f2",
+            "label": "Відображати кольоровий фон",
+            "name": "is_show_colour_bg",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6a886f2ed33f3",
+            "label": "Колір фону",
+            "name": "bg-color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6a886f02d33f2",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#FFF8E8",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_6a8493504e371",
             "label": "",
             "name": "",
@@ -47,33 +95,11 @@
             "prefix_name": 0
         },
         {
-            "key": "field_6a8493864e372",
-            "label": "Розмір колонок",
-            "name": "columns_size",
+            "key": "field_6a886fe5d33f4",
+            "label": "Колонки",
+            "name": "columns",
             "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 6,
-            "min": 0,
-            "max": 12,
-            "allow_in_bindings": 0,
-            "step": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6a8494704e375",
-            "label": "Ліва колонка",
-            "name": "left_column",
-            "aria-label": "",
-            "type": "group",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -83,9 +109,15 @@
                 "id": ""
             },
             "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Додати рядок",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6a8724d2d825f",
+                    "key": "field_6a8870ee4ea7a",
                     "label": "",
                     "name": "",
                     "aria-label": "",
@@ -104,11 +136,97 @@
                     "display": "seamless",
                     "layout": "block",
                     "prefix_label": 0,
-                    "prefix_name": 0
+                    "prefix_name": 0,
+                    "parent_repeater": "field_6a886fe5d33f4"
                 },
                 {
-                    "key": "field_6a8493ee4e373",
-                    "label": "Контент",
+                    "key": "field_6a8871274ea7b",
+                    "label": "Розмір колонки",
+                    "name": "col_sizes",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a8871434ea7c",
+                            "label": "Розмір на мобільних пристроях",
+                            "name": "mob_size",
+                            "aria-label": "",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 6,
+                            "min": 1,
+                            "max": 12,
+                            "allow_in_bindings": 0,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6a8871b84ea7d",
+                            "label": "Розмір на планшетах",
+                            "name": "tablet_size",
+                            "aria-label": "",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 6,
+                            "min": 1,
+                            "max": 12,
+                            "allow_in_bindings": 0,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6a8871ce4ea7e",
+                            "label": "Розмір на десктопах",
+                            "name": "desk_size",
+                            "aria-label": "",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 6,
+                            "min": 1,
+                            "max": 12,
+                            "allow_in_bindings": 0,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "parent_repeater": "field_6a886fe5d33f4"
+                },
+                {
+                    "key": "field_6a8871f14ea7f",
+                    "label": "Контент колонки",
                     "name": "content",
                     "aria-label": "",
                     "type": "flexible_content",
@@ -121,14 +239,36 @@
                         "id": ""
                     },
                     "layouts": {
-                        "layout_6a8493fc8d8a5": {
-                            "key": "layout_6a8493fc8d8a5",
+                        "layout_6a8871fa55065": {
+                            "key": "layout_6a8871fa55065",
                             "name": "text",
                             "label": "Текст",
                             "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_6a84949e4e376",
+                                    "key": "field_6a8879fb51708",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a8872224ea80",
                                     "label": "",
                                     "name": "text",
                                     "aria-label": "",
@@ -152,14 +292,144 @@
                             "min": "",
                             "max": ""
                         },
-                        "layout_6a8494b44e377": {
-                            "key": "layout_6a8494b44e377",
+                        "layout_6a8872304ea81": {
+                            "key": "layout_6a8872304ea81",
+                            "name": "price",
+                            "label": "Ціна",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a887a8751709",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a8872304ea82",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_6a8339fa263d6"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_6a8872574ea83": {
+                            "key": "layout_6a8872574ea83",
+                            "name": "buttons-group",
+                            "label": "Кнопки",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a887aa85170a",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a8872574ea85",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_6a873985a1f0b"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_6a88727d4ea86": {
+                            "key": "layout_6a88727d4ea86",
                             "name": "image",
                             "label": "Зображення",
                             "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_6a8494b44e378",
+                                    "key": "field_6a887abe5170b",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a88727d4ea88",
                                     "label": "Зображення",
                                     "name": "image_id",
                                     "aria-label": "",
@@ -185,8 +455,8 @@
                                     "preview_size": "medium"
                                 },
                                 {
-                                    "key": "field_6a8495084e379",
-                                    "label": "Формат зображення",
+                                    "key": "field_6a8872aa4ea89",
+                                    "label": "Формат",
                                     "name": "ratio",
                                     "aria-label": "",
                                     "type": "select",
@@ -199,9 +469,9 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "video": "Широке 16\/9",
-                                        "square": "Квадрат 1\/1",
-                                        "vertical": "Високе 9\/16"
+                                        "video": "16\/9",
+                                        "square": "1\/1",
+                                        "vertical": "9\/16"
                                     },
                                     "default_value": "square",
                                     "return_format": "",
@@ -216,14 +486,36 @@
                             "min": "",
                             "max": ""
                         },
-                        "layout_6a87255e813f1": {
-                            "key": "layout_6a87255e813f1",
+                        "layout_6a8873074ea8a": {
+                            "key": "layout_6a8873074ea8a",
                             "name": "video",
                             "label": "Відео",
                             "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_6a8725c0813f4",
+                                    "key": "field_6a887ad35170c",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a8873074ea8b",
                                     "label": "Постер",
                                     "name": "poster",
                                     "aria-label": "",
@@ -249,7 +541,7 @@
                                     "preview_size": "medium"
                                 },
                                 {
-                                    "key": "field_6a87255e813f2",
+                                    "key": "field_6a88733a4ea8d",
                                     "label": "Відео",
                                     "name": "video_url",
                                     "aria-label": "",
@@ -266,12 +558,12 @@
                                     "library": "all",
                                     "min_size": "",
                                     "max_size": "",
-                                    "mime_types": ".mp4, .webm",
+                                    "mime_types": "",
                                     "allow_in_bindings": 0
                                 },
                                 {
-                                    "key": "field_6a87255e813f3",
-                                    "label": "Формат відео",
+                                    "key": "field_6a8873074ea8c",
+                                    "label": "Формат",
                                     "name": "ratio",
                                     "aria-label": "",
                                     "type": "select",
@@ -284,12 +576,12 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "video": "Широке 16\/9",
-                                        "square": "Квадрат 1\/1",
-                                        "vertical": "Високе 9\/16"
+                                        "video": "16\/9",
+                                        "square": "1\/1",
+                                        "vertical": "9\/16"
                                     },
                                     "default_value": "video",
-                                    "return_format": "",
+                                    "return_format": "value",
                                     "multiple": 0,
                                     "allow_null": 0,
                                     "allow_in_bindings": 0,
@@ -301,14 +593,36 @@
                             "min": "",
                             "max": ""
                         },
-                        "layout_6a872602813f5": {
-                            "key": "layout_6a872602813f5",
+                        "layout_6a8873594ea8e": {
+                            "key": "layout_6a8873594ea8e",
                             "name": "youtube-video",
                             "label": "YouTube Відео",
                             "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_6a872602813f7",
+                                    "key": "field_6a887aea5170d",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a8873594ea8f",
                                     "label": "YouTube ID",
                                     "name": "id",
                                     "aria-label": "",
@@ -329,8 +643,8 @@
                                     "append": ""
                                 },
                                 {
-                                    "key": "field_6a872602813f8",
-                                    "label": "Формат відео",
+                                    "key": "field_6a8873594ea90",
+                                    "label": "Формат",
                                     "name": "ratio",
                                     "aria-label": "",
                                     "type": "select",
@@ -343,12 +657,12 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "video": "Широке 16\/9",
-                                        "square": "Квадрат 1\/1",
-                                        "vertical": "Високе 9\/16"
+                                        "video": "16\/9",
+                                        "square": "1\/1",
+                                        "vertical": "9\/16"
                                     },
                                     "default_value": "video",
-                                    "return_format": "value",
+                                    "return_format": "",
                                     "multiple": 0,
                                     "allow_null": 0,
                                     "allow_in_bindings": 0,
@@ -359,137 +673,12 @@
                             ],
                             "min": "",
                             "max": ""
-                        },
-                        "layout_6a8496254e37a": {
-                            "key": "layout_6a8496254e37a",
-                            "name": "price",
-                            "label": "Ціна",
-                            "display": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_6a8496334e37d",
-                                    "label": "",
-                                    "name": "",
-                                    "aria-label": "",
-                                    "type": "clone",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "clone": [
-                                        "group_6a8339fa263d6"
-                                    ],
-                                    "display": "seamless",
-                                    "layout": "",
-                                    "prefix_label": 0,
-                                    "prefix_name": 0
-                                }
-                            ],
-                            "min": "",
-                            "max": ""
-                        },
-                        "layout_6a84964c4e37e": {
-                            "key": "layout_6a84964c4e37e",
-                            "name": "buttons-group",
-                            "label": "Кнопки",
-                            "display": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_6a84964c4e380",
-                                    "label": "",
-                                    "name": "",
-                                    "aria-label": "",
-                                    "type": "clone",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "clone": [
-                                        "group_6a873985a1f0b"
-                                    ],
-                                    "display": "seamless",
-                                    "layout": "block",
-                                    "prefix_label": 0,
-                                    "prefix_name": 0
-                                }
-                            ],
-                            "min": "",
-                            "max": ""
                         }
                     },
                     "min": "",
                     "max": "",
-                    "button_label": "Додати рядок"
-                }
-            ]
-        },
-        {
-            "key": "field_6a84940a4e374",
-            "label": "Права колнка",
-            "name": "right_column",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_6a8724ecd8260",
-                    "label": "",
-                    "name": "",
-                    "aria-label": "",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "group_6a833bef8614e"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                },
-                {
-                    "key": "field_6a8496914e382",
-                    "label": "",
-                    "name": "",
-                    "aria-label": "",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "field_6a8493ee4e373"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
+                    "button_label": "Додати рядок",
+                    "parent_repeater": "field_6a886fe5d33f4"
                 }
             ]
         }
@@ -512,5 +701,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787247412
+    "modified": 1787329286
 }

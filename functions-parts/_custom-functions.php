@@ -83,10 +83,11 @@ function get_section_id($data)
 
 function get_part_path($file_name)
 {
-  return 'templates/parts/' . $file_name;
+    return 'templates/parts/' . $file_name;
 }
 
-function get_section_space_top($data) {
+function get_section_space_top($data)
+{
     $value = check($data['section_utils']['space_top'] ?? null) ? $data['section_utils']['space_top'] : 'lg';
     return 'section-space-top-' . $value;
 }
@@ -111,4 +112,9 @@ function get_faq_schema(array $items)
     ];
 
     return '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>';
+}
+
+function get_space_top($value)
+{
+    return 'style="--space-top:' . ((int) $value) . 'px;"';
 }

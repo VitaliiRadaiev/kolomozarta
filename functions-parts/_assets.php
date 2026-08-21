@@ -21,9 +21,30 @@ function learning_files()
 
 add_action('wp_enqueue_scripts', 'learning_files');
 
+define('THEME_ADMIN_STYLE', 'dist/css/admin-styles.css');
+
 add_action('admin_enqueue_scripts', 'load_admin_style');
 function load_admin_style()
 {
-    wp_enqueue_style('admin-style-css', get_template_directory_uri() . '/admin-style.css');
+    wp_enqueue_style('admin-style-css', get_theme_file_uri(THEME_ADMIN_STYLE), array(), filemtime(get_theme_file_path(THEME_ADMIN_STYLE)));
 }
-add_editor_style('admin-style.css');
+
+// Те же стили — внутрь iframe TinyMCE, чтобы контент в редакторе
+// выглядел как на фронте (src/scss/admin-styles.scss).
+add_action('after_setup_theme', function () {
+    add_editor_style(THEME_ADMIN_STYLE);
+});
+
+// add_editor_style() отдаёт URL без версии, поэтому правки стилей залипают в
+// кеше браузера внутри iframe редактора. Дописать ?ver прямо в add_editor_style
+// нельзя — WP проверяет file_exists() и молча отбросит путь с query-строкой.
+add_filter('mce_css', function ($stylesheets) {
+    $path = get_theme_file_path(THEME_ADMIN_STYLE);
+    if (!file_exists($path)) {
+        return $stylesheets;
+    }
+
+    $uri = get_theme_file_uri(THEME_ADMIN_STYLE);
+
+    return str_replace($uri, add_query_arg('ver', filemtime($path), $uri), $stylesheets);
+});

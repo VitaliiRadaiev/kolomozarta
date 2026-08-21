@@ -1,0 +1,47 @@
+{
+    "key": "group_6a887a10d4b4a",
+    "title": "[util] space-top",
+    "fields": [
+        {
+            "key": "field_6a887a1146009",
+            "label": "Відступ зверху",
+            "name": "space-top",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 20,
+            "min": "",
+            "max": 50,
+            "allow_in_bindings": 0,
+            "step": 5,
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787330855
+}
