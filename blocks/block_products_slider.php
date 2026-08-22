@@ -1,7 +1,7 @@
 <?php
 global $data;
 if (!$data['section_utils']['is_hide']):
-    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+    if (!current_user_can('administrator') && $data['section_utils']['is_hide_for_users']) {
         return;
     }
 
@@ -16,7 +16,7 @@ if (!$data['section_utils']['is_hide']):
     $query_args = [
         'post_type'        => 'product',
         'post_status'      => 'publish',
-        'posts_per_page'   => 16,
+        'posts_per_page'   => 50,
         'orderby'          => [
             'menu_order' => 'ASC',
             'date'       => 'DESC',
@@ -37,7 +37,6 @@ if (!$data['section_utils']['is_hide']):
         $the_posts = get_posts($query_args);
     }
 ?>
-
     <section <?= get_section_id($data) ?> class="products-slider <?= get_section_space_top($data) ?>">
         <div class="container">
             <?php get_template_part(get_part_path('title'), null, [

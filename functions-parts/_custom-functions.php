@@ -88,8 +88,7 @@ function get_part_path($file_name)
 
 function get_section_space_top($data)
 {
-    $value = check($data['section_utils']['space_top'] ?? null) ? $data['section_utils']['space_top'] : 'lg';
-    return 'section-space-top-' . $value;
+    return 'section-space-top-' . $data['section_utils']['space_top'];
 }
 
 function get_faq_schema(array $items)

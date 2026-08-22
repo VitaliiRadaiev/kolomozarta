@@ -948,7 +948,7 @@
                 "layout_6a8496b6d5e8a": {
                     "key": "layout_6a8496b6d5e8a",
                     "name": "block_multicontent",
-                    "label": "Блок \"Мультіконтент дві колонки\"",
+                    "label": "Блок \"Мультіконтент\"",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1001,5 +1001,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787245549
+    "modified": 1787389180
 }

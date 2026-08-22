@@ -1,7 +1,7 @@
 <?php
 global $data;
 if (!$data['section_utils']['is_hide']):
-    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+    if (!current_user_can('administrator') && $data['section_utils']['is_hide_for_users']) {
         return;
     }
 
@@ -14,6 +14,8 @@ if (!$data['section_utils']['is_hide']):
     $year_course_video = $data['year_course_video'];
     $year_course_list_title = $data['year_course_list_title'];
     $year_course_list = $data['year_course_list'];
+    $year_course_price_title = $data['year_course_price_title'];
+    $year_course_price = $data['year_course_price'];
 ?>
     <section <?= get_section_id($data) ?> class="year-course <?= get_section_space_top($data) ?>">
         <div class="container">
@@ -55,6 +57,20 @@ if (!$data['section_utils']['is_hide']):
                         </div>
                     <?php endif; ?>
                 </div>
+                <?php if (check($year_course_price_title ?? null) || check($year_course_price ?? null)): ?>
+                    <div data-aos="fade-up" class="year-course__lists-price">
+                        <?php if ($year_course_price_title): ?>
+                            <p><?= $year_course_price_title ?></p>
+                        <?php endif; ?>
+                        <?php if ($year_course_price) : ?>
+                            <span><?= $year_course_price ?></span>
+                        <?php endif; ?>
+                        <button class="openOrderPopup"
+                            data-price="<?= $year_course_price ?>"
+                            data-title="<?= the_title() ?>"
+                            data-subtitle="<?= $year_course_price_title ?>"><?= $order_btn ?></button>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>

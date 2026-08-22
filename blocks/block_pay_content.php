@@ -1,7 +1,7 @@
 <?php
 global $data;
 if (!$data['section_utils']['is_hide']):
-    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+    if (!current_user_can('administrator') && $data['section_utils']['is_hide_for_users']) {
         return;
     }
 

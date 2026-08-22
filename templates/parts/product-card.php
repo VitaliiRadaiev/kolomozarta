@@ -14,7 +14,7 @@ wp_enqueue_script('product-card_js', get_theme_file_uri('./dist/js/templates/par
 
 $btn_details      = get_field('btn_details', 'option');
 
-$title             = get_the_title();
+$title             = get_the_title($post_id);
 $short_description = get_field('short_description', $post_id);
 $price             = get_field('price', $post_id);
 $gallery           = get_field('gallery', $post_id);

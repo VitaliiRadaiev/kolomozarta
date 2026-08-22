@@ -1,7 +1,7 @@
 <?php
 global $data;
 if (!$data['section_utils']['is_hide']):
-    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+    if (!current_user_can('administrator') && $data['section_utils']['is_hide_for_users']) {
         return;
     }
 
@@ -11,7 +11,7 @@ if (!$data['section_utils']['is_hide']):
     $title = $data['block_text_title'];
     $text = $data['block_text_text'];
 ?>
-    <section <?= get_section_id($data) ?> class="block-text text-<?= $text_align ?> <?= get_section_space_top($data) ?>">>
+    <section <?= get_section_id($data) ?> class="block-text text-<?= $text_align ?> <?= get_section_space_top($data) ?>">
         <div data-aos="fade-up" class="container">
             <?php if ($title): ?>
                 <div class="block-text__title">

@@ -1,6 +1,6 @@
 {
     "key": "group_6a84932245285",
-    "title": "[C-Block] Блок \"Мультіконтент дві колонки\"",
+    "title": "[C-Block] Блок \"Мультіконтент\"",
     "fields": [
         {
             "key": "field_6a8493224e370",
@@ -239,6 +239,60 @@
                         "id": ""
                     },
                     "layouts": {
+                        "layout_6a89615e756f9": {
+                            "key": "layout_6a89615e756f9",
+                            "name": "title",
+                            "label": "Заголовок",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a89615e756fb",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a89615e756fc",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_6a8025a2ed463"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
                         "layout_6a8871fa55065": {
                             "key": "layout_6a8871fa55065",
                             "name": "text",
@@ -701,5 +755,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787329286
+    "modified": 1787388299
 }

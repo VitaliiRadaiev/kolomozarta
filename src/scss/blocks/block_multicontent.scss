@@ -21,11 +21,13 @@
     &__grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap: 8px;
+        column-gap: 8px;
+        row-gap: 20px;
         width: 100%;
 
         @media (min-width: $mq-md) {
             gap: 16px;
+            row-gap: 20px;
         }
 
         @media (min-width: $mq-lg) {
@@ -79,10 +81,6 @@
             & .price__old {
                 margin-left: 66px;
             }
-        }
-
-        & .text-content {
-            margin: 0;
         }
 
         & .multicontent-img,

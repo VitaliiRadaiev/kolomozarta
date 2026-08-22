@@ -179,6 +179,48 @@
                     "parent_repeater": "field_672b5e735c140"
                 }
             ]
+        },
+        {
+            "key": "field_672b5f555c142",
+            "label": "Заголовок над ціною",
+            "name": "year_course_price_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_672b678b79784",
+            "label": "Ціна",
+            "name": "year_course_price",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -204,5 +246,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787072843
+    "modified": 1787072844
 }

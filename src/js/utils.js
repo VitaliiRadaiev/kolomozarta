@@ -73,3 +73,24 @@ function initFancybox() {
         });
     }
 }
+
+function initSmoothScrollByAnchors() {
+    let anchors = document.querySelectorAll('a[href*="#"]:not([data-action="open-popup"])');
+    if (anchors.length) {
+        anchors.forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const href = anchor.getAttribute('href')
+                let url = href.startsWith('#') ? href : new URL(href).hash;
+
+                const id = url.length > 1 ? url : null;
+                if (!id) return;
+                let el = document.querySelector(url);
+
+                if (el) {
+                    e.preventDefault();
+                    scrollToEl(el);
+                }
+            })
+        })
+    }
+}

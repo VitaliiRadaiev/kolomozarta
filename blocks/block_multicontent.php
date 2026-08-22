@@ -1,7 +1,7 @@
 <?php
 global $data;
 if (!$data['section_utils']['is_hide']):
-    if (is_admin() && $data['section_utils']['is_hide_for_users']) {
+    if (!current_user_can('administrator') && $data['section_utils']['is_hide_for_users']) {
         return;
     }
 
@@ -29,6 +29,16 @@ if (!$data['section_utils']['is_hide']):
                 ?>
                     <div style="--col-size-mob: <?= $col_sizes['mob_size'] ?>; --col-size-tablet: <?= $col_sizes['tablet_size'] ?>; --col-size-desk: <?= $col_sizes['desk_size'] ?>;" class="multicontent__col alignment-<?= $alignment ?>">
                         <?php foreach ($content as $item): ?>
+
+
+                            <?php if ($item['acf_fc_layout'] == 'title'): ?>
+                                <div <?= get_space_top($item['space-top']); ?> class="multicontent-space-top">
+                                    <?php get_template_part(get_part_path('title'), null, [
+                                        'title_data' => $item['title']
+                                    ]) ?>
+                                </div>
+                            <?php endif; ?>
+
                             <?php if ($item['acf_fc_layout'] == 'text'): ?>
                                 <div <?= get_space_top($item['space-top']); ?> class="text-content multicontent-space-top">
                                     <?= add_inner_wrap_to_li($item['text']); ?>

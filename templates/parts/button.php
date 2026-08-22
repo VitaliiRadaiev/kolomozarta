@@ -20,9 +20,9 @@ $button_style_map = [
 ?>
 
 <?php if ($button_data['button_type'] === 'link' && check($button_data['link'])): ?>
-    <a href="btn-default <?= $button_data['link']['url'] ?>"
+    <a href="<?= $button_data['link']['url'] ?>"
         target="<?= check($button_data['link']['target']) ? $button_data['link']['target'] : '_self' ?>"
-        class="<?= $button_style_map[$button_data['button_style']] ?> <?= $classes ?>"
+        class="btn-default <?= $button_style_map[$button_data['button_style']] ?> <?= $classes ?>"
         aria-label="<?= esc_attr($button_data['link']['title']) ?>"
         <?= $attributes ?>>
         <?= $button_data['link']['title'] ?>

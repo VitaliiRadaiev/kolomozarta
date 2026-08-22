@@ -1,5 +1,6 @@
 $(document).ready(function () {
     initFancybox();
+    initSmoothScrollByAnchors();
 
 
     // Reviews slider
