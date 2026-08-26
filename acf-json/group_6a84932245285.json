@@ -63,7 +63,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -71,6 +71,43 @@
             "enable_opacity": 1,
             "return_format": "string",
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6a8f1675898d4",
+            "label": "Внутрішні відступи, зверху та знизу",
+            "name": "paddings",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6a886f02d33f2",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "lg": "Великий",
+                "md": "Середній",
+                "sm": "Малий",
+                "0": "Немає"
+            },
+            "default_value": "lg",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_6a8493504e371",
@@ -165,7 +202,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "33",
                                 "class": "",
                                 "id": ""
                             },
@@ -187,7 +224,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "33",
                                 "class": "",
                                 "id": ""
                             },
@@ -209,7 +246,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "33",
                                 "class": "",
                                 "id": ""
                             },
@@ -525,10 +562,12 @@
                                     "choices": {
                                         "video": "16\/9",
                                         "square": "1\/1",
-                                        "vertical": "9\/16"
+                                        "vertical": "9\/16",
+                                        "album": "5\/4",
+                                        "album_vertical": "4\/5"
                                     },
                                     "default_value": "square",
-                                    "return_format": "",
+                                    "return_format": "value",
                                     "multiple": 0,
                                     "allow_null": 0,
                                     "allow_in_bindings": 0,
@@ -632,7 +671,9 @@
                                     "choices": {
                                         "video": "16\/9",
                                         "square": "1\/1",
-                                        "vertical": "9\/16"
+                                        "vertical": "9\/16",
+                                        "album": "5\/4",
+                                        "album_vertical": "4\/5"
                                     },
                                     "default_value": "video",
                                     "return_format": "value",
@@ -713,10 +754,12 @@
                                     "choices": {
                                         "video": "16\/9",
                                         "square": "1\/1",
-                                        "vertical": "9\/16"
+                                        "vertical": "9\/16",
+                                        "album": "5\/4",
+                                        "album_vertical": "4\/5"
                                     },
                                     "default_value": "video",
-                                    "return_format": "",
+                                    "return_format": "value",
                                     "multiple": 0,
                                     "allow_null": 0,
                                     "allow_in_bindings": 0,
@@ -755,5 +798,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787388299
+    "modified": 1787763552
 }

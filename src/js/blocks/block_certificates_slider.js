@@ -2,6 +2,11 @@
     const sliders = document.querySelectorAll('[data-slider="certificates"]');
     sliders.forEach((slider) => {
 
+        // Слайди вміщуються цілком — гортати нічого, ховаємо кнопки навігації
+        const toggleNav = (swiper) => {
+            slider.classList.toggle('slider-nav-locked', swiper.isLocked);
+        };
+
         const swiper = new Swiper(slider.querySelector('.swiper'), {
             observer: true,
             observeParents: true,
@@ -31,8 +36,16 @@
                     slidesPerView: 4,
                     spaceBetween: 16,
                 }
+            },
+            on: {
+                init: toggleNav,
+                lock: toggleNav,
+                unlock: toggleNav,
+                breakpoint: toggleNav,
             }
         });
+
+        toggleNav(swiper);
 
     });
 }

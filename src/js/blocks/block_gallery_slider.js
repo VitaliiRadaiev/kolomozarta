@@ -1,6 +1,10 @@
 {
-    const sliders = document.querySelectorAll('[data-slider="certificates"]');
+    const sliders = document.querySelectorAll('[data-slider="gallery"]');
     sliders.forEach((slider) => {
+
+        const mob = parseInt(slider.dataset.slidesMob, 10) || 1;
+        const tablet = parseInt(slider.dataset.slidesTablet, 10) || 2;
+        const desktop = parseInt(slider.dataset.slidesDesktop, 10) || 3;
 
         // Слайди вміщуються цілком — гортати нічого, ховаємо кнопки навігації
         const toggleNav = (swiper) => {
@@ -21,19 +25,15 @@
             speed: 600,
             breakpoints: {
                 0: {
-                    slidesPerView: 1,
+                    slidesPerView: mob,
                     spaceBetween: 12,
                 },
-                576: {
-                    slidesPerView: 2,
-                    spaceBetween: 12,
-                },
-                744: {
-                    slidesPerView: 3,
+                768: {
+                    slidesPerView: tablet,
                     spaceBetween: 16,
                 },
-                1280: {
-                    slidesPerView: 4,
+                1024: {
+                    slidesPerView: desktop,
                     spaceBetween: 16,
                 }
             },

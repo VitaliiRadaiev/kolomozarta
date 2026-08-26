@@ -6,18 +6,17 @@
 }
 
 .page__wrap {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
   .page__title {
-    text-align: center; 
+    text-align: center;
   }
 
   nav {
     align-self: flex-start;
-    padding: 20px 0;
 
     * {
       color: $text;
@@ -27,4 +26,5 @@
 
 .page__breadcrumbs {
   width: 100%;
+  margin-bottom: 20px;
 }

@@ -3,6 +3,7 @@
 @use 'base/_fonts' as *;
 @use './components/forms.scss';
 @use './components/global-ui.scss';
+@use './components/slider-head.scss';
 @use 'typography.scss';
 
 html {
@@ -317,4 +318,60 @@ presto-player::part(wrapper) {
 
 .section-space-top-0 {
   margin-top: 0px;
+}
+
+.section-padding-y-lg {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media (min-width: $mq-xl) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.section-padding-y-md {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+
+  @media (min-width: $mq-xl) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.section-padding-y-sm {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @media (min-width: $mq-xl) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+.section-padding-y-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-vertical {
+  aspect-ratio: 9 / 16;
+}
+
+.aspect-album {
+  aspect-ratio: 5 / 4;
+}
+
+.aspect-album_vertical {
+  aspect-ratio: 4 / 5;
 }

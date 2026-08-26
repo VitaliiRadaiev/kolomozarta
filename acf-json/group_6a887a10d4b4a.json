@@ -28,9 +28,8 @@
     "location": [
         [
             {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
+                "param": "block",
+                "operator": "=="
             }
         ]
     ],
@@ -43,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787330855
+    "modified": 1787764440
 }

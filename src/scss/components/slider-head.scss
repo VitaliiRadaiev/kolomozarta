@@ -1,0 +1,78 @@
+@use '../base/_variables' as *;
+
+// Шапка слайдера: заголовок і кнопки навігації в один рівень.
+// Живе всередині обгортки [data-slider], щоб JS блоку знаходив кнопки.
+.slider-head {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    @media (min-width: $mq-lg) {
+        &:not(:has(.swiper-button-lock)) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &--no-title {
+        display: none;
+
+        @media (min-width: $mq-lg) {
+            display: flex;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    &__nav {
+        display: none;
+        flex-shrink: 0;
+        margin-left: auto;
+
+        @media (min-width: $mq-lg) {
+            display: flex;
+            gap: 10px;
+        }
+
+        & .swiper-button {
+            position: static;
+
+            &.next,
+            &.prev {
+                right: auto;
+            }
+        }
+    }
+}
+
+// Слайди вміщуються цілком — гортати нічого, ховаємо навігацію.
+// Клас вішає JS блоку за swiper.isLocked
+.slider-nav-locked {
+
+    & .slider-head__nav {
+        display: none;
+    }
+
+    & .slider-head--no-title {
+        display: none;
+    }
+}
+
+// Вирівнювання заголовка з ACF (text-left / text-center / text-right) працює лише там,
+// де немає кнопок навігації: нижче $mq-lg вони приховані, вище — коли слайдер заблоковано.
+// Поруч із кнопками заголовок завжди притиснутий ліворуч, щоб не конфліктувати з ними.
+@media (min-width: $mq-lg) {
+    [data-slider]:not(.slider-nav-locked) .slider-head__title {
+        text-align: left;
+
+        &::after {
+            left: 0;
+            right: auto;
+            transform: translateX(0);
+        }
+    }
+}

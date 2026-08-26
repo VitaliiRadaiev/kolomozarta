@@ -1,19 +1,6 @@
 @use '../base/_variables' as *;
 
 .products-slider {
-    &__slider {
-        margin-top: 30px;
-
-        @include minw($sm-pc) {
-            margin-top: 15px;
-        }
-
-        &:first-child {
-            margin-top: 0;
-        }
-
-    }
-
     & .swiper-slide {
         height: auto;
     }

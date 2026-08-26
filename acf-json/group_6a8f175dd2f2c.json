@@ -1,11 +1,11 @@
 {
-    "key": "group_6a833bef8614e",
-    "title": "[util] alignment",
+    "key": "group_6a8f175dd2f2c",
+    "title": "[util] Формат медіа",
     "fields": [
         {
-            "key": "field_6a833bef362fa",
-            "label": "Вирівнювання",
-            "name": "alignment",
+            "key": "field_6a8f175e69fc1",
+            "label": "Формат медіа",
+            "name": "ratio",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -17,11 +17,13 @@
                 "id": ""
             },
             "choices": {
-                "left": "Ліворуч",
-                "center": "Посередині",
-                "right": "Праворуч"
+                "video": "16\/9",
+                "square": "1\/1",
+                "vertical": "9\/16",
+                "album": "5\/4",
+                "album_vertical": "4\/5"
             },
-            "default_value": false,
+            "default_value": "square",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -35,8 +37,7 @@
         [
             {
                 "param": "block",
-                "operator": "==",
-                "value": ""
+                "operator": "=="
             }
         ]
     ],
@@ -49,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787764381
+    "modified": 1787764420
 }

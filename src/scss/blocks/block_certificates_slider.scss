@@ -2,19 +2,6 @@
 
 .certificates-slider {
 
-    &__slider {
-        margin-top: 30px;
-
-        @include minw($sm-pc) {
-            margin-top: 15px;
-        }
-
-        &:first-child {
-            margin-top: 0;
-        }
-
-    }
-
     &__slider-item {
         position: relative;
         aspect-ratio: 1 / 1.25;

@@ -91,6 +91,11 @@ function get_section_space_top($data)
     return 'section-space-top-' . $data['section_utils']['space_top'];
 }
 
+function get_section_padding_y($data)
+{
+    return 'section-padding-y-' . (check($data['paddings'] ?? null) ? $data['paddings'] : '0');
+}
+
 function get_faq_schema(array $items)
 {
     $entities = array_map(function ($item) {

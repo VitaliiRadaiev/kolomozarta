@@ -1,17 +1,6 @@
 @use '../base/_variables' as *;
 
 .multicontent {
-
-    &--bg {
-        padding-top: 40px;
-        padding-bottom: 40px;
-
-        @media (min-width: $mq-lg) {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-    }
-
     &__container {
         display: flex;
         flex-direction: column;
@@ -98,19 +87,6 @@
             object-fit: cover;
         }
     }
-}
-
-
-.aspect-square {
-    aspect-ratio: 1 / 1;
-}
-
-.aspect-video {
-    aspect-ratio: 16 / 9;
-}
-
-.aspect-vertical {
-    aspect-ratio: 9 / 16;
 }
 
 .multicontent-space-top {

@@ -976,6 +976,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6a8f1fefeff7e": {
+                    "key": "layout_6a8f1fefeff7e",
+                    "name": "block_gallery_slider",
+                    "label": "Блок \"Галерея слайдер\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a8f1fefeff80",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a8f1ca839c14"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -1001,5 +1033,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787389180
+    "modified": 1787764778
 }

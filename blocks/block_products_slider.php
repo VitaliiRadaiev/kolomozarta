@@ -39,12 +39,12 @@ if (!$data['section_utils']['is_hide']):
 ?>
     <section <?= get_section_id($data) ?> class="products-slider <?= get_section_space_top($data) ?>">
         <div class="container">
-            <?php get_template_part(get_part_path('title'), null, [
-                'title_data' => $data['title']
-            ]) ?>
-
             <div data-slider="products-slider" class="products-slider__slider">
-                <div class="swiper swiper-has-buttons">
+                <?php get_template_part(get_part_path('slider-head'), null, [
+                    'title_data' => $data['title']
+                ]) ?>
+
+                <div class="swiper">
                     <div class="swiper-wrapper">
                         <?php if (check($the_posts ?? null)): ?>
                             <?php foreach ($the_posts as $item):
@@ -61,17 +61,6 @@ if (!$data['section_utils']['is_hide']):
                     <div class="slider-pagination-wrapper">
                         <div class="swiper-pagination"></div>
                     </div>
-
-                    <button type="button" class="swiper-button prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                        </svg>
-                    </button>
-                    <button type="button" class="swiper-button next">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>

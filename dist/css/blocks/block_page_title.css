@@ -23,7 +23,6 @@
 .page__wrap nav {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  padding: 20px 0;
 }
 .page__wrap nav * {
   color: #454545;
@@ -31,4 +30,5 @@
 
 .page__breadcrumbs {
   width: 100%;
+  margin-bottom: 20px;
 }

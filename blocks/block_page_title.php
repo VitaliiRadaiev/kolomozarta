@@ -11,13 +11,14 @@ if (!$data['section_utils']['is_hide']):
 ?>
     <section <?= get_section_id($data) ?> class="page__hero <?= get_section_space_top($data) ?>">
         <div class="container">
+            <div data-aos="fade-in" data-aos-delay="600" data-aos-duration="1000" class="page__breadcrumbs">
+                <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+            </div>
+            
             <div class="page__wrap">
                 <h1 data-aos="fade-up" class="page__title">
                     <?= $page_title ?>
                 </h1>
-                <div data-aos="fade-in" data-aos-delay="600" data-aos-duration="1000" class="page__breadcrumbs">
-                    <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
-                </div>
             </div>
         </div>
     </section>
