@@ -2,10 +2,18 @@
 
 .gallery-slider {
 
+    & .swiper {
+        width: auto;
+        margin: -3px;
+        padding: 3px;
+    }
+
     &__item {
         display: block;
         border-radius: 12px;
         overflow: hidden;
+        box-shadow: 0px 0px 3px 0px rgba(#000, 0.1);
+
 
         @media (min-width: $mq-lg) {
             &:hover .gallery-slider__image {

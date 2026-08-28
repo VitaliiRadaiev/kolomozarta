@@ -25,11 +25,11 @@
             "prefix_name": 0
         },
         {
-            "key": "field_6a886f02d33f2",
-            "label": "Відображати кольоровий фон",
-            "name": "is_show_colour_bg",
+            "key": "field_6a90621ecb36e",
+            "label": "",
+            "name": "",
             "aria-label": "",
-            "type": "true_false",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,76 +38,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_6a886f2ed33f3",
-            "label": "Колір фону",
-            "name": "bg-color",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6a886f02d33f2",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
+            "clone": [
+                "group_6a8f1cfa6c063"
             ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#FFF8E8",
-            "enable_opacity": 1,
-            "return_format": "string",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_6a8f1675898d4",
-            "label": "Внутрішні відступи, зверху та знизу",
-            "name": "paddings",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6a886f02d33f2",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "lg": "Великий",
-                "md": "Середній",
-                "sm": "Малий",
-                "0": "Немає"
-            },
-            "default_value": "lg",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_6a8493504e371",
@@ -533,7 +470,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "",
+                                    "return_format": "id",
                                     "library": "",
                                     "min_width": "",
                                     "min_height": "",
@@ -547,6 +484,96 @@
                                 },
                                 {
                                     "key": "field_6a8872aa4ea89",
+                                    "label": "Формат",
+                                    "name": "ratio",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "video": "16\/9",
+                                        "square": "1\/1",
+                                        "vertical": "9\/16",
+                                        "album": "5\/4",
+                                        "album_vertical": "4\/5"
+                                    },
+                                    "default_value": "square",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_6a919b51faef3": {
+                            "key": "layout_6a919b51faef3",
+                            "name": "images-slider",
+                            "label": "Зображення горталка",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a919b51faef5",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a919b51faef6",
+                                    "label": "Галерея",
+                                    "name": "images_ids",
+                                    "aria-label": "",
+                                    "type": "gallery",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min": "",
+                                    "max": "",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ".jpeg, .jpg, .png, .webp",
+                                    "insert": "append",
+                                    "preview_size": "medium"
+                                },
+                                {
+                                    "key": "field_6a919b51faef7",
                                     "label": "Формат",
                                     "name": "ratio",
                                     "aria-label": "",
@@ -798,5 +825,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787763552
+    "modified": 1787927631
 }

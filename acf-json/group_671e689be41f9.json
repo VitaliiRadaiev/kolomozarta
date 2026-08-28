@@ -1008,6 +1008,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6a91b1f9d5888": {
+                    "key": "layout_6a91b1f9d5888",
+                    "name": "block_reviews_slider",
+                    "label": "Блок \"Відгуки слайдер\"",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a91b1f9d588a",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a91b0af65204"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -1033,5 +1065,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787764778
+    "modified": 1787933261
 }

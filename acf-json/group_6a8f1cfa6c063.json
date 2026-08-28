@@ -57,7 +57,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "50",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -68,8 +68,8 @@
                 },
                 {
                     "key": "field_6a8f1d84e71f3",
-                    "label": "Внутрішні відступи, зверху та знизу",
-                    "name": "paddings",
+                    "label": "Внутрішній відступ зверху",
+                    "name": "padding_top",
                     "aria-label": "",
                     "type": "select",
                     "instructions": "",
@@ -84,7 +84,44 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "50",
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "lg": "Великий",
+                        "md": "Середній",
+                        "sm": "Малий",
+                        "0": "Немає"
+                    },
+                    "default_value": "lg",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6a90617d0ecc8",
+                    "label": "Внутрішній відступ знизу",
+                    "name": "padding_bottom",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a8f1d3ae71f1",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -124,5 +161,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787764148
+    "modified": 1787847110
 }

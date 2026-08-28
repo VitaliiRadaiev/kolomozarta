@@ -17,6 +17,7 @@ $btn_details      = get_field('btn_details', 'option');
 $title             = get_the_title($post_id);
 $short_description = get_field('short_description', $post_id);
 $price             = get_field('price', $post_id);
+$old_price             = get_field('old_price', $post_id);
 $gallery           = get_field('gallery', $post_id);
 $link_url          = get_field('link', $post_id);
 if (empty($link_url)) {
@@ -24,7 +25,6 @@ if (empty($link_url)) {
 }
 
 ?>
-
 <a class="product-card <?= $classes ?>" href="<?= esc_url($link_url) ?>" <?= $attributes ?>>
     <?php if (!empty($gallery)): ?>
         <div class="product-card__slider">
@@ -36,7 +36,7 @@ if (empty($link_url)) {
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination slider-pagination--light"></div>
             </div>
             <button class="product-card__slider-prev" type="button" aria-label="Попередній слайд"></button>
             <button class="product-card__slider-next" type="button" aria-label="Наступний слайд"></button>
@@ -48,8 +48,15 @@ if (empty($link_url)) {
     <?php endif; ?>
     <div class="product-card__footer">
         <?php if (!empty($price)): ?>
-            <span class="product-card__price"><?= esc_html($price) ?></span>
+            <div class="">
+                <?php if(check($old_price ?? null)):?>
+                    <div class="product-card__old-price">
+                        <?= $old_price ?>
+                    </div>
+                <?php endif;?>
+                <div class="product-card__price"><?= esc_html($price) ?></div>
+            </div>
         <?php endif; ?>
-        <span class="product-card__btn btn-default"><?= esc_html($btn_details) ?></span>
+        <div class="product-card__btn btn-default"><?= esc_html($btn_details) ?></div>
     </div>
 </a>

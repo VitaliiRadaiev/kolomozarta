@@ -41,6 +41,14 @@
     &__price {
         font-size: 1.6rem;
         font-weight: 700;
+        line-height: 1;
+    }
+
+    &__old-price {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-decoration: line-through;
+        line-height: 1;
     }
 
     &__slider {

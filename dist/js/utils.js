@@ -80,7 +80,15 @@ function initSmoothScrollByAnchors() {
         anchors.forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 const href = anchor.getAttribute('href')
-                let url = href.startsWith('#') ? href : new URL(href).hash;
+                if (!href.startsWith('#')) {
+                    const linkUrl = new URL(href, window.location.href);
+                    const isSamePage = linkUrl.origin === window.location.origin
+                        && linkUrl.pathname.replace(/\/$/, '') === window.location.pathname.replace(/\/$/, '');
+
+                    if (!isSamePage) return;
+                }
+
+                let url = href.startsWith('#') ? href : new URL(href, window.location.href).hash;
 
                 const id = url.length > 1 ? url : null;
                 if (!id) return;

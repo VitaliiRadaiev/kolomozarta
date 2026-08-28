@@ -26,7 +26,7 @@ if (!$data['section_utils']['is_hide']):
 
         $unique_id = uniqid('gallery-');
 ?>
-        <section <?= $is_show_colour_bg ? 'style="background-color:' . $section_bg['bg-color'] . ';"' : '' ?> <?= get_section_id($data) ?> class="gallery-slider <?= $is_show_colour_bg ? get_section_padding_y($section_bg) : '' ?> <?= get_section_space_top($data) ?>">
+        <section <?= $is_show_colour_bg ? 'style="background-color:' . $section_bg['bg-color'] . ';"' : '' ?> <?= get_section_id($data) ?> class="gallery-slider <?= $is_show_colour_bg ? get_section_padding($section_bg) : '' ?> <?= get_section_space_top($data) ?>">
             <div class="container">
                 <div data-slider="gallery"
                     data-slides-mob="<?= (int) $counts['mob'] ?>"

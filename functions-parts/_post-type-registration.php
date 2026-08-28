@@ -150,4 +150,38 @@ function init_post_types()
         'rewrite'            => false,
         'query_var'          => false,
     ));
+
+    register_post_type('review', array(
+        'label' => 'Відгуки',
+        'labels' => array(
+            'name'               => 'Відгуки',
+            'singular_name'      => 'Відгук',
+            'add_new'            => 'Додати Відгук',
+            'add_new_item'       => 'Додати новий Відгук',
+            'edit_item'          => 'Редагувати Відгук',
+            'new_item'           => 'Новий Відгук',
+            'view_item'          => 'Переглянути Відгук',
+            'search_items'       => 'Пошук Відгуків',
+            'not_found'          => 'Відгуків не знайдено',
+            'not_found_in_trash' => 'В кошику не знайдено Відгуків',
+            'menu_name'          => 'Відгуки',
+        ),
+        'public'             => true,
+        'publicly_queryable' => false,
+        'exclude_from_search' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_admin_bar'  => true,
+        'show_in_nav_menus'  => false,
+        'show_in_rest'       => true,
+        'rest_base'          => 'review',
+        'menu_position'      => 10,
+        'menu_icon'          => 'dashicons-format-quote',
+        'hierarchical'       => false,
+        'supports'           => array('title', 'editor', 'thumbnail'),
+        'taxonomies'         => array('review_category'),
+        'has_archive'        => false,
+        'rewrite'            => false,
+        'query_var'          => false,
+    ));
 }
