@@ -25,32 +25,6 @@
             "prefix_name": 0
         },
         {
-            "key": "field_69fafefdcdd55",
-            "label": "",
-            "name": "image_id",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
-        },
-        {
             "key": "field_6728d7d113e7c",
             "label": "Заголовок над картками",
             "name": "material_title",
@@ -95,5 +69,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786871427
+    "modified": 1787994031
 }

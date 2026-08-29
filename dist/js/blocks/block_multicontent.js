@@ -11,7 +11,7 @@
                 nextEl: slider.querySelector('.multicontent__slider-next'),
             },
             pagination: {
-                el: swiperEl.querySelector('.swiper-pagination'),
+                el: slider.querySelector('.swiper-pagination'),
                 clickable: true,
                 dynamicBullets: true,
             },

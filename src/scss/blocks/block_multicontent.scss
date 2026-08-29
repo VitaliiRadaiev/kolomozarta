@@ -93,21 +93,9 @@
         width: 100%;
 
         & .swiper {
+            position: relative;
             border-radius: 12px;
             overflow: hidden;
-        }
-
-        & .swiper-pagination {
-            bottom: 10px;
-        }
-
-        & .swiper-pagination-bullet {
-            background: rgba(255, 255, 255, 0.55);
-            opacity: 1;
-        }
-
-        & .swiper-pagination-bullet-active {
-            background: rgba(255, 255, 255, 0.9);
         }
     }
 

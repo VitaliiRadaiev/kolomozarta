@@ -28,9 +28,11 @@ if (!$data['section_utils']['is_hide']):
     <section <?= get_section_id($data) ?> class="material <?= get_section_space_top($data) ?>">
         <div class="container">
             <div class="material__wrap">
-                <div data-aos="fade-up" class="material__title">
-                    <h2><?= $material_title ?></h2>
-                </div>
+                <?php if(check($material_title ?? null)):?>
+                    <div data-aos="fade-up" class="material__title">
+                        <h2><?= $material_title ?></h2>
+                    </div>
+                <?php endif;?>
 
                 <?php if (!is_wp_error($product_categories) && !empty($product_categories)): ?>
                     <div data-aos="fade-up" class="material__tabs">

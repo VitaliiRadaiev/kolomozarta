@@ -77,18 +77,9 @@
   width: 100%;
 }
 .multicontent__slider .swiper {
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
-}
-.multicontent__slider .swiper-pagination {
-  bottom: 10px;
-}
-.multicontent__slider .swiper-pagination-bullet {
-  background: rgba(255, 255, 255, 0.55);
-  opacity: 1;
-}
-.multicontent__slider .swiper-pagination-bullet-active {
-  background: rgba(255, 255, 255, 0.9);
 }
 .multicontent__slider-item {
   display: block;

@@ -29,7 +29,7 @@ if (!$data['section_utils']['is_hide']):
                 foreach ($columns as $column):
                     $alignment = $column['alignment'];
                     $col_sizes = $column['col_sizes'];
-                    $content = $column['content'];
+                    $content = check($column['content'] ?? null) ? $column['content'] : [];
                 ?>
                     <div style="--col-size-mob: <?= $col_sizes['mob_size'] ?>; --col-size-tablet: <?= $col_sizes['tablet_size'] ?>; --col-size-desk: <?= $col_sizes['desk_size'] ?>;" class="multicontent__col alignment-<?= $alignment ?>">
                         <?php foreach ($content as $item): ?>
@@ -86,10 +86,12 @@ if (!$data['section_utils']['is_hide']):
                                                 </div>
                                             <?php endforeach; ?>
                                         </div>
-                                        <div class="swiper-pagination slider-pagination--light"></div>
+                                        <button class="multicontent__slider-prev" type="button" aria-label="Попередній слайд"></button>
+                                        <button class="multicontent__slider-next" type="button" aria-label="Наступний слайд"></button>
                                     </div>
-                                    <button class="multicontent__slider-prev" type="button" aria-label="Попередній слайд"></button>
-                                    <button class="multicontent__slider-next" type="button" aria-label="Наступний слайд"></button>
+                                    <div class="slider-pagination-wrapper">
+                                        <div class="swiper-pagination"></div>
+                                    </div>
                                 </div>
                             <?php endif; ?>
 

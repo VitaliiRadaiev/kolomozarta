@@ -154,6 +154,9 @@
   overflow: visible;
 }
 @media (min-width: 1024px) {
+  .reviews-slider__controls {
+    min-height: 40px;
+  }
   .review-card__media:hover .review-card__image {
     -webkit-transform: scale(1.04);
         -ms-transform: scale(1.04);
