@@ -202,11 +202,11 @@ $text_cabinet = get_field('text_cabinet', 'option');
                                     </li>
                                 <?php else: ?>
                                     <li class="menu-item menu-item-type-post_type">
-                                        <?php if(check($text_no_courses ?? null)):?>
+                                        <?php if (check($text_no_courses ?? null)): ?>
                                             <p>
                                                 <?= $text_no_courses ?>
                                             </p>
-                                        <?php endif;?>
+                                        <?php endif; ?>
                                         <a href="<?= esc_url($logout_url) ?>" target="_self" class=""> <?= $text_exit ?> </a>
                                     </li>
                                 <?php endif; ?>
@@ -264,4 +264,11 @@ $text_cabinet = get_field('text_cabinet', 'option');
             </div>
         </div>
     </header>
+    <?php if(!is_front_page() && !is_404() && !is_search()):?>
+        <div class="container">
+            <div class="breadcrumbs">
+                <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+            </div>
+        </div>
+    <?php endif;?>
     <main>

@@ -94,3 +94,12 @@
         margin-top: 30px;
     }
 }
+
+.breadcrumbs {
+    margin-top: 12px;
+    color: $text;
+
+    & a {
+        color: inherit;
+    }
+}

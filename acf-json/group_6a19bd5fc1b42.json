@@ -25,7 +25,7 @@
         },
         {
             "key": "field_6a81963272858",
-            "label": "Попередня ціна",
+            "label": "Закреслена ціна",
             "name": "old_price",
             "aria-label": "",
             "type": "text",
@@ -150,5 +150,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786882911
+    "modified": 1787996620
 }

@@ -251,6 +251,14 @@
   margin-top: 20px;
 }
 
+.breadcrumbs {
+  margin-top: 12px;
+  color: #454545;
+}
+.breadcrumbs a {
+  color: inherit;
+}
+
 .slider-head {
   display: -webkit-box;
   display: -ms-flexbox;
