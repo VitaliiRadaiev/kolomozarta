@@ -61,7 +61,7 @@
                 "id": ""
             },
             "choices": {
-                "default": "Показати за замовчуванням",
+                "default": "Всі",
                 "by_category": "Сортувати по категорії",
                 "custom": "Власний список"
             },
@@ -165,5 +165,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787071078
+    "modified": 1787997342
 }

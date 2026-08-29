@@ -14,5 +14,14 @@
         max-width:800px;
         margin: 0 auto;
         width: 100%;
+
+        &:not(.is-expanded) .faq-item.is-hidden {
+            display: none;
+        }
+    }
+
+    &__btn-wrap {
+        display: flex;
+        justify-content: center;
     }
 }

@@ -473,24 +473,6 @@
             "append": ""
         },
         {
-            "key": "field_67963f9370d6a",
-            "label": "Інші тексти",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
             "key": "field_67963fa070d6b",
             "label": "Текст обмеженого доступу",
             "name": "content-access-error",
@@ -500,7 +482,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "53",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -521,7 +503,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -542,7 +524,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -563,7 +545,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -584,7 +566,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -605,7 +587,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -626,7 +608,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -647,7 +629,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -668,7 +650,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -689,7 +671,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -710,7 +692,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -731,7 +713,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -752,7 +734,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -773,7 +755,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -794,11 +776,53 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "52",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "Немає жодного курсу",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a92ae10133de",
+            "label": "Текст \"Показати всі\"",
+            "name": "text_show_all",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Показати всі",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a92ae29133df",
+            "label": "Текст \"Приховати\"",
+            "name": "text_hide",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Приховати",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -1040,5 +1064,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786878072
+    "modified": 1787997764
 }

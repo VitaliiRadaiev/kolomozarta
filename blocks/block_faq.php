@@ -10,10 +10,16 @@ if (!$data['section_utils']['is_hide']):
 
     $display_mode = $data['display_mode'] ?? 'default';
 
+    // Количество элементов, видимых до нажатия на кнопку "Показати всі"
+    $visible_count = 2;
+
+    $text_show_all = get_field('text_show_all', 'option');
+    $text_hide     = get_field('text_hide', 'option');
+
     $query_args = [
         'post_type'        => 'faq',
         'post_status'      => 'publish',
-        'posts_per_page'   => 16,
+        'posts_per_page'   => -1,
         'orderby'          => [
             'menu_order' => 'ASC',
             'date'       => 'DESC',
@@ -53,6 +59,9 @@ if (!$data['section_utils']['is_hide']):
         return;
     }
 
+    $has_hidden = count($faq_items) > $visible_count;
+    $list_id    = uniqid('faq-list-');
+
     echo get_faq_schema(array_map(function ($faq_item) {
         return [
             'name' => $faq_item['title'],
@@ -67,9 +76,10 @@ if (!$data['section_utils']['is_hide']):
                 'title_data' => $data['title']
             ]) ?>
 
-            <div class="block-faq__list" data-accordion="one">
+            <div id="<?= esc_attr($list_id) ?>" class="block-faq__list" data-accordion="one">
                 <?php foreach ($faq_items as $key => $faq_item):
                     get_template_part(get_part_path('faq-item'), null, [
+                        'classes'       => $has_hidden && $key >= $visible_count ? 'is-hidden' : '',
                         'faq_item_data' => [
                             'title'   => $faq_item['title'],
                             'text'    => $faq_item['text'],
@@ -78,6 +88,12 @@ if (!$data['section_utils']['is_hide']):
                     ]);
                 endforeach; ?>
             </div>
+
+            <?php if ($has_hidden): ?>
+                <div class="block-faq__btn-wrap">
+                    <button type="button" class="btn-default" data-faq-toggle aria-expanded="false" aria-controls="<?= esc_attr($list_id) ?>" data-text-show="<?= esc_attr($text_show_all) ?>" data-text-hide="<?= esc_attr($text_hide) ?>"><?= esc_html($text_show_all) ?></button>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 <?php endif; ?>

@@ -132,7 +132,27 @@
         });
     };
 
+    const initFaqToggle = (button) => {
+        const list = document.getElementById(button.getAttribute('aria-controls'));
+        if (!list) return;
+
+        const textShow = button.dataset.textShow || button.textContent.trim();
+        const textHide = button.dataset.textHide || textShow;
+
+        button.addEventListener('click', () => {
+            const isExpanded = list.classList.toggle('is-expanded');
+
+            button.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            button.textContent = isExpanded ? textHide : textShow;
+
+            if (!isExpanded && list.getBoundingClientRect().top < 0) {
+                scrollToEl(list);
+            }
+        });
+    };
+
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-accordion]').forEach(initAccordion);
+        document.querySelectorAll('[data-faq-toggle]').forEach(initFaqToggle);
     });
 }

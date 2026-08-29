@@ -16,7 +16,7 @@ if (!$data['section_utils']['is_hide']):
     $query_args = [
         'post_type'        => 'product',
         'post_status'      => 'publish',
-        'posts_per_page'   => 50,
+        'posts_per_page'   => -1,
         'orderby'          => [
             'menu_order' => 'ASC',
             'date'       => 'DESC',
