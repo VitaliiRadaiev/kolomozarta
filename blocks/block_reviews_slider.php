@@ -14,60 +14,78 @@ if (!$data['section_utils']['is_hide']):
     wp_enqueue_style('reviews_slider_style', get_theme_file_uri() . '/dist/css/blocks/block_reviews_slider.css');
     wp_enqueue_script('reviews_slider_js', get_theme_file_uri('./dist/js/blocks/block_reviews_slider.js'), array('main_js'), null, true);
 
-    // Один запит на всі відгуки — панелі табів збираються з цього масиву
-    $reviews_query = new WP_Query([
-        'post_type'      => 'review',
-        'posts_per_page' => -1,
-        'post_status'    => 'publish',
-        'orderby'        => check($data['is_random'] ?? null) ? 'rand' : 'date',
-        'order'          => 'DESC',
-    ]);
+    $display_mode = check($data['display_mode'] ?? null) ? $data['display_mode'] : 'all';
+    $is_random    = check($data['is_random'] ?? null);
+    $term_ids     = [];
+
+    $query_args = [
+        'post_type'        => 'review',
+        'post_status'      => 'publish',
+        'posts_per_page'   => -1,
+        'orderby'          => $is_random ? 'rand' : 'date',
+        'order'            => 'DESC',
+        'suppress_filters' => false,
+    ];
+
+    if ($display_mode === 'by_category' && check($data['taxonomies'] ?? null)) {
+        $term_ids = array_values(array_filter(array_map('intval', (array) $data['taxonomies'])));
+
+        $query_args['tax_query'] = [[
+            'taxonomy'         => 'review_category',
+            'field'            => 'term_id',
+            'terms'            => $term_ids,
+            'include_children' => false,
+        ]];
+
+        $the_posts = get_posts($query_args);
+    } elseif ($display_mode === 'custom' && check($data['custom_list'] ?? null)) {
+        $the_posts = (array) $data['custom_list'];
+
+        if ($is_random) {
+            shuffle($the_posts);
+        }
+    } else {
+        $display_mode = 'all';
+        $the_posts    = get_posts($query_args);
+    }
 
     $reviews = [];
 
-    if ($reviews_query->have_posts()):
-        while ($reviews_query->have_posts()): $reviews_query->the_post();
-            $review_id = get_the_ID();
-            $thumb_id  = get_post_thumbnail_id($review_id);
-            $content   = apply_filters('the_content', get_the_content());
+    foreach ($the_posts as $item) {
+        if (!is_object($item) || $item->post_status !== 'publish') {
+            continue;
+        }
 
-            // Ні фото, ні тексту — виводити нічого
-            if (!check($thumb_id) && !check(trim(wp_strip_all_tags($content)))) {
-                continue;
-            }
+        $thumb_id = get_post_thumbnail_id($item->ID);
+        $content  = apply_filters('the_content', $item->post_content);
 
-            $post_terms = wp_get_post_terms($review_id, 'review_category');
+        if (!check($thumb_id) && !check(trim(wp_strip_all_tags($content)))) {
+            continue;
+        }
 
-            $reviews[] = [
-                'id'       => $review_id,
-                'title'    => get_the_title(),
-                'thumb_id' => $thumb_id,
-                'content'  => $content,
-                'slugs'    => (!is_wp_error($post_terms) && !empty($post_terms)) ? wp_list_pluck($post_terms, 'slug') : [],
-            ];
-        endwhile;
-        wp_reset_postdata();
-    endif;
+        $post_terms = wp_get_post_terms($item->ID, 'review_category');
+
+        $reviews[] = [
+            'id'       => $item->ID,
+            'title'    => get_the_title($item),
+            'thumb_id' => $thumb_id,
+            'content'  => $content,
+            'slugs'    => (!is_wp_error($post_terms) && !empty($post_terms)) ? wp_list_pluck($post_terms, 'slug') : [],
+        ];
+    }
 
     if (!empty($reviews)):
 
-        $text_all        = get_field('text_all', 'option');
-        $text_categories = get_field('text_categories', 'option');
+        if ($display_mode === 'by_category') {
+            $panels = [];
 
-        // Перша панель — «Всі», далі по категоріях (порожні категорії пропускаємо)
-        $panels = [[
-            'slug'  => 'all',
-            'name'  => check($text_all) ? $text_all : 'Всі',
-            'items' => $reviews,
-        ]];
+            foreach ($term_ids as $term_id) {
+                $term = get_term($term_id, 'review_category');
 
-        $review_categories = get_terms([
-            'taxonomy'   => 'review_category',
-            'hide_empty' => true,
-        ]);
+                if (!$term || is_wp_error($term)) {
+                    continue;
+                }
 
-        if (!is_wp_error($review_categories) && !empty($review_categories)):
-            foreach ($review_categories as $term) {
                 $items = array_values(array_filter($reviews, function ($review) use ($term) {
                     return in_array($term->slug, $review['slugs'], true);
                 }));
@@ -82,7 +100,54 @@ if (!$data['section_utils']['is_hide']):
                     'items' => $items,
                 ];
             }
-        endif;
+
+            if (empty($panels)) {
+                $panels = [[
+                    'slug'  => 'all',
+                    'name'  => '',
+                    'items' => $reviews,
+                ]];
+            }
+
+        } elseif ($display_mode === 'custom') {
+            $panels = [[
+                'slug'  => 'all',
+                'name'  => '',
+                'items' => $reviews,
+            ]];
+
+        } else {
+            $text_all = get_field('text_all', 'option');
+
+            $panels = [[
+                'slug'  => 'all',
+                'name'  => check($text_all) ? $text_all : 'Всі',
+                'items' => $reviews,
+            ]];
+
+            $review_categories = get_terms([
+                'taxonomy'   => 'review_category',
+                'hide_empty' => true,
+            ]);
+
+            if (!is_wp_error($review_categories) && !empty($review_categories)) {
+                foreach ($review_categories as $term) {
+                    $items = array_values(array_filter($reviews, function ($review) use ($term) {
+                        return in_array($term->slug, $review['slugs'], true);
+                    }));
+
+                    if (empty($items)) {
+                        continue;
+                    }
+
+                    $panels[] = [
+                        'slug'  => $term->slug,
+                        'name'  => $term->name,
+                        'items' => $items,
+                    ];
+                }
+            }
+        }
 
         $has_tabs = count($panels) > 1;
 
@@ -105,33 +170,26 @@ if (!$data['section_utils']['is_hide']):
                     data-slides-desktop="<?= (int) $counts['desktop'] ?>"
                     class="reviews-slider__slider">
 
-                    <?php get_template_part(get_part_path('title'), null, [
-                        'title_data' => $data['title'] ?? [],
-                        'classes'    => 'reviews-slider__title'
-                    ]) ?>
+                    <?php if ($has_tabs): ?>
+                        <?php get_template_part(get_part_path('title'), null, [
+                            'title_data' => $data['title'] ?? [],
+                            'classes'    => 'reviews-slider__title'
+                        ]) ?>
 
-                    <div class="reviews-slider__controls">
-                        <div class="reviews-slider__tabs">
-                            <?php if ($has_tabs): ?>
+                        <div class="reviews-slider__controls">
+                            <div class="reviews-slider__tabs">
                                 <?php foreach ($panels as $index => $panel): ?>
                                     <button type="button" class="reviews-slider__tabs-btn <?= $index === 0 ? 'is-active' : '' ?>" data-filter="<?= esc_attr($panel['slug']) ?>"><?= esc_html($panel['name']) ?></button>
                                 <?php endforeach; ?>
-                            <?php endif; ?>
-                        </div>
+                            </div>
 
-                        <div class="slider-head__nav">
-                            <button type="button" class="swiper-button prev">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                                </svg>
-                            </button>
-                            <button type="button" class="swiper-button next">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                </svg>
-                            </button>
+                            <?php get_template_part(get_part_path('slider-nav')) ?>
                         </div>
-                    </div>
+                    <?php else: ?>
+                        <?php get_template_part(get_part_path('slider-head'), null, [
+                            'title_data' => $data['title'] ?? []
+                        ]) ?>
+                    <?php endif; ?>
 
                     <div class="reviews-slider__panels">
                         <?php foreach ($panels as $index => $panel):
@@ -140,10 +198,9 @@ if (!$data['section_utils']['is_hide']):
                                 <div class="swiper">
                                     <div class="swiper-wrapper">
                                         <?php foreach ($panel['items'] as $review):
-                                            $has_content = check(trim(wp_strip_all_tags($review['content'])));
-                                            $has_body    = $has_content || check($review['title']); ?>
+                                            $has_content = check(trim(wp_strip_all_tags($review['content']))); ?>
                                             <div class="swiper-slide">
-                                                <article class="review-card <?= $has_body ? '' : 'review-card--media-only' ?>">
+                                                <article class="review-card <?= $has_content ? '' : 'review-card--media-only' ?>">
                                                     <?php if (check($review['thumb_id'])): ?>
                                                         <a href="<?= wp_get_attachment_url($review['thumb_id']) ?>" data-fancybox="<?= esc_attr($gallery_id) ?>" class="review-card__media">
                                                             <?php get_image($review['thumb_id'], 'review-card__image aspect-' . $ratio); ?>
@@ -152,10 +209,8 @@ if (!$data['section_utils']['is_hide']):
 
                                                     <?php if ($has_content): ?>
                                                         <div class="review-card__body">
-                                                            <?php if ($has_content): ?>
-                                                                <div class="review-card__text text-content"><?= $review['content'] ?></div>
-                                                                <button type="button" class="review-card__more" data-text-more="Читати більше" data-text-less="Згорнути" hidden>Читати більше</button>
-                                                            <?php endif; ?>
+                                                            <div class="review-card__text text-content"><?= $review['content'] ?></div>
+                                                            <button type="button" class="review-card__more" data-text-more="Читати більше" data-text-less="Згорнути" hidden>Читати більше</button>
                                                         </div>
                                                     <?php endif; ?>
                                                 </article>

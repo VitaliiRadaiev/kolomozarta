@@ -26,12 +26,6 @@
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
-.reviews-slider__tabs-label {
-  font-size: 1.6rem;
-  color: #212934;
-  margin-right: 4px;
-  font-weight: 700;
-}
 .reviews-slider__tabs-btn {
   padding: 6px 16px;
   border-radius: 4px;
@@ -56,10 +50,6 @@
 }
 .reviews-slider .swiper-slide {
   height: auto;
-}
-
-.slider-nav-locked .slider-head__nav {
-  display: none;
 }
 
 .review-card {

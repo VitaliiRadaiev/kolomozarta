@@ -26,13 +26,6 @@
         min-width: 0;
         flex: 1 1 auto;
 
-        &-label {
-            font-size: 1.6rem;
-            color: $text-dark;
-            margin-right: 4px;
-            font-weight: 700;
-        }
-
         &-btn {
             padding: 6px 16px;
             border-radius: 4px;
@@ -64,12 +57,6 @@
     & .swiper-slide {
         height: auto;
     }
-}
-
-// Кнопки навігації приховані, коли активна панель вміщується цілком.
-// Клас вішає JS блоку за swiper.isLocked
-.slider-nav-locked .slider-head__nav {
-    display: none;
 }
 
 .review-card {
