@@ -153,27 +153,6 @@
             ]
         },
         {
-            "key": "field_6a91b2ca39c83",
-            "label": "Випадковий порядок",
-            "name": "is_random",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Перемішувати відгуки при кожному завантаженні сторінки",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_6a91b1b439c82",
             "label": "",
             "name": "",
@@ -210,9 +189,8 @@
                 "id": ""
             },
             "choices": {
-                "all": "Всі",
-                "by_category": "Сортувати по категоріях",
-                "custom": "Власний список"
+                "defaullt": "Відображення за замовчуванням",
+                "custom_tabs": "Створити власні таби"
             },
             "default_value": "",
             "return_format": "value",
@@ -221,11 +199,11 @@
             "layout": "horizontal"
         },
         {
-            "key": "field_6a92a2f08f029",
-            "label": "Категорії",
-            "name": "taxonomies",
+            "key": "field_6a984ae2a5775",
+            "label": "Таби",
+            "name": "tabs",
             "aria-label": "",
-            "type": "taxonomy",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -233,7 +211,7 @@
                     {
                         "field": "field_6a92a2bc8f028",
                         "operator": "==",
-                        "value": "by_category"
+                        "value": "custom_tabs"
                     }
                 ]
             ],
@@ -242,58 +220,229 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "review_category",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "checkbox",
-            "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional_target": []
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Додати рядок",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6a984b13a5776",
+                    "label": "Спосіб відображення таба",
+                    "name": "tab_mode",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "term_name": "Обрати назву з наявних категорій",
+                        "custom_tab": "Власна назва",
+                        "hidden": "Не відображати таб"
+                    },
+                    "default_value": "term_name",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "horizontal",
+                    "parent_repeater": "field_6a984ae2a5775"
+                },
+                {
+                    "key": "field_6a984b77a5777",
+                    "label": "Обрати назву таба",
+                    "name": "term_name",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a984b13a5776",
+                                "operator": "==",
+                                "value": "term_name"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "review_category",
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_6a984ae2a5775"
+                },
+                {
+                    "key": "field_6a984c38a5778",
+                    "label": "Власна назва",
+                    "name": "custom_tab",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a984b13a5776",
+                                "operator": "==",
+                                "value": "custom_tab"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6a984ae2a5775"
+                },
+                {
+                    "key": "field_6a984cb6a5779",
+                    "label": "Метод відображення відгуків",
+                    "name": "tab_display_mode",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "by_categories": "Відображати по категоріях",
+                        "custom_list": "Власний список"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "horizontal",
+                    "parent_repeater": "field_6a984ae2a5775"
+                },
+                {
+                    "key": "field_6a92a2f08f029",
+                    "label": "Категорії",
+                    "name": "taxonomies",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a984cb6a5779",
+                                "operator": "==",
+                                "value": "by_categories"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "review_category",
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "field_type": "checkbox",
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_6a984ae2a5775"
+                },
+                {
+                    "key": "field_6a92a3358f02a",
+                    "label": "Власний список",
+                    "name": "custom_list",
+                    "aria-label": "",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a984cb6a5779",
+                                "operator": "==",
+                                "value": "custom_list"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "review"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "return_format": "object",
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 0,
+                    "elements": "",
+                    "bidirectional": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_6a984ae2a5775"
+                }
+            ]
         },
         {
-            "key": "field_6a92a3358f02a",
-            "label": "Власний список",
-            "name": "custom_list",
+            "key": "field_6a91b2ca39c83",
+            "label": "Випадковий порядок",
+            "name": "is_random",
             "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
+            "type": "true_false",
+            "instructions": "Перемішувати відгуки при кожному завантаженні сторінки",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6a92a2bc8f028",
-                        "operator": "==",
-                        "value": "custom"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "review"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
+            "message": "",
+            "default_value": 0,
             "allow_in_bindings": 0,
-            "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -314,5 +463,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787994981
+    "modified": 1788367257
 }

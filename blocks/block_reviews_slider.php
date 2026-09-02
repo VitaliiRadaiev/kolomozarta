@@ -14,40 +14,18 @@ if (!$data['section_utils']['is_hide']):
     wp_enqueue_style('reviews_slider_style', get_theme_file_uri() . '/dist/css/blocks/block_reviews_slider.css');
     wp_enqueue_script('reviews_slider_js', get_theme_file_uri('./dist/js/blocks/block_reviews_slider.js'), array('main_js'), null, true);
 
-    $display_mode = check($data['display_mode'] ?? null) ? $data['display_mode'] : 'all';
+    $display_mode = ($data['display_mode'] ?? '') === 'custom_tabs' ? 'custom_tabs' : 'default';
     $is_random    = check($data['is_random'] ?? null);
-    $term_ids     = [];
 
-    $query_args = [
+    // Один запит на всі відгуки — далі вся вибірка по табах робиться в PHP над цим пулом
+    $the_posts = get_posts([
         'post_type'        => 'review',
         'post_status'      => 'publish',
         'posts_per_page'   => -1,
-        'orderby'          => $is_random ? 'rand' : 'date',
+        'orderby'          => 'date',
         'order'            => 'DESC',
         'suppress_filters' => false,
-    ];
-
-    if ($display_mode === 'by_category' && check($data['taxonomies'] ?? null)) {
-        $term_ids = array_values(array_filter(array_map('intval', (array) $data['taxonomies'])));
-
-        $query_args['tax_query'] = [[
-            'taxonomy'         => 'review_category',
-            'field'            => 'term_id',
-            'terms'            => $term_ids,
-            'include_children' => false,
-        ]];
-
-        $the_posts = get_posts($query_args);
-    } elseif ($display_mode === 'custom' && check($data['custom_list'] ?? null)) {
-        $the_posts = (array) $data['custom_list'];
-
-        if ($is_random) {
-            shuffle($the_posts);
-        }
-    } else {
-        $display_mode = 'all';
-        $the_posts    = get_posts($query_args);
-    }
+    ]);
 
     $reviews = [];
 
@@ -63,68 +41,92 @@ if (!$data['section_utils']['is_hide']):
             continue;
         }
 
-        $post_terms = wp_get_post_terms($item->ID, 'review_category');
+        $post_terms = get_the_terms($item, 'review_category');
 
-        $reviews[] = [
+        $reviews[$item->ID] = [
             'id'       => $item->ID,
             'title'    => get_the_title($item),
             'thumb_id' => $thumb_id,
             'content'  => $content,
-            'slugs'    => (!is_wp_error($post_terms) && !empty($post_terms)) ? wp_list_pluck($post_terms, 'slug') : [],
+            'term_ids' => (!is_wp_error($post_terms) && !empty($post_terms)) ? array_map('intval', wp_list_pluck($post_terms, 'term_id')) : [],
         ];
     }
 
     if (!empty($reviews)):
 
-        if ($display_mode === 'by_category') {
-            $panels = [];
+        $text_all = get_field('text_all', 'option');
 
-            foreach ($term_ids as $term_id) {
-                $term = get_term($term_id, 'review_category');
+        // Таб «Всі» завжди перший і активний за замовчуванням
+        $panels = [[
+            'slug'  => 'all',
+            'name'  => check($text_all) ? $text_all : 'Всі',
+            'items' => array_values($reviews),
+        ]];
 
-                if (!$term || is_wp_error($term)) {
+        if ($display_mode === 'custom_tabs') {
+            $tabbed_ids = [];
+
+            foreach ((array) ($data['tabs'] ?? []) as $index => $tab) {
+                $tab_mode = check($tab['tab_mode'] ?? null) ? $tab['tab_mode'] : 'term_name';
+                $items    = [];
+
+                if (($tab['tab_display_mode'] ?? '') === 'custom_list') {
+                    foreach ((array) ($tab['custom_list'] ?? []) as $custom_post) {
+                        $post_id = is_object($custom_post) ? (int) $custom_post->ID : (int) $custom_post;
+
+                        if (isset($reviews[$post_id])) {
+                            $items[] = $reviews[$post_id];
+                        }
+                    }
+                } else {
+                    // Кілька категорій в одному табі працюють як AND — відгук має мати всі обрані терми
+                    $tab_term_ids = array_values(array_filter(array_map('intval', (array) ($tab['taxonomies'] ?? []))));
+
+                    if (!empty($tab_term_ids)) {
+                        foreach ($reviews as $review) {
+                            if (empty(array_diff($tab_term_ids, $review['term_ids']))) {
+                                $items[] = $review;
+                            }
+                        }
+                    }
+                }
+
+                // Прихований таб кнопки не має, але свої відгуки в таб «Всі» так само групує
+                foreach ($items as $tab_item) {
+                    $tabbed_ids[] = $tab_item['id'];
+                }
+
+                if ($tab_mode === 'hidden' || empty($items)) {
                     continue;
                 }
 
-                $items = array_values(array_filter($reviews, function ($review) use ($term) {
-                    return in_array($term->slug, $review['slugs'], true);
-                }));
+                if ($tab_mode === 'custom_tab') {
+                    $name = check($tab['custom_tab'] ?? null) ? $tab['custom_tab'] : '';
+                } else {
+                    $term = check($tab['term_name'] ?? null) ? get_term((int) $tab['term_name'], 'review_category') : null;
+                    $name = ($term && !is_wp_error($term)) ? $term->name : '';
+                }
 
-                if (empty($items)) {
+                if (!check($name)) {
                     continue;
                 }
 
                 $panels[] = [
-                    'slug'  => $term->slug,
-                    'name'  => $term->name,
+                    'slug'  => 'tab-' . $index,
+                    'name'  => $name,
                     'items' => $items,
                 ];
             }
 
-            if (empty($panels)) {
-                $panels = [[
-                    'slug'  => 'all',
-                    'name'  => '',
-                    'items' => $reviews,
-                ]];
-            }
+            // «Всі» — спочатку відгуки табів у порядку табів, далі всі інші
+            $tabbed_ids = array_values(array_unique($tabbed_ids));
+            $rest       = array_diff(array_keys($reviews), $tabbed_ids);
 
-        } elseif ($display_mode === 'custom') {
-            $panels = [[
-                'slug'  => 'all',
-                'name'  => '',
-                'items' => $reviews,
-            ]];
+            $panels[0]['items'] = array_values(array_map(function ($id) use ($reviews) {
+                return $reviews[$id];
+            }, array_merge($tabbed_ids, array_values($rest))));
 
         } else {
-            $text_all = get_field('text_all', 'option');
-
-            $panels = [[
-                'slug'  => 'all',
-                'name'  => check($text_all) ? $text_all : 'Всі',
-                'items' => $reviews,
-            ]];
-
             $review_categories = get_terms([
                 'taxonomy'   => 'review_category',
                 'hide_empty' => true,
@@ -133,7 +135,7 @@ if (!$data['section_utils']['is_hide']):
             if (!is_wp_error($review_categories) && !empty($review_categories)) {
                 foreach ($review_categories as $term) {
                     $items = array_values(array_filter($reviews, function ($review) use ($term) {
-                        return in_array($term->slug, $review['slugs'], true);
+                        return in_array((int) $term->term_id, $review['term_ids'], true);
                     }));
 
                     if (empty($items)) {
@@ -147,6 +149,13 @@ if (!$data['section_utils']['is_hide']):
                     ];
                 }
             }
+        }
+
+        if ($is_random) {
+            foreach ($panels as &$panel) {
+                shuffle($panel['items']);
+            }
+            unset($panel);
         }
 
         $has_tabs = count($panels) > 1;

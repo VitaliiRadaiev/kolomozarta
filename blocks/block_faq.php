@@ -11,7 +11,7 @@ if (!$data['section_utils']['is_hide']):
     $display_mode = $data['display_mode'] ?? 'default';
 
     // Количество элементов, видимых до нажатия на кнопку "Показати всі"
-    $visible_count = 2;
+    $visible_count = 6;
 
     $text_show_all = get_field('text_show_all', 'option');
     $text_hide     = get_field('text_hide', 'option');
