@@ -198,7 +198,7 @@
 }
 .lessons__nav {
   position: sticky;
-  top: 16px;
+  top: 58px;
   margin-bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -392,6 +392,11 @@ presto-player::part(video) {
     -webkit-column-gap: 80px;
        -moz-column-gap: 80px;
             column-gap: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .lessons__nav {
+    top: 74px;
   }
 }
 @media only screen and (min-width: 1024px) {

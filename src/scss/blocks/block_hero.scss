@@ -17,11 +17,11 @@
     text-align: center;
   }
 
-  &__subtitle {
-    margin-bottom: 20px;
-  }
-
   &__description {
     max-width: 650px;
+
+    &.text-content {
+      margin-top: 0;
+    }
   }
 }

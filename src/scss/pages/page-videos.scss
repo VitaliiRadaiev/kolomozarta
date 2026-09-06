@@ -241,11 +241,15 @@ $green: #3ED715;
 
   &__nav {
     position: sticky;
-    top: 16px;
+    top: 58px;
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     z-index: 3;
+
+    @media (min-width: $mq-lg) {
+      top: 74px;
+    }
   }
 
   &__nav-scroll-wrap-1 {

@@ -21,8 +21,20 @@ function build_menu_hierarchy($items, $parent = 0)
 
 function render_menu_link($menu, $classes = '', $attr = '')
 {
+    $icon = get_field('icon', $menu->ID);
+
+    if (check($icon)) {
+        $classes = trim($classes . ' has-icon');
+    }
 ?>
     <a href="<?= $menu->url ?>" target="<?= $menu->target ? '_blank' : '_self' ?>" <?= $attr ?> class="<?= $classes ?>">
+        <?php if (check($icon)) : ?>
+            <?= get_image($icon, 'menu-item__icon', false, 'thumbnail', [
+                'sizes'   => '20px',
+                'loading' => 'lazy',
+                'alt'     => '',
+            ]) ?>
+        <?php endif; ?>
         <?= $menu->title ?>
     </a>
 <?php

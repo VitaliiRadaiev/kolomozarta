@@ -51,6 +51,55 @@ $(document).ready(function () {
             });
         });
     });
+
+    // Header "Зв'язатись" dropdown. Desktop opens it on hover via CSS
+    // (@media #{$mouse-device}); here we only add the tap toggle for touch devices,
+    // so a click never fights the CSS hover state on a mouse device.
+    const headerContacts = document.querySelector(".header-contacts");
+    if (headerContacts) {
+        const contactsToggle = headerContacts.querySelector(".header-contacts__toggle");
+        const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)");
+
+        const closeContacts = () => {
+            headerContacts.classList.remove("is-open");
+            contactsToggle.setAttribute("aria-expanded", "false");
+        };
+
+        contactsToggle.addEventListener("click", () => {
+            if (!isTouch.matches) return;
+            const isOpen = headerContacts.classList.toggle("is-open");
+            contactsToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        document.addEventListener("click", (e) => {
+            if (e.target.closest(".header-contacts")) return;
+            closeContacts();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeContacts();
+        });
+
+        $(".openMenu").on("click", closeContacts);
+    }
+
+    // Scroll to top button
+    const scrollTopWrap = document.querySelector(".scroll-top-wrap");
+    if (scrollTopWrap) {
+        const toggleScrollTop = () => {
+            scrollTopWrap.classList.toggle("is-visible", window.scrollY > window.innerHeight);
+        };
+
+        toggleScrollTop();
+        window.addEventListener("scroll", throttle(toggleScrollTop, 200));
+
+        scrollTopWrap
+            .querySelector('[data-action="scroll-top"]')
+            .addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+    }
+
     // Animations
 
     AOS.init({

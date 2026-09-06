@@ -46,27 +46,6 @@
             "append": ""
         },
         {
-            "key": "field_671e6f033e0a8",
-            "label": "Підзаголовок",
-            "name": "hero_subtitle",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_671e6f993e0a9",
             "label": "Короткий опис",
             "name": "hero_description",
@@ -111,5 +90,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787998205
+    "modified": 1788596440
 }

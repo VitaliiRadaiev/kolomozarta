@@ -32,11 +32,11 @@
           align-items: center;
   text-align: center;
 }
-.hero__subtitle {
-  margin-bottom: 20px;
-}
 .hero__description {
   max-width: 650px;
+}
+.hero__description.text-content {
+  margin-top: 0;
 }
 @media only screen and (min-width: 360px) {
   .hero h1 {

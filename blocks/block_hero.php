@@ -8,7 +8,6 @@ if (!$data['section_utils']['is_hide']):
     wp_enqueue_style('hero_style', get_theme_file_uri() . '/dist/css/blocks/block_hero.css');
 
     $hero_title = $data['hero_title'];
-    $hero_subtitle = $data['hero_subtitle'];
     $hero_description = $data['hero_description'];
 ?>
     <section <?= get_section_id($data) ?> class="hero <?= get_section_space_top($data) ?>">
@@ -18,16 +17,10 @@ if (!$data['section_utils']['is_hide']):
                     <h1><?= $hero_title ?></h1>
                 <?php endif; ?>
 
-                <?php if ($hero_subtitle): ?>
-                    <p class="hero__subtitle">
-                        <?= $hero_subtitle ?>
-                    </p>
-                <?php endif; ?>
-
                 <?php if ($hero_description): ?>
-                    <p class="hero__description">
+                    <div class="hero__description text-content">
                         <?= $hero_description ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

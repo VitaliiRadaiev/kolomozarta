@@ -21,7 +21,7 @@ if (!$data['section_utils']['is_hide']):
     $the_posts = get_posts([
         'post_type'        => 'review',
         'post_status'      => 'publish',
-        'posts_per_page'   => -1,
+        'posts_per_page'   => 100,
         'orderby'          => 'date',
         'order'            => 'DESC',
         'suppress_filters' => false,
@@ -118,13 +118,12 @@ if (!$data['section_utils']['is_hide']):
                 ];
             }
 
-            // «Всі» — спочатку відгуки табів у порядку табів, далі всі інші
+            // «Всі» — це об'єднання відгуків усіх табів (включно з прихованими), без решти CPT
             $tabbed_ids = array_values(array_unique($tabbed_ids));
-            $rest       = array_diff(array_keys($reviews), $tabbed_ids);
 
             $panels[0]['items'] = array_values(array_map(function ($id) use ($reviews) {
                 return $reviews[$id];
-            }, array_merge($tabbed_ids, array_values($rest))));
+            }, $tabbed_ids));
 
         } else {
             $review_categories = get_terms([

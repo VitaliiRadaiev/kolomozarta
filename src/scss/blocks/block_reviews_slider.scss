@@ -70,7 +70,12 @@
         flex: 0 0 auto;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0px 0px 3px 0px rgba(#000, 0.1);
+        box-shadow: 0px 0px 3px 0px rgba(#000, 0.3);
+        background-color: $primary-ultra-light;
+
+        & img { 
+            //mix-blend-mode: darken;
+        }
 
         @media (min-width: $mq-lg) {
             &:hover .review-card__image {
@@ -108,7 +113,7 @@
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        
+
         &.text-content {
             margin-top: 0;
         }

@@ -188,17 +188,6 @@ $wysiwyg-margin: (
         }
     }
 
-    // & ol:not(.no-style) {
-    //   margin-left: 2em;
-    //   & li {
-    //     list-style: decimal;
-
-    //     &:not(:first-child) {
-    //       margin-top: 0.25em;
-    //     }
-    //   }
-    // }
-
     & a {
         @extend %wysiwyg-link;
     }

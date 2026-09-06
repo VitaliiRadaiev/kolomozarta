@@ -33,8 +33,21 @@
       border-bottom: 1px solid $text-dark;
       transition: $ease-in;
 
+      &.has-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
       & img {
         height: 1em;
+      }
+
+      .menu-item__icon {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        flex-shrink: 0;
       }
 
 

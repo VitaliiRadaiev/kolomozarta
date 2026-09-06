@@ -3,10 +3,15 @@
 .slider-pagination-wrapper {
     position: relative;
     height: 15px;
-    margin-top: 25px;
+    margin-top: 18px;
+
+    &:has( .swiper-pagination-lock) {
+        display: none;
+    }
 
     & .swiper-pagination {
         height: 100%;
+        top: 0 !important;
     }
 
     & .swiper-pagination-bullet {
@@ -66,6 +71,11 @@
             right: 50px;
         }
 
+        &.swiper-button-disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
         & svg {
             height: 18px;
             width: 18px;
@@ -100,6 +110,52 @@
     color: $text;
 
     & a {
-        color: inherit;
+        color: $text-dark;
+        border-bottom: 1px solid $text-dark;
+        transition: $ease-in;
+
+        & img {
+            height: 1em;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
+}
+.scroll-top-wrap {
+    position: fixed;
+    z-index: 40;
+    bottom: 155px;
+    right: 10px;
+
+    @media (min-width: $mq-md) {
+        bottom: 118px;
+    }
+
+    @media (min-width: $mq-lg) {
+        bottom: 90px;
+    }
+}
+
+.scroll-top {
+    @extend %primary-btn;
+
+    width: 42px;
+    padding: 0;
+    color: $text;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.scroll-top-wrap.is-visible .scroll-top {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
 }

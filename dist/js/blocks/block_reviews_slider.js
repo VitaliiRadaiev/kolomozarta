@@ -21,10 +21,15 @@
 
         const getActive = () => sliders.get(activeSlug);
 
-        // Слайди вміщуються цілком — гортати нічого, ховаємо кнопки навігації
+        // Слайди вміщуються цілком — гортати нічого, ховаємо кнопки навігації.
+        // Навігація спільна на кілька Swiper-інстансів, тому опція navigation не задається,
+        // і Swiper сам стан swiper-button-disabled не проставляє — робимо це вручну.
         const toggleNav = () => {
             const active = getActive();
             block.classList.toggle('slider-nav-locked', !active || active.swiper.isLocked);
+
+            if (prevBtn) prevBtn.classList.toggle('swiper-button-disabled', !active || active.swiper.isBeginning);
+            if (nextBtn) nextBtn.classList.toggle('swiper-button-disabled', !active || active.swiper.isEnd);
         };
 
         // Обрізаний текст: кнопка «Читати більше» потрібна лише там, де текст справді не вміщується.
@@ -68,6 +73,7 @@
                     lock: toggleNav,
                     unlock: toggleNav,
                     breakpoint: toggleNav,
+                    slideChange: toggleNav,
                 }
             });
 

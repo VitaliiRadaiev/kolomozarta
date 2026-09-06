@@ -308,6 +308,67 @@
             "append": ""
         },
         {
+            "key": "field_6a9c41257be90",
+            "label": "E-Пошта",
+            "name": "email",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a9c413d7be91",
+            "label": "",
+            "name": "sontact_button",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6a9c41d0c5712",
+                    "label": "",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_6a81969e954ff"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
+        },
+        {
             "key": "field_671e701f1e06d",
             "label": "Глобальні тексти",
             "name": "",
@@ -830,6 +891,27 @@
             "append": ""
         },
         {
+            "key": "field_6a9c429aa700e",
+            "label": "Текст \"Зв'язатись\"",
+            "name": "text_contact_us",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Зв'язатись",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68524dd0e215c",
             "label": "Сторінка недоступна",
             "name": "",
@@ -1064,5 +1146,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787997764
+    "modified": 1788625596
 }

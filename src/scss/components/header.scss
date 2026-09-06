@@ -44,6 +44,9 @@
   display: flex;
   @include fluid-font(14, 16, 360, 1200);
   background-color: $primary;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 
   &__nav,
   &__menu {
@@ -54,7 +57,7 @@
     nav {
       display: none;
 
-      @include minw($sm-pc) {
+      @media (min-width: $mq-xl) {
         display: flex;
       }
     }
@@ -62,8 +65,9 @@
 
   &__nav {
     align-items: center;
+    gap: 12px;
 
-    @include minw($sm-pc) {
+    @media (min-width: $mq-xl) {
       align-items: flex-start;
     }
   }
@@ -73,6 +77,18 @@
       color: $text-dark;
       z-index: 3;
       position: relative;
+    }
+
+    .menu-item__icon {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      flex-shrink: 0;
+
+      @media (min-width: $mq-lg) {
+        width: 20px;
+        height: 20px;
+      }
     }
 
     .menu-item.current-menu-item,
@@ -115,7 +131,7 @@
         z-index: 2;
 
         @include minw($pc) {
-          padding: 18px 20px;
+          padding: 18px 12px;
         }
       }
 
@@ -197,7 +213,7 @@
       padding: 8px 0;
 
       @include minw($sm-pc) {
-            height: 64px;
+        height: 64px;
       }
     }
 
@@ -239,7 +255,7 @@ header {
 .header__nav-mobile {
   display: block;
 
-  @include minw($sm-pc) {
+  @media (min-width: $mq-xl) {
     display: none;
   }
 
@@ -323,6 +339,19 @@ header {
         color: $text;
         display: block;
       }
+
+      a.has-icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .menu-item__icon {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
     }
 
     .has-submenu,
@@ -379,5 +408,151 @@ header {
 
   .entire__line {
     display: flex;
+  }
+}
+
+.header-contacts {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: $mq-md) {
+    margin-left: auto;
+  }
+
+  @media (min-width: $mq-xl) {
+    margin-left: 0;
+  }
+
+  @include minw($sm-pc) {
+    align-items: stretch;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: $text-dark;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    transition: $ease-out;
+    min-height: 50px;
+
+    @include minw($sm-pc) {
+      padding: 10px 14px;
+      min-height: 64px;
+    }
+
+    @include minw($pc) {
+      padding: 18px;
+    }
+
+    &::after {
+      content: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2210%22 height=%226%22 viewBox=%220 0 10 6%22 fill=%22none%22%3E%3Cpath d=%22M9.79774 0.999504C9.79774 1.07241 9.77171 1.14011 9.71963 1.2026L5.54826 5.35835C5.49618 5.42084 5.42848 5.45209 5.34516 5.45209C5.27225 5.45209 5.20455 5.42084 5.14206 5.35835L0.986317 1.2026C0.923824 1.14011 0.892578 1.07241 0.892578 0.999504C0.892578 0.916181 0.923824 0.848481 0.986317 0.796403L1.42376 0.343334C1.48626 0.280841 1.55396 0.249595 1.62686 0.249595C1.71019 0.249595 1.78309 0.280841 1.84559 0.343334L5.34516 3.85853L8.86036 0.343334C8.91244 0.280841 8.98014 0.249595 9.06346 0.249595C9.13637 0.249595 9.20407 0.280841 9.26656 0.343334L9.71963 0.796403C9.77171 0.848481 9.79774 0.916181 9.79774 0.999504Z%22 fill=%22%23212934%22/%3E%3C/svg%3E');
+      position: absolute;
+      right: 0;
+      top: calc(50% + 1px);
+      transform: translateY(-50%);
+      transition: $ease-out;
+      line-height: 0;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 100%;
+    z-index: 5;
+    min-width: max-content;
+    padding: 16px;
+    background-color: $white;
+    box-shadow: $card-shadow;
+    opacity: 0;
+    visibility: hidden;
+    transition: $ease-out;
+
+    @include minw($sm-pc) {
+      top: 64px;
+    }
+
+    @media (min-width: $mq-md) {
+      right: 0;
+      transform: translateX(0%);
+    }
+
+    & .btn-default {
+      min-width: 100%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      transition: $ease-out;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      color: $text;
+      white-space: nowrap;
+    }
+
+    img,
+    svg {
+      width: 20px;
+      height: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  &__email {
+    & svg {
+      color: $primary-ultra-dark;
+    }
+  }
+
+  &__btn {
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  // Desktop: reveal on hover, as the main menu`s .sub-menu does.
+  @media #{$mouse-device} {
+    &:hover>.header-contacts__dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:hover>.header-contacts__toggle::after {
+      transform: translateY(-55%) rotate(180deg);
+    }
+  }
+
+  // Touch devices: `is-open` is toggled by tap in main.js.
+  &.is-open>.header-contacts__dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.is-open>.header-contacts__toggle::after {
+    transform: translateY(-55%) rotate(180deg);
   }
 }
