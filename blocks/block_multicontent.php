@@ -57,6 +57,14 @@ if (!$data['section_utils']['is_hide']):
                                 </div>
                             <?php endif; ?>
 
+                            <?php if ($item['acf_fc_layout'] == 'product-tags'): ?>
+                                <div <?= get_space_top($item['space-top']); ?> class="multicontent-space-top">
+                                    <?php get_template_part(get_part_path('product-tags'), null, [
+                                        'post_id' => $item['product-tags']['product_for_tags'] ?? null,
+                                    ]) ?>
+                                </div>
+                            <?php endif; ?>
+
                             <?php if ($item['acf_fc_layout'] == 'buttons-group'): ?>
                                 <div <?= get_space_top($item['space-top']); ?> class="multicontent-space-top">
                                     <?php get_template_part(get_part_path('buttons-group'), null, [

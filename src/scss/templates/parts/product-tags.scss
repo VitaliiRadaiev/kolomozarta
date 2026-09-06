@@ -1,0 +1,37 @@
+@use '../../base/_variables' as *;
+
+.product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+
+    &__item {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border: 2px solid $primary;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1;
+        color: $text;
+        flex: 1 1 auto;
+    }
+
+    &__icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+
+    &__name {
+        white-space: nowrap;
+    }
+}

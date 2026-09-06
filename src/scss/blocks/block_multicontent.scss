@@ -57,6 +57,10 @@
             & .price__old {
                 margin-left: 66px;
             }
+
+            & .product-tags {
+                justify-content: center;
+            }
         }
 
         &.alignment-right {
@@ -69,6 +73,10 @@
 
             & .price__old {
                 margin-left: 66px;
+            }
+
+            & .product-tags {
+                justify-content: flex-end;
             }
         }
 

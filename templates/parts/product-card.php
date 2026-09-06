@@ -43,6 +43,10 @@ if (empty($link_url)) {
         </div>
     <?php endif; ?>
     <h3 class="product-card__title"><?= esc_html($title) ?></h3>
+    <?php get_template_part(get_part_path('product-tags'), null, [
+        'post_id' => $post_id,
+        'classes' => 'product-card__tags',
+    ]) ?>
     <?php if (!empty($short_description)): ?>
         <p class="product-card__desc"><?= esc_html($short_description) ?></p>
     <?php endif; ?>

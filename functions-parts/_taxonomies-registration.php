@@ -36,6 +36,40 @@ function init_taxonomies()
         'query_var' => true,
     ));
 
+    register_taxonomy('product_tag', array('product'), array(
+        'label' => 'Теги продуктів',
+        'labels' => array(
+            'name'                       => 'Теги продуктів',
+            'singular_name'              => 'Тег продукту',
+            'add_new_item'               => 'Додати новий Тег',
+            'edit_item'                  => 'Редагувати Тег',
+            'new_item_name'              => 'Назва нового Тегу',
+            'search_items'               => 'Пошук Тегів',
+            'not_found'                  => 'Тегів не знайдено',
+            'menu_name'                  => 'Теги',
+            'back_to_items'              => '← Повернутися до Тегів',
+        ),
+        'description'        => 'Тег для Продукту',
+        'public'             => true,
+        'publicly_queryable' => true,
+        'hierarchical'       => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => false,
+        'show_in_rest'       => true,
+        'rest_base'          => 'product-tag',
+        'show_admin_column'  => true,
+        'show_in_quick_edit' => true,
+        'show_tagcloud'      => false,
+        'meta_box_cb'        => 'post_categories_meta_box',
+        'rewrite'            => array(
+            'slug'       => 'product-tag',
+            'with_front' => true,
+            'pages'      => true,
+        ),
+        'query_var' => true,
+    ));
+
     register_taxonomy('faq_category', array('faq'), array(
         'label' => 'Категорії питань',
         'labels' => array(

@@ -374,6 +374,60 @@
                             "min": "",
                             "max": ""
                         },
+                        "layout_6a9e4c2d8b110": {
+                            "key": "layout_6a9e4c2d8b110",
+                            "name": "product-tags",
+                            "label": "Теги товару",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a9e4c2d8b111",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6a887a1146009"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_6a9e4c2d8b112",
+                                    "label": "",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_6a9e4c1b7f3a2"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
                         "layout_6a8872574ea83": {
                             "key": "layout_6a8872574ea83",
                             "name": "buttons-group",
@@ -825,5 +879,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787927631
+    "modified": 1788689478
 }

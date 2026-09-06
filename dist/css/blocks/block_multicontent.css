@@ -48,6 +48,11 @@
 .multicontent__col.alignment-center .price__old {
   margin-left: 66px;
 }
+.multicontent__col.alignment-center .product-tags {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 .multicontent__col.alignment-right {
   text-align: right;
   -webkit-box-align: end;
@@ -59,6 +64,11 @@
 }
 .multicontent__col.alignment-right .price__old {
   margin-left: 66px;
+}
+.multicontent__col.alignment-right .product-tags {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .multicontent__col .multicontent-img, .multicontent__col .multicontent-iframe, .multicontent__col .multicontent-video {
   background-color: rgba(0, 0, 0, 0.06);

@@ -25,6 +25,12 @@
   font-size: 1.8rem;
   text-align: center;
 }
+.product-card__tags {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 14px;
+}
 .product-card__desc {
   font-size: 1.4rem;
   text-align: center;
