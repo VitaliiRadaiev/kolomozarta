@@ -24,10 +24,6 @@
   transition: all 0.3s ease-in;
   border: 2px solid #F8DB01;
 }
-.btn-default:hover, .scroll-top:hover, .order__form-buttons .wpcf7-submit:hover,
-.order__form-buttons button:hover {
-  background-color: transparent;
-}
 
 * {
   padding: 0;
@@ -275,8 +271,13 @@
 .scroll-top-wrap {
   position: fixed;
   z-index: 40;
-  bottom: 155px;
+  bottom: 88px;
   right: 10px;
+  -webkit-transition: bottom 0.25s ease;
+  transition: bottom 0.25s ease;
+}
+.scroll-top-wrap.bottom {
+  bottom: 155px;
 }
 
 .scroll-top {
@@ -1164,6 +1165,9 @@ presto-player::part(wrapper) {
   .scroll-top-wrap {
     bottom: 118px;
   }
+  .scroll-top-wrap.bottom {
+    bottom: 118px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1190,6 +1194,7 @@ presto-player::part(wrapper) {
     -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     border: 2px solid transparent;
+    color: #212934;
   }
   .swiper-button:hover {
     background-color: transparent;
@@ -1210,6 +1215,9 @@ presto-player::part(wrapper) {
     width: 18px;
   }
   .scroll-top-wrap {
+    bottom: 90px;
+  }
+  .scroll-top-wrap.bottom {
     bottom: 90px;
   }
   .slider-head:not(:has(.swiper-button-lock)) {
@@ -1335,5 +1343,12 @@ presto-player::part(wrapper) {
   }
   .wp-caption img {
     width: 100%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-default:hover, .scroll-top:hover, .order__form-buttons .wpcf7-submit:hover,
+  .order__form-buttons button:hover {
+    background-color: transparent;
   }
 }

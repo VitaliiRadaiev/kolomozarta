@@ -9,6 +9,9 @@ $text_cabinet = get_field('text_cabinet', 'option');
 $email = get_field('email', 'option');
 $contact_button = get_field('sontact_button', 'option')['button'] ?? [];
 $text_contact_us = get_field('text_contact_us', 'option');
+$account_icon_image_id = get_field('account_icon_image_id', 'option') ?? null;
+$entrance_icon_image_id = get_field('entrance_icon_image_id', 'option') ?? null;
+$exit_icon_image_id = get_field('exit_icon_image_id', 'option') ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -93,27 +96,62 @@ $text_contact_us = get_field('text_contact_us', 'option');
                         ?>
                             <?php if (!empty($pages)): ?>
                                 <li class="has-submenu menu-item-has-children menu-item menu-item-type-post_type">
-                                    <a href="#" target="_self" class=""> <?= $text_cabinet ?> </a>
+                                    <a href="#" target="_self" class="has-icon">
+                                        <?php if (check($account_icon_image_id)) : ?>
+                                            <?= get_image($account_icon_image_id, 'menu-item__icon', false, 'thumbnail', [
+                                                'sizes'   => '20px',
+                                                'loading' => 'lazy',
+                                                'alt'     => '',
+                                            ]) ?>
+                                        <?php endif; ?>
+                                        <?= $text_cabinet ?>
+                                    </a>
 
                                     <ul class="sub-menu">
                                         <?php foreach ($pages as $page): ?>
                                             <li class="menu-item menu-item-type-post_type">
-                                                <a href="<?= get_the_permalink($page->ID); ?>" target="_self" class="">🎵 <?= $page->post_title ?> </a>
+                                                <a href="<?= get_the_permalink($page->ID); ?>" target="_self" class=""><?= $page->post_title ?> </a>
                                             </li>
                                         <?php endforeach; ?>
                                         <li class="menu-item menu-item-type-post_type">
-                                            <a href="<?= esc_url($logout_url) ?>" target="_self" class=""> <?= $text_exit ?> </a>
+                                            <a href="<?= esc_url($logout_url) ?>" target="_self" class="has-icon">
+                                                <?php if (check($exit_icon_image_id)) : ?>
+                                                    <?= get_image($exit_icon_image_id, 'menu-item__icon', false, 'thumbnail', [
+                                                        'sizes'   => '20px',
+                                                        'loading' => 'lazy',
+                                                        'alt'     => '',
+                                                    ]) ?>
+                                                <?php endif; ?>
+                                                <?= $text_exit ?>
+                                            </a>
                                         </li>
                                     </ul>
                                 </li>
                             <?php else: ?>
                                 <li class="menu-item menu-item-type-post_type">
-                                    <a href="<?= esc_url($logout_url) ?>" target="_self" class=""> <?= $text_exit ?> </a>
+                                    <a href="<?= esc_url($logout_url) ?>" target="_self" class="has-icon">
+                                        <?php if (check($exit_icon_image_id)) : ?>
+                                            <?= get_image($exit_icon_image_id, 'menu-item__icon', false, 'thumbnail', [
+                                                'sizes'   => '20px',
+                                                'loading' => 'lazy',
+                                                'alt'     => '',
+                                            ]) ?>
+                                        <?php endif; ?>
+                                        <?= $text_exit ?>
+                                    </a>
                                 </li>
                             <?php endif; ?>
                         <?php else: ?>
                             <li class="menu-item menu-item-type-post_type">
-                                <a href="#" data-action="open-auth-popup" class=""> <?= $text_entrance ?> </a>
+                                <a href="#" data-action="open-auth-popup" class="has-icon">
+                                    <?php if (check($entrance_icon_image_id)) : ?>
+                                        <?= get_image($entrance_icon_image_id, 'menu-item__icon', false, 'thumbnail', [
+                                            'sizes'   => '20px',
+                                            'loading' => 'lazy',
+                                            'alt'     => '',
+                                        ]) ?>
+                                    <?php endif; ?>
+                                    <?= $text_entrance ?> </a>
                             </li>
                         <?php endif; ?>
                     </ul>
@@ -173,15 +211,6 @@ $text_contact_us = get_field('text_contact_us', 'option');
                 </div>
 
                 <div class="menu__popup">
-                    <?php
-                    // wp_nav_menu(array(
-                    //     'theme_location' => 'headerMenuLocation',
-                    //     'container' => 'nav',
-                    //     'container_class' => 'menu__popup-wrap',
-                    //     'menu_class' => 'menu__popup-mob',
-                    //     'fallback_cb' => false,
-                    // ));
-                    ?>
                     <nav class="menu__popup-wrap">
                         <ul id="menu-header-menu" class="menu__popup-mob">
                             <?php foreach ($header_menu as $item): ?>
@@ -227,16 +256,34 @@ $text_contact_us = get_field('text_contact_us', 'option');
                             ?>
                                 <?php if (!empty($pages)): ?>
                                     <li class="has-submenu menu-item-has-children menu-item menu-item-type-post_type">
-                                        <a href="#" target="_self" class=""> <?= $text_cabinet ?> </a>
+                                        <a href="#" target="_self" class="has-icon">
+                                            <?php if (check($account_icon_image_id)) : ?>
+                                                <?= get_image($account_icon_image_id, 'menu-item__icon', false, 'thumbnail', [
+                                                    'sizes'   => '20px',
+                                                    'loading' => 'lazy',
+                                                    'alt'     => '',
+                                                ]) ?>
+                                            <?php endif; ?>
+                                            <?= $text_cabinet ?>
+                                        </a>
 
                                         <ul class="sub-menu">
                                             <?php foreach ($pages as $page): ?>
                                                 <li class="menu-item menu-item-type-post_type">
-                                                    <a href="<?= get_the_permalink($page->ID); ?>" target="_self" class="">🎵 <?= $page->post_title ?> </a>
+                                                    <a href="<?= get_the_permalink($page->ID); ?>" target="_self" class=""><?= $page->post_title ?> </a>
                                                 </li>
                                             <?php endforeach; ?>
                                             <li class="menu-item menu-item-type-post_type">
-                                                <a href="<?= esc_url($logout_url) ?>" target="_self" class=""> <?= $text_exit ?> </a>
+                                                <a href="<?= esc_url($logout_url) ?>" target="_self" class="has-icon">
+                                                    <?php if (check($exit_icon_image_id)) : ?>
+                                                        <?= get_image($exit_icon_image_id, 'menu-item__icon', false, 'thumbnail', [
+                                                            'sizes'   => '20px',
+                                                            'loading' => 'lazy',
+                                                            'alt'     => '',
+                                                        ]) ?>
+                                                    <?php endif; ?>
+                                                    <?= $text_exit ?>
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -247,12 +294,30 @@ $text_contact_us = get_field('text_contact_us', 'option');
                                                 <?= $text_no_courses ?>
                                             </p>
                                         <?php endif; ?>
-                                        <a href="<?= esc_url($logout_url) ?>" target="_self" class=""> <?= $text_exit ?> </a>
+                                        <a href="<?= esc_url($logout_url) ?>" target="_self" class="has-icon">
+                                            <?php if (check($exit_icon_image_id)) : ?>
+                                                <?= get_image($exit_icon_image_id, 'menu-item__icon', false, 'thumbnail', [
+                                                    'sizes'   => '20px',
+                                                    'loading' => 'lazy',
+                                                    'alt'     => '',
+                                                ]) ?>
+                                            <?php endif; ?>
+                                            <?= $text_exit ?>
+                                        </a>
                                     </li>
                                 <?php endif; ?>
                             <?php else: ?>
                                 <li class="menu-item menu-item-type-post_type">
-                                    <a href="#" data-action="open-auth-popup" class=""> <?= $text_entrance ?> </a>
+                                    <a href="#" data-action="open-auth-popup" class="has-icon">
+                                        <?php if (check($entrance_icon_image_id)) : ?>
+                                            <?= get_image($entrance_icon_image_id, 'menu-item__icon', false, 'thumbnail', [
+                                                'sizes'   => '20px',
+                                                'loading' => 'lazy',
+                                                'alt'     => '',
+                                            ]) ?>
+                                        <?php endif; ?>
+                                        <?= $text_entrance ?>
+                                    </a>
                                 </li>
                             <?php endif; ?>
                         </ul>
@@ -304,11 +369,11 @@ $text_contact_us = get_field('text_contact_us', 'option');
             </div>
         </div>
     </header>
-    <?php if(!is_front_page() && !is_404() && !is_search()):?>
+    <?php if (!is_front_page() && !is_404() && !is_search()): ?>
         <div class="container">
             <div class="breadcrumbs">
                 <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
             </div>
         </div>
-    <?php endif;?>
+    <?php endif; ?>
     <main>

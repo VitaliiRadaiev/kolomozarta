@@ -59,9 +59,6 @@
   transition: all 0.3s ease-in;
   border: 2px solid #F8DB01;
 }
-.games__btn button:hover, .games__btn a:hover {
-  background-color: transparent;
-}
 
 .games__btn a {
   border: 2px solid #F8DB01;
@@ -143,5 +140,10 @@
 @media only screen and (min-width: 1024px) {
   .games__additional {
     margin-right: 0;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .games__btn button:hover, .games__btn a:hover {
+    background-color: transparent;
   }
 }

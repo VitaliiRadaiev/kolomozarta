@@ -23,9 +23,6 @@
   transition: all 0.3s ease-in;
   border: 2px solid #F8DB01;
 }
-.scroll-top:hover {
-  background-color: transparent;
-}
 
 .slider-pagination-wrapper {
   position: relative;
@@ -95,8 +92,13 @@
 .scroll-top-wrap {
   position: fixed;
   z-index: 40;
-  bottom: 155px;
+  bottom: 88px;
   right: 10px;
+  -webkit-transition: bottom 0.25s ease;
+  transition: bottom 0.25s ease;
+}
+.scroll-top-wrap.bottom {
+  bottom: 155px;
 }
 
 .scroll-top {
@@ -129,6 +131,9 @@
   .scroll-top-wrap {
     bottom: 118px;
   }
+  .scroll-top-wrap.bottom {
+    bottom: 118px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -155,6 +160,7 @@
     -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     border: 2px solid transparent;
+    color: #212934;
   }
   .swiper-button:hover {
     background-color: transparent;
@@ -177,10 +183,19 @@
   .scroll-top-wrap {
     bottom: 90px;
   }
+  .scroll-top-wrap.bottom {
+    bottom: 90px;
+  }
 }
 
 @media (min-width: 1280px) {
   .main-buttons-group {
     gap: 18px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .scroll-top:hover {
+    background-color: transparent;
   }
 }

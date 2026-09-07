@@ -5,7 +5,7 @@
     height: 15px;
     margin-top: 18px;
 
-    &:has( .swiper-pagination-lock) {
+    &:has(.swiper-pagination-lock) {
         display: none;
     }
 
@@ -57,6 +57,7 @@
         cursor: pointer;
         transition: $ease-in;
         border: 2px solid transparent;
+        color: $text-dark;
 
         &:hover {
             background-color: transparent;
@@ -123,11 +124,13 @@
         }
     }
 }
+
 .scroll-top-wrap {
     position: fixed;
     z-index: 40;
-    bottom: 155px;
+    bottom: 88px;
     right: 10px;
+    transition: bottom .25s ease;
 
     @media (min-width: $mq-md) {
         bottom: 118px;
@@ -135,6 +138,18 @@
 
     @media (min-width: $mq-lg) {
         bottom: 90px;
+    }
+
+    &.bottom {
+        bottom: 155px;
+
+        @media (min-width: $mq-md) {
+            bottom: 118px;
+        }
+
+        @media (min-width: $mq-lg) {
+            bottom: 90px;
+        }
     }
 }
 

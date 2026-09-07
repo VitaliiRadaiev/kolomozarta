@@ -34,9 +34,6 @@
   transition: all 0.3s ease-in;
   border: 2px solid #F8DB01;
 }
-.material-description__text a:hover {
-  background-color: transparent;
-}
 
 .material-description {
   overflow: hidden;
@@ -148,5 +145,10 @@
 @media only screen and (min-width: 1440px) {
   .material-description__item h2 {
     font-size: 40px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .material-description__text a:hover {
+    background-color: transparent;
   }
 }

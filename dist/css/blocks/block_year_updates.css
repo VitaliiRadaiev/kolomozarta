@@ -59,9 +59,6 @@
   transition: all 0.3s ease-in;
   border: 2px solid #F8DB01;
 }
-.year-updates__buttons-item button:hover {
-  background-color: transparent;
-}
 
 .year-updates__wrap h2 {
   text-align: center;
@@ -123,5 +120,10 @@
 @media only screen and (min-width: 1024px) {
   .year-updates__wrap h2 {
     margin-bottom: 75px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .year-updates__buttons-item button:hover {
+    background-color: transparent;
   }
 }

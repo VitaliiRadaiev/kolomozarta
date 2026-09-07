@@ -98,6 +98,16 @@ $(document).ready(function () {
             .addEventListener("click", () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             });
+
+        const footerCopyright = document.querySelector('.footer__copyright');
+        if (footerCopyright) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    scrollTopWrap.classList.toggle("bottom", entry.isIntersecting);
+                });
+            });
+            footerObserver.observe(footerCopyright);
+        }
     }
 
     // Animations

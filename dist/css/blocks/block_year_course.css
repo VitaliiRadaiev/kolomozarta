@@ -59,9 +59,6 @@
   transition: all 0.3s ease-in;
   border: 2px solid #F8DB01;
 }
-.year-course__lists-price button:hover {
-  background-color: transparent;
-}
 
 .year-course__info {
   display: -webkit-box;
@@ -178,5 +175,10 @@
   }
   .year-course__lists-wrap {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .year-course__lists-price button:hover {
+    background-color: transparent;
   }
 }
